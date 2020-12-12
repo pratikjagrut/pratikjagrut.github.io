@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Welcome to Pratik&#39;s space</title>
+    <title>Pratik Jagrut</title>
     <link>https://pratikjagrut.github.io/</link>
-    <description>Recent content on Welcome to Pratik&#39;s space</description>
+    <description>Recent content on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 12 Dec 2020 12:30:45 +0530</lastBuildDate><atom:link href="https://pratikjagrut.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -39,7 +39,8 @@
       <pubDate>Sat, 12 Dec 2020 12:21:16 +0530</pubDate>
       
       <guid>https://pratikjagrut.github.io/resume/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+      <description>PRATIK JAGRUT Bangalore, India  A computer science engineer, an open-source enthusiast and tech speaker with a passion for programming, eager to learn new technologies and desire to work in an environment which encourages learning. I&amp;rsquo;m a goal-oriented individual with a pleasant personality and a tenacity that knows no bounds.
+ Experience   Red Hat / ​ Associate Software Engineer January 2019 - present, Bangalore, India  Working on a project called ​Service Binding Operator  which is an open source project.</description>
     </item>
     
     <item>
@@ -57,7 +58,7 @@
       <pubDate>Sat, 12 Dec 2020 12:02:44 +0530</pubDate>
       
       <guid>https://pratikjagrut.github.io/about/</guid>
-      <description></description>
+      <description>Resume</description>
     </item>
     
   </channel>
