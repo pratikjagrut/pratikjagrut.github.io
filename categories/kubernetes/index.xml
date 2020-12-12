@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on Welcome to Pratik&#39;s space</title>
+    <link>https://pratikjagrut.github.io/categories/kubernetes/</link>
+    <description>Recent content in Kubernetes on Welcome to Pratik&#39;s space</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 12 Dec 2020 12:30:36 +0530</lastBuildDate><atom:link href="https://pratikjagrut.github.io/categories/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trial</title>
+      <link>https://pratikjagrut.github.io/blog/kubernetes/trial/</link>
+      <pubDate>Sat, 12 Dec 2020 12:30:36 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.github.io/blog/kubernetes/trial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://pratikjagrut.github.io/blog/kubernetes/k8s/</link>
+      <pubDate>Sat, 12 Dec 2020 12:28:12 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.github.io/blog/kubernetes/k8s/</guid>
+      <description>Hello K8S</description>
+    </item>
+    
+  </channel>
+</rss>
