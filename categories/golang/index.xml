@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>golang on Welcome to Pratik&#39;s space</title>
-    <link>https://pratikjagrut.io/categories/golang/</link>
+    <link>https://pratikjagrut.github.io/categories/golang/</link>
     <description>Recent content in golang on Welcome to Pratik&#39;s space</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 12 Dec 2020 12:30:45 +0530</lastBuildDate><atom:link href="https://pratikjagrut.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Dec 2020 12:30:45 +0530</lastBuildDate><atom:link href="https://pratikjagrut.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Next</title>
-      <link>https://pratikjagrut.io/blog/golang/next/</link>
+      <link>https://pratikjagrut.github.io/blog/golang/next/</link>
       <pubDate>Sat, 12 Dec 2020 12:30:45 +0530</pubDate>
       
-      <guid>https://pratikjagrut.io/blog/golang/next/</guid>
+      <guid>https://pratikjagrut.github.io/blog/golang/next/</guid>
       <description>How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking – for Students, Academics and Nonfiction Book Writers by Sönke Ahrens is a small (171 pages) non-fiction genre book. The book is a manual explaining Zettlekasten method designed by Niklas Luhmann. Sönke has used straightforward and simple English to explain the concepts. For anyone who is a knowledge curator or wishes to publish non-fictional content in any form (text, video or audio), this book is a must-read.</description>
     </item>
     
     <item>
       <title>Get Golang in your system</title>
-      <link>https://pratikjagrut.io/blog/golang/install/</link>
+      <link>https://pratikjagrut.github.io/blog/golang/install/</link>
       <pubDate>Sat, 12 Dec 2020 12:10:56 +0530</pubDate>
       
-      <guid>https://pratikjagrut.io/blog/golang/install/</guid>
+      <guid>https://pratikjagrut.github.io/blog/golang/install/</guid>
       <description>How to install golang?</description>
     </item>
     
