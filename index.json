@@ -1,37 +1,19 @@
 [{
-    "title": "Next",
+    "title": "Blog",
     "date": "",
     "description": "",
-    "body": "How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking – for Students, Academics and Nonfiction Book Writers by Sönke Ahrens is a small (171 pages) non-fiction genre book. The book is a manual explaining Zettlekasten method designed by Niklas Luhmann. Sönke has used straightforward and simple English to explain the concepts. For anyone who is a knowledge curator or wishes to publish non-fictional content in any form (text, video or audio), this book is a must-read.…How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking – for Students, Academics and Nonfiction Book Writers by Sönke Ahrens is a small (171 pages) non-fiction genre book. The book is a manual explaining Zettlekasten method designed by Niklas Luhmann. Sönke has used straightforward and simple English to explain the concepts. For anyone who is a knowledge curator or wishes to publish non-fictional content in any form (text, video or audio), this book is a must-read.…\n",
-    "ref": "/blog/golang/next/"
-  },{
-    "title": "Trial",
-    "date": "",
-    "description": "Kubernetes",
-    "body": "",
-    "ref": "/blog/kubernetes/trial/"
-  },{
-    "title": "Kubernetes",
-    "date": "",
-    "description": "Kubernetes",
-    "body": "Hello K8S\n",
-    "ref": "/blog/kubernetes/k8s/"
+    "body": "Blogs are yet to update here.",
+    "ref": "/blog/"
   },{
     "title": "Resume",
     "date": "",
     "description": "",
-    "body": "PRATIK JAGRUT Bangalore, India  A computer science engineer, an open-source enthusiast and tech speaker with a passion for programming, eager to learn new technologies and desire to work in an environment which encourages learning. I\u0026rsquo;m a goal-oriented individual with a pleasant personality and a tenacity that knows no bounds.\n Experience   Red Hat / ​ Associate Software Engineer January 2019 - present, Bangalore, India  Working on a project called ​Service Binding Operator  which is an open source project. My primary focus is to test the quality of the product by adding automated tests and fixing bugs.    Red Hat / ​ Intern June 2018 - January 2019, Pune, India  Worked as an intern on project SSSD(System Security Services Daemon) which is a remote authentication client for Linux based systems. Primary worked to create an automated tests framework based on Pytest to add and write automated tests.    Sheng Li Telecom India Pvt Ltd / ​ Software Engineer Intern November 2017 - April 2018, Pune, India  Worked as a team lead and developer for the office automation project.     Open source Contribution   Tektoncd Cli , the Tekton Pipelines CLI project provides a CLI for interacting with Tekton!   Helm , the helm is a tool for managing packages of pre-configured Kubernetes resources.    Community contribution  Speaker at Paris Open source summit 2019, Speaker Kubernetes and Cloud native Bangalore meetup. Member of the organizing committee of DevConf INDIA 2018.   Skills   Programming Languages\n Proficient in Golang and Python Prior experience: C++, PHP, TypeScript    Technologies\n Kubernetes, OpenShift, Podman, Linux, Git, Fedora, containers     Certifications   Red Hat Certified Specialist in OpenShift Administration      Red Hat Certified Specialist in OpenShift Application Development      Red Hat Certified Engineer      Red Hat Certified System Administrator     Education   G. H. Raisoni College of Engineering, Nagpur, Maharashtra, India BE. Computer science and Engineering, 2014 - 2018,\nCGPA: 8.73\n  Kulbhushan Jr. College, Aurangabad, Maharashtra, India​ Higher School Secondary Certificate, 2012 - 2014\nPercentage: 79.08%*\n   Awards  Secured 1st position at e-Governance conference for best e-Governance Project model at 19th National e-Governance conference (01/2015). Secured 77th all India rank in IEEEXtreme 11.0, 24 hours coding competition.   Interests  Space science and quantum physics, philosophy, playing around open source projects, travelling, football and swimming.   Human languages  English Hindi Marathi   ",
+    "body": "PRATIK JAGRUT Bangalore, India  A computer science engineer, an open-source enthusiast and tech speaker with a passion for programming, eager to learn new technologies and desire to work in an environment which encourages learning. I\u0026rsquo;m a goal-oriented individual with a pleasant personality and a tenacity that knows no bounds.\n Experience   Red Hat / ​ Associate Software Engineer January 2019 - present, Bangalore, India  Working on a project called ​Service Binding Operator  which is an open source project. My primary focus is to test the quality of the product by adding automated tests and fixing bugs.    Red Hat / ​ Intern June 2018 - January 2019, Pune, India  Worked as an intern on project SSSD(System Security Services Daemon) which is a remote authentication client for Linux based systems. Primary worked to create an automated tests framework based on Pytest to add and write automated tests.    Sheng Li Telecom India Pvt Ltd / ​ Software Engineer Intern November 2017 - April 2018, Pune, India  Worked as a team lead and developer for the office automation project.     Open source Contribution   Tektoncd Cli , the Tekton Pipelines CLI project provides a CLI for interacting with Tekton!   Helm , the helm is a tool for managing packages of pre-configured Kubernetes resources.    Community contribution  Speaker at Paris Open source summit 2019, Speaker Kubernetes and Cloud-native Bangalore meetup. Member of the organizing committee of DevConf INDIA 2018.   Skills   Programming Languages\n Proficient in Golang and Python Prior experience: C++, PHP, TypeScript    Technologies\n Kubernetes, OpenShift, Podman, Linux, Git, Fedora, containers     Certifications   Red Hat Certified Specialist in OpenShift Administration      Red Hat Certified Specialist in OpenShift Application Development      Red Hat Certified Engineer      Red Hat Certified System Administrator     Education   G. H. Raisoni College of Engineering, Nagpur, Maharashtra, India BE. Computer science and Engineering, 2014 - 2018,\nCGPA: 8.73\n  Kulbhushan Jr. College, Aurangabad, Maharashtra, India​ Higher School Secondary Certificate, 2012 - 2014\nPercentage: 79.08%*\n   Awards  Secured 1st position at e-Governance conference for best e-Governance Project model at 19th National e-Governance conference (01/2015). Secured 77th all India rank in IEEEXtreme 11.0, 24 hours coding competition.   Interests  Space science and quantum physics, philosophy, playing around open source projects, travelling, football and swimming.   Human languages  English Hindi Marathi   ",
     "ref": "/resume/"
   },{
-    "title": "Get Golang in your system",
+    "title": "About Pratik",
     "date": "",
     "description": "",
-    "body": "How to install golang?\n",
-    "ref": "/blog/golang/install/"
-  },{
-    "title": "About",
-    "date": "",
-    "description": "",
-    "body": "Resume\n",
+    "body": "Pratik currently works at Red Hat as Associate Software Engineer since January 2019. He joined Red Hat as an intern just after graduating in 2018. He holds a Bachelor of Engineering degree in Computer Science.\nPratik is enthusiastic about Linux and opensource technologies. He\u0026rsquo;s fueled by his passion for understanding new technologies. He considers himself a ‘forever student', eager to learn, grow and build his professional and personal life.\nPratik is also very enamoured of outdoor activities. He likes to play European football, swimming, trekking and travelling around the globe.\nClick here to know more about him.\nGithub  \u0026emsp; Twitter  \u0026emsp; Linkedin  \u0026emsp; Facebook  \u0026emsp; Email  ",
     "ref": "/about/"
   }]

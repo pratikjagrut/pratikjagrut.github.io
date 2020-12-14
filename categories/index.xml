@@ -4,25 +4,6 @@
     <title>Categories on Pratik Jagrut</title>
     <link>https://pratikjagrut.github.io/categories/</link>
     <description>Recent content in Categories on Pratik Jagrut</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 12 Dec 2020 12:30:45 +0530</lastBuildDate><atom:link href="https://pratikjagrut.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>golang</title>
-      <link>https://pratikjagrut.github.io/categories/golang/</link>
-      <pubDate>Sat, 12 Dec 2020 12:30:45 +0530</pubDate>
-      
-      <guid>https://pratikjagrut.github.io/categories/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
-      <link>https://pratikjagrut.github.io/categories/kubernetes/</link>
-      <pubDate>Sat, 12 Dec 2020 12:30:36 +0530</pubDate>
-      
-      <guid>https://pratikjagrut.github.io/categories/kubernetes/</guid>
-      <description></description>
-    </item>
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://pratikjagrut.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
