@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pratik Jagrut</title>
-    <link>https://pratikjagrut.github.io/</link>
+    <link>https://pratikjagrut.dev/</link>
     <description>Recent content on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 12 Dec 2020 12:21:16 +0530</lastBuildDate><atom:link href="https://pratikjagrut.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Dec 2020 12:21:16 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog</title>
-      <link>https://pratikjagrut.github.io/blog/</link>
+      <link>https://pratikjagrut.dev/blog/</link>
       <pubDate>Mon, 14 Dec 2020 23:06:10 +0530</pubDate>
       
-      <guid>https://pratikjagrut.github.io/blog/</guid>
+      <guid>https://pratikjagrut.dev/blog/</guid>
       <description>Blogs are yet to update here.</description>
     </item>
     
     <item>
       <title>Resume</title>
-      <link>https://pratikjagrut.github.io/resume/</link>
+      <link>https://pratikjagrut.dev/resume/</link>
       <pubDate>Sat, 12 Dec 2020 12:21:16 +0530</pubDate>
       
-      <guid>https://pratikjagrut.github.io/resume/</guid>
+      <guid>https://pratikjagrut.dev/resume/</guid>
       <description>PRATIK JAGRUT Bangalore, India  A computer science engineer, an open-source enthusiast and tech speaker with a passion for programming, eager to learn new technologies and desire to work in an environment which encourages learning. I&amp;rsquo;m a goal-oriented individual with a pleasant personality and a tenacity that knows no bounds.
  Experience   Red Hat / ​ Associate Software Engineer January 2019 - present, Bangalore, India  Working on a project called ​Service Binding Operator  which is an open source project.</description>
     </item>
     
     <item>
       <title>About Pratik</title>
-      <link>https://pratikjagrut.github.io/about/</link>
+      <link>https://pratikjagrut.dev/about/</link>
       <pubDate>Sat, 12 Dec 2020 12:02:44 +0530</pubDate>
       
-      <guid>https://pratikjagrut.github.io/about/</guid>
+      <guid>https://pratikjagrut.dev/about/</guid>
       <description>Pratik currently works at Red Hat as Associate Software Engineer since January 2019. He joined Red Hat as an intern just after graduating in 2018. He holds a Bachelor of Engineering degree in Computer Science.
 Pratik is enthusiastic about Linux and opensource technologies. He&amp;rsquo;s fueled by his passion for understanding new technologies. He considers himself a ‘forever student&#39;, eager to learn, grow and build his professional and personal life.
 Pratik is also very enamoured of outdoor activities.</description>
