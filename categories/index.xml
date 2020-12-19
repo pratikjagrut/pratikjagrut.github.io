@@ -4,6 +4,16 @@
     <title>Categories on Pratik Jagrut</title>
     <link>https://pratikjagrut.dev/categories/</link>
     <description>Recent content in Categories on Pratik Jagrut</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://pratikjagrut.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 19 Dec 2020 17:23:52 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang</title>
+      <link>https://pratikjagrut.dev/categories/golang/</link>
+      <pubDate>Sat, 19 Dec 2020 17:23:52 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/categories/golang/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

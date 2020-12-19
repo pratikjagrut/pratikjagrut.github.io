@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on Pratik Jagrut</title>
+    <link>https://pratikjagrut.dev/tags/programming/</link>
+    <description>Recent content in programming on Pratik Jagrut</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 19 Dec 2020 17:23:52 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Index</title>
+      <link>https://pratikjagrut.dev/blog/golang/contents/</link>
+      <pubDate>Sat, 19 Dec 2020 17:23:52 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Go Introduction and Installation</title>
+      <link>https://pratikjagrut.dev/blog/golang/introduction/</link>
+      <pubDate>Sat, 19 Dec 2020 17:23:49 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/introduction/</guid>
+      <description>• Contents   &amp;emsp; Go is an open-source, statically typed, compiled programing language built by Google. It combines the simplest of both statically typed and dynamically typed languages and provides you with the proper mixture of efficiency and simple programming. It is primarily fitted to building fast, efficient, and reliable server-side or system applications.
+Following are some noted features of Go -
+ Safety Concurrency Efficient Garbage Collection High-speed compilation Excellent Tooling support  Installing GO Go binary distributions are available for all major operating systems like Linux, Windows, and macOS.</description>
+    </item>
+    
+  </channel>
+</rss>
