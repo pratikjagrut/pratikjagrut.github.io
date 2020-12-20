@@ -5,14 +5,23 @@
     <link>https://pratikjagrut.dev/categories/golang/</link>
     <description>Recent content in golang on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 19 Dec 2020 17:23:52 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Dec 2020 22:14:14 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Index</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Sat, 19 Dec 2020 17:23:52 +0530</pubDate>
+      <pubDate>Sat, 19 Dec 2020 22:14:14 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://pratikjagrut.dev/blog/golang/helloworld/</link>
+      <pubDate>Sat, 19 Dec 2020 21:48:51 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/helloworld/</guid>
+      <description>Classic hello world program First thing, packages In Go, source files are organized into system directories called packages, which enable code reusability. When you build reusable pieces of code, you will develop a package as a shared library. But when you develop executable programs, you will use the package main for making the package as an executable program. The package main tells the Go compiler that the package should compile as an executable program instead of a shared library.</description>
     </item>
     
     <item>
@@ -21,7 +30,7 @@
       <pubDate>Sat, 19 Dec 2020 17:23:49 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/introduction/</guid>
-      <description>• Contents   &amp;emsp; Go is an open-source, statically typed, compiled programing language built by Google. It combines the simplest of both statically typed and dynamically typed languages and provides you with the proper mixture of efficiency and simple programming. It is primarily fitted to building fast, efficient, and reliable server-side or system applications.
+      <description>Go is an open-source, statically typed, compiled programing language built by Google. It combines the simplest of both statically typed and dynamically typed languages and provides you with the proper mixture of efficiency and simple programming. It is primarily fitted to building fast, efficient, and reliable server-side or system applications.
 Following are some noted features of Go -
  Safety Concurrency Efficient Garbage Collection High-speed compilation Excellent Tooling support  Installing GO Go binary distributions are available for all major operating systems like Linux, Windows, and macOS.</description>
     </item>
