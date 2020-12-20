@@ -5,14 +5,25 @@
     <link>https://pratikjagrut.dev/</link>
     <description>Recent content on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 19 Dec 2020 22:14:14 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Dec 2020 19:30:37 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Index</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Sat, 19 Dec 2020 22:14:14 +0530</pubDate>
+      <pubDate>Sun, 20 Dec 2020 19:30:37 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Variables, data types and constants</title>
+      <link>https://pratikjagrut.dev/blog/golang/vdc/</link>
+      <pubDate>Sun, 20 Dec 2020 18:34:48 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/vdc/</guid>
+      <description>Variable Variable is a symbolic name given to the storage location which contains some value which can be changed at any time during the execution of the program. A variable must be defined with the type of data or value it is holding.
+Data types There are several data types in Go.
+bool int uint float32 complex64 string int8 uint8 float64 complex128 byte int16 uint16 rune int32 uint32 error int64 uint64 Zero value In some programming languages variable holds a null or undefined value when not initialized, Go gives it a zero-value of its data type.</description>
     </item>
     
     <item>
