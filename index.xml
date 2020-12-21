@@ -5,14 +5,24 @@
     <link>https://pratikjagrut.dev/</link>
     <description>Recent content on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 21 Dec 2020 19:48:27 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Dec 2020 22:51:09 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Index</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Mon, 21 Dec 2020 19:48:27 +0530</pubDate>
+      <pubDate>Mon, 21 Dec 2020 22:51:09 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Conditional Statements</title>
+      <link>https://pratikjagrut.dev/blog/golang/if_else/</link>
+      <pubDate>Mon, 21 Dec 2020 22:18:32 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/if_else/</guid>
+      <description>Conditional Statements are part of every programming language. They help us to decide which instruction is suppose to run when certain condition is met. e.g. If I&amp;rsquo;m hungry then I&amp;rsquo;ll eat else I&amp;rsquo;ll wait. e.g. If score is greater than 35%, you passed, else you failed.
+If statement in Go if condition/expression { //instruction to be performed } Condition needs to be true to perform the given set of instructions.</description>
     </item>
     
     <item>
@@ -22,8 +32,7 @@
       
       <guid>https://pratikjagrut.dev/blog/golang/for_loop/</guid>
       <description>Go has only one looping construct, the for loop.
-Basic for loop
-The basic for loop has three components separated by semicolons:
+Basic for loop The basic for loop has three components separated by semicolons:
  init statement: i := 0 exec before 1st iteration condition expression: i &amp;lt; n eval on every interation post statement: i++ exec after each iteration  The expression is not surrounded by parentheses ( ) but the braces { } around set of instructions are required.
 for i := 0; i &amp;lt; n; i++ { //business logic //set of instructions } Init and post statement are optional.</description>
     </item>
@@ -40,12 +49,12 @@ bool int uint float32 complex64 string int8 uint8 float64 complex128 byte int16 
     </item>
     
     <item>
-      <title>Hello World</title>
+      <title>Classic hello world program</title>
       <link>https://pratikjagrut.dev/blog/golang/helloworld/</link>
       <pubDate>Sat, 19 Dec 2020 21:48:51 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/helloworld/</guid>
-      <description>Classic hello world program First thing, packages In Go, source files are organized into system directories called packages, which enable code reusability. When you build reusable pieces of code, you will develop a package as a shared library. But when you develop executable programs, you will use the package main for making the package as an executable program. The package main tells the Go compiler that the package should compile as an executable program instead of a shared library.</description>
+      <description>First thing, packages In Go, source files are organized into system directories called packages, which enable code reusability. When you build reusable pieces of code, you will develop a package as a shared library. But when you develop executable programs, you will use the package main for making the package as an executable program. The package main tells the Go compiler that the package should compile as an executable program instead of a shared library.</description>
     </item>
     
     <item>
