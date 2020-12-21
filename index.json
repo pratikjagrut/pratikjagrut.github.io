@@ -1,7 +1,7 @@
 [{
-    "title": "Index",
+    "title": "Golang",
     "date": "",
-    "description": "List of contents",
+    "description": "Index page",
     "body": "Contents Github Repo   \u0026emsp; \u0026#128279; Reference     Introduction and Installation  \u0026emsp;   First program in Go: Hello World  \u0026emsp;   Variables, data types and constants  \u0026emsp;   Looping Construct  \u0026emsp;   Conditional Statements  \u0026emsp;  ",
     "ref": "/blog/golang/contents/"
   },{
