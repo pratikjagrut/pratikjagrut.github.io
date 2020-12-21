@@ -5,14 +5,27 @@
     <link>https://pratikjagrut.dev/categories/golang/</link>
     <description>Recent content in golang on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 20 Dec 2020 19:30:37 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Dec 2020 19:48:27 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Index</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Sun, 20 Dec 2020 19:30:37 +0530</pubDate>
+      <pubDate>Mon, 21 Dec 2020 19:48:27 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Looping Construct</title>
+      <link>https://pratikjagrut.dev/blog/golang/for_loop/</link>
+      <pubDate>Mon, 21 Dec 2020 19:34:10 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/for_loop/</guid>
+      <description>Go has only one looping construct, the for loop.
+Basic for loop
+The basic for loop has three components separated by semicolons:
+ init statement: i := 0 exec before 1st iteration condition expression: i &amp;lt; n eval on every interation post statement: i++ exec after each iteration  The expression is not surrounded by parentheses ( ) but the braces { } around set of instructions are required.
+for i := 0; i &amp;lt; n; i++ { //business logic //set of instructions } Init and post statement are optional.</description>
     </item>
     
     <item>
