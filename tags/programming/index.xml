@@ -5,14 +5,25 @@
     <link>https://pratikjagrut.dev/tags/programming/</link>
     <description>Recent content in programming on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 21 Dec 2020 22:51:09 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Dec 2020 14:44:13 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Mon, 21 Dec 2020 22:51:09 +0530</pubDate>
+      <pubDate>Tue, 22 Dec 2020 14:44:13 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Switch</title>
+      <link>https://pratikjagrut.dev/blog/golang/switch/</link>
+      <pubDate>Tue, 22 Dec 2020 14:35:42 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/switch/</guid>
+      <description>A switch statement is another way to write a sequence of if - else statements.
+Go&amp;rsquo;s switch is like the one in C and C++ except that it only runs the selected case, not all the cases that follows so we don&amp;rsquo;t need break statement here.
+switch expression { case exp1: //Executes if expression matches exp1 case exp2: //Executes if expression matches exp2 default: //Executes if expression does not matches with any case } Switch evaluation order Switch cases evaluate cases from top to bottom and stops when a case succeeds.</description>
     </item>
     
     <item>
