@@ -5,14 +5,14 @@
     <link>https://pratikjagrut.dev/tags/tech/</link>
     <description>Recent content in tech on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 22 Dec 2020 14:44:13 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Dec 2020 13:04:25 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Tue, 22 Dec 2020 14:44:13 +0530</pubDate>
+      <pubDate>Wed, 23 Dec 2020 13:04:25 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;  </description>
     </item>
     
   </channel>

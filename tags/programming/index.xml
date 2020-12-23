@@ -5,14 +5,25 @@
     <link>https://pratikjagrut.dev/tags/programming/</link>
     <description>Recent content in programming on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 22 Dec 2020 14:44:13 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Dec 2020 13:04:25 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Tue, 22 Dec 2020 14:44:13 +0530</pubDate>
+      <pubDate>Wed, 23 Dec 2020 13:04:25 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Arrays and Slices</title>
+      <link>https://pratikjagrut.dev/blog/golang/array_slice/</link>
+      <pubDate>Tue, 22 Dec 2020 16:08:06 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/array_slice/</guid>
+      <description>Array The array is a collection of the same type of element in a contiguous memory location. The array has fixed length i.e the number of elements to be stored is fixed before memory allocation.
+In Go, the type [n]T is an array of length n and type T.
+Array Declarations // i is an array of length 3, // it means it can hold upto 3 int values var i [3]int i[0] = 1 i[1] = 10 i[2] = 100 Short-hand declaration</description>
     </item>
     
     <item>
