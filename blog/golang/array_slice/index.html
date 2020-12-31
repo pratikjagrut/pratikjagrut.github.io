@@ -192,7 +192,7 @@
   <div class="meta">
     <time datetime="2020-12-22 16:08:06 &#43;0530 IST">December 22, 2020</time>
     <p>Pratik Jagrut</p>
-    <p>3-Minute Read</p>
+    <p>5-Minute Read</p>
   </div>
 </header>
 
@@ -246,53 +246,121 @@
       <h2 id="array">Array</h2>
 <p>The array is a collection of the same type of element in a contiguous memory location.
 The array has fixed length i.e the number of elements to be stored is fixed before memory allocation.</p>
-<p>In Go, the type <code>[n]T</code> is an array of length <code>n</code> and type <code>T</code>.</p>
 <h3 id="array-declarations">Array Declarations</h3>
-<pre><code>// i is an array of length 3, 
-// it means it can hold upto 3 int values
+<p>An array type definition specifies length and type of element.
+The array <code>[n]T</code> is of length <code>n</code> and type <code>T</code>.</p>
+<pre><code>// This array can hold 3 integers.
 var i [3]int
-i[0] = 1
+</code></pre><p>Arrays can be indexed in usual way, to access the <code>n&lt;sup&gt;th&lt;/sup&gt;</code> element we can do <code>a[n]</code>.</p>
+<pre><code>i[0] = 1
 i[1] = 10
 i[2] = 100
-</code></pre><p><strong>Short-hand declaration</strong></p>
+</code></pre><p><strong>Array literal</strong></p>
 <pre><code>j := [3]string{&quot;Go&quot;, &quot;is&quot;, &quot;fun&quot;}
-</code></pre><p><em><strong>You can refer <a href="https://github.com/pratikjagrut/go-tutorial/blob/master/06_array/main.go" style="color:DodgerBlue" target="_blank">main.go</a> file for arrays examples</strong></em></p>
+</code></pre><p>We can make compiler to compute the length of an array.</p>
+<pre><code>j := [...]string{&quot;Go&quot;, &quot;is&quot;, &quot;fun&quot;}
+</code></pre><p>In both cases, the type of <code>j</code> is <code>[3]string</code>.</p>
+<p><em><strong>You can refer <a href="https://github.com/pratikjagrut/go-tutorial/blob/master/06_array/main.go" style="color:DodgerBlue" target="_blank">main.go</a> file for arrays examples</strong></em></p>
 <h2 id="slices">Slices</h2>
-<p>Slices are a pivotal data type in Go, giving a more powerful interface to sequences than arrays.
-An array has a fixed size whereas the slice is a dynamically-sized.</p>
-<p>The type <code>[]T</code> is a slice with elements of type <code>T</code>.</p>
+<p>Arrays are a bit inflexible, so slices are widely used in GO.
+Slices are built on arrays giving it more flexibility, power and convenience.</p>
+<p>The slice type is <code>[]T</code>, specified without length and <code>T</code> is the element type.</p>
 <h3 id="slice-formation">Slice formation</h3>
-<h4 id="creating-a-slice-with-make">Creating a slice with make</h4>
-<p>Slices can be created with the built-in make function; this is how you create dynamically-sized arrays. <code>make([]T, len, cap(optional))</code></p>
-<pre><code>a := make([]int, 5)    // len(a) = 5
-b := make([]int, 0, 5) // len(b) = 0, cap(b) = 5
-</code></pre><h4 id="creating-a-slice-from-array">Creating a slice from array</h4>
-<p>Slice can be formed by specifying 2 indices, high bound and low bound, <code>s[low : high]</code>.
+<p>A slice literal is like an array literal without the length.</p>
+<pre><code>i := []int{1, 2, 3, 4, 5,}
+</code></pre><h4 id="creating-a-slice-with-make">Creating a slice with make</h4>
+<p>Slices can be created with the built-in make function; this is how you create dynamically-sized arrays.</p>
+<pre><code>func make([]T, len, cap) []T
+</code></pre><p>Where,</p>
+<ul>
+<li>[]T: Type of underlying array</li>
+<li>len: Length of the underlying array</li>
+<li>cap: Capacity of the underlying array, cap is optional</li>
+</ul>
+<pre><code>b := make([]int, 3, 5)
+</code></pre><p>If the capacity argument is omitted then capacity defaults to length.</p>
+<pre><code>a := make([]int, 5)
+</code></pre><h5 id="length-and-capacity">Length and capacity</h5>
+<p>The length of a slice is the number of elements it contains.</p>
+<p>The capacity of a slice is the number of elements in the underlying array, counting from the first element in the slice.</p>
+<p>Length: <code>len(s)</code></p>
+<p>Capacity: <code>cap(s)</code></p>
+<h4 id="creating-a-slice-from-an-array">Creating a slice from an array</h4>
+<p>Slice can be formed by specifying 2 indices, high bound and low bound separated by a colon, <code>s[low : high]</code>.
 This selects a half-open range which includes the first element but excludes the last one.</p>
 <pre><code>odds := [5]int{1, 3, 5, 7, 9}
 
 var o []int = odds[1:4]
-</code></pre><p>We can skip low or high bound to use their defaults. For low bound default is <code>0</code> and for high bound default is <code>length of an array</code>.</p>
+m := odds[1:4]
+</code></pre><p>We can skip low or high bound to use their defaults. <br>
+For low bound default is <code>0</code> and for high bound default is <code>length of an array</code>.</p>
 <p><code>a[:high]</code>, <code>a[low:]</code></p>
-<h3 id="slice-are-like-references-to-arrays">Slice are like references to arrays</h3>
+<p>To create a slice of an entire array we can omit both high bound and low bound.</p>
+<pre><code>odds := [5]int{1, 3, 5, 7, 9}
+o := odds[:]
+</code></pre><h3 id="slice-internals">Slice internals</h3>
 <p>A slice does not store any data, it just describes a section of an underlying array.</p>
-<p>Changing element of the slice will make those changes to an underlying array and all other slices which share the same underlying array.</p>
+<p>A slice consists of a pointer to the array segment, length of an array segment and its capacity (the maximum length of the segment).</p>
+<table border = "1" cellspacing="0" bordercolor="black" style="width: 15%" >
+  <tr>
+    <th>ptr (*Ele)</th>
+  </tr>
+  <tr>
+    <th>Length (int)</th>
+  </tr>
+  <tr>
+      <th>Capacity (int)</th>
+  </tr>
+</table>
+<h4 id="relation-of-array-and-slice">Relation of array and slice</h4>
+<p>When we create a slice we create a slice variable which stores the pointer, length and capacity of the underlying array. Slicing does not copy the elements, it creates a new slice variable pointing to the original array. Hence changing element of the slice will make those changes to an underlying array and all other slices which share the same underlying array will be affected.</p>
 <pre><code>alphabet := [5]string{&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;}
 
 i := alphabet[0:3]
 j := alphabet[1:4]
 
 i[2] = &quot;P&quot; // This changes will affect alphabet, i ,j slices
-</code></pre><h3 id="slice-literals">Slice literals</h3>
-<p>A slice literal is like an array literal without the length.</p>
-<pre><code>i := []int{1, 2, 3, 4, 5,}
-</code></pre><h3 id="length-and-capacity">Length and capacity</h3>
-<p>The length of a slice is the number of elements it contains.</p>
-<p>The capacity of a slice is the number of elements in the underlying array, counting from the first element in the slice.</p>
-<p>Length: <code>len(s)</code></p>
-<p>Capacity: <code>cap(s)</code></p>
-<h3 id="appending">Appending</h3>
-<p>Slices support several operations including basic operations of arrays. One of such operation is appending.</p>
+</code></pre><h3 id="append-and-copy-functions">Append and copy functions</h3>
+<h4 id="append">Append</h4>
+<pre><code>func append(s []T, x ...T) []T
+</code></pre><p>The append function appends the data at the end of the slice. If the destination slice has enough capacity then it is re-sliced to accommodate the new element but if capacity is not enough then new underlying array is created and allocated.</p>
+<pre><code>a := make([]int, 1)
+// a == []int{0}
+a = append(a, 1, 2, 3)
+// a == []int{0, 1, 2, 3}
+</code></pre><p><strong>Appending one slice to another</strong></p>
+<pre><code>a := []string{&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}
+b := []string{&quot;d&quot;, &quot;e&quot;}
+a = append(a, b...)
+// a == []string{&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;}
+</code></pre><h4 id="copy">Copy</h4>
+<p>Slice can not grow beyond the capacity of the underlying array if it tries to grow will cause runtime panic error similar to index out of bounds error.</p>
+<pre><code>nums := [3]int{1, 2, 3} // array
+n := nums[:] // slicing nums array
+n[3] = 4 // this will throw runtime error
+
+panic: runtime error: index out of range [3] with length 3
+</code></pre><p>So to achieve the dynamic array we&rsquo;ve to create a new bigger slice and copy the content from the old slice to a new slice.</p>
+<pre><code>nums := [3]int{1, 2, 3} // array
+n := nums[:] // slicing nums array
+
+o := make([]int, len(n)+1)
+copy(o, n)
+o[3] = 4
+</code></pre><p>The copy function takes destination slice and source slice as an argument and returns the number of elements copied.</p>
+<pre><code>func copy(dst, src []T) int
+</code></pre><h5 id="examples">Examples</h5>
+<p><strong>Copy from one slice to another slice</strong></p>
+<pre><code>var odds = make([]int, 3)
+n := copy(odds, []int{1, 3, 5}) // n == 3, odds == []int{1, 3, 5}
+</code></pre><p><strong>Copy between same slice</strong></p>
+<pre><code>odds := []int{1, 3, 5}
+n := copy(odds, odds[1:]) // n == 2, s == []int{3, 5, 5}
+</code></pre><p>In this example, the values at index 0 and 1 are replaced by values at index 1 and 2.</p>
+<p><strong>Copy from a string to a byte slice</strong></p>
+<pre><code>var s = make([]byte, 5)
+copy(s, &quot;Hello, world!&quot;) // s == []byte(&quot;Hello&quot;)
+</code></pre><p>In this example, the slice s has a capacity of 5 elements so the only string Hello is copied to it.</p>
 <pre><code>z := []int{1, 2, 3, 4, 5}
 z = append(z, 6, 7, 8) //1st arg is slice, and then can take any number of arg to append
 </code></pre><p><em><strong>You can refer <a href="https://github.com/pratikjagrut/go-tutorial/blob/master/07_slice/main.go" style="color:DodgerBlue" target="_blank">main.go</a> file for slices examples</strong></em></p>
