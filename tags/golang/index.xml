@@ -5,14 +5,25 @@
     <link>https://pratikjagrut.dev/tags/golang/</link>
     <description>Recent content in golang on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 23 Dec 2020 13:04:25 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jan 2021 18:01:19 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Wed, 23 Dec 2020 13:04:25 +0530</pubDate>
+      <pubDate>Sun, 10 Jan 2021 18:01:19 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Maps</title>
+      <link>https://pratikjagrut.dev/blog/golang/maps/</link>
+      <pubDate>Sun, 10 Jan 2021 16:38:32 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/maps/</guid>
+      <description>The map is a collection of key-value pairs. It is an implementation of a Hash Table, which provides Create/Add, Read, Update and Delete operations over the data. Collection of key-value pairs is unordered and each key is unique.
+Declaration and initialization In general GO map looks like
+map[KeyType]ValueType The KeyType could be anything that is comparable such as string, int etc. and ValueType could be anything, even it can be another map.</description>
     </item>
     
     <item>
