@@ -302,7 +302,7 @@ fmt.Println(&quot;Slice after range: &quot;, nums)```
 </code></pre><p>Output:</p>
 <pre><code>Slice before range:  [1 2 3 4 5]
 Slice after range:  [1 2 3 4 5]
-</code></pre><p>In the above example, I try to increment all the values of the slice by 1 but the original slice is unaffected by it. This is because the range loop copies the value from slice to local variable. So to update the slice we&rsquo;ll need to use traditional way <code>nums[i] += 1</code>.</p>
+</code></pre><p>In the above example, I try to increment all the values of the slice by 1 but the slice is unaffected. This is because the range loop copies the value from slice to local variable. So to update the slice we&rsquo;ll need to use traditional way <code>nums[i] += 1</code>.</p>
 <p><em><strong>You can refer <a href="https://github.com/pratikjagrut/go-tutorial/blob/master/09_range/main.go" style="color:DodgerBlue" target="_blank">main.go</a> file for examples</strong></em></p>
 <hr>
 <a href="/blog/golang/maps">
