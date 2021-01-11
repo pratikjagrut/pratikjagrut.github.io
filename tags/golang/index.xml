@@ -5,14 +5,25 @@
     <link>https://pratikjagrut.dev/tags/golang/</link>
     <description>Recent content in golang on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 10 Jan 2021 18:01:19 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jan 2021 23:42:37 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Sun, 10 Jan 2021 18:01:19 +0530</pubDate>
+      <pubDate>Mon, 11 Jan 2021 23:42:37 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Range</title>
+      <link>https://pratikjagrut.dev/blog/golang/range/</link>
+      <pubDate>Mon, 11 Jan 2021 23:41:28 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/range/</guid>
+      <description>The range keyword is used to iterate over various data types. It is used in for loops and its return values are dependent on the data types over which we&amp;rsquo;re using range keyword.
+Range over slice/array Range on Array and Slice returns the first value as an index and second value as an element located at that index.
+nums := []int{1, 2, 3, 4, 5} for i, v := range nums{ fmt.</description>
     </item>
     
     <item>
