@@ -5,14 +5,26 @@
     <link>https://pratikjagrut.dev/tags/golang/</link>
     <description>Recent content in golang on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 11 Jan 2021 23:42:37 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Jan 2021 13:44:05 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Mon, 11 Jan 2021 23:42:37 +0530</pubDate>
+      <pubDate>Tue, 12 Jan 2021 13:44:05 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Functions</title>
+      <link>https://pratikjagrut.dev/blog/golang/functions/</link>
+      <pubDate>Tue, 12 Jan 2021 12:36:48 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/functions/</guid>
+      <description>Function is a block of statements which performs a specific task. Functions is a well organized and reusable code. It improves the code readability, maintainability and testability. The general function is:
+func function_name( [parameter list] ) [return_types] { body of the function } Declaring and calling functions The function is declared using func keyword.
+func sayCheeze() { fmt.Println(&amp;quot;Cheeeeeeeeeeeeze&amp;quot;) } Calling the function is pretty easy.
+sayCheeze() You may pass list of input parameters.</description>
     </item>
     
     <item>
