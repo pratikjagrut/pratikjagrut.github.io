@@ -21,10 +21,10 @@
       <pubDate>Tue, 12 Jan 2021 12:36:48 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/functions/</guid>
-      <description>Function is a block of statements which performs a specific task. Functions is a well organized and reusable code. It improves the code readability, maintainability and testability. The general function is:
+      <description>A function is a block of statements which performs a specific task. Functions is a well organized and reusable code. It improves the code readability, maintainability and testability. The general function is:
 func function_name( [parameter list] ) [return_types] { body of the function } Declaring and calling functions The function is declared using func keyword.
 func sayCheeze() { fmt.Println(&amp;quot;Cheeeeeeeeeeeeze&amp;quot;) } Calling the function is pretty easy.
-sayCheeze() You may pass list of input parameters.</description>
+sayCheeze() You may pass input parameters func addition(i int, j int) { fmt.</description>
     </item>
     
     <item>
