@@ -5,14 +5,26 @@
     <link>https://pratikjagrut.dev/</link>
     <description>Recent content on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 12 Jan 2021 13:44:05 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Jan 2021 13:12:48 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Tue, 12 Jan 2021 13:44:05 +0530</pubDate>
+      <pubDate>Wed, 13 Jan 2021 13:12:48 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;   Anonymous Function  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Anonymous Function</title>
+      <link>https://pratikjagrut.dev/blog/golang/anonymous_func/</link>
+      <pubDate>Wed, 13 Jan 2021 13:08:36 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/anonymous_func/</guid>
+      <description>The anonymous function is a feature in Golang which let us define a function without a name. This feature is also called a function literal. This is useful when you want an inline function or to form a closure.
+Declaring the anonymous function The syntax is pretty straight forward and much similar to normal function.
+func(parameter_list)(return_type){ return }() Parameter list and return type are optional.
+() this will invoke the function as soon as it is defined.</description>
     </item>
     
     <item>
