@@ -5,20 +5,30 @@
     <link>https://pratikjagrut.dev/tags/golang/</link>
     <description>Recent content in golang on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 13 Jan 2021 13:12:48 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Feb 2021 18:23:45 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Wed, 13 Jan 2021 13:12:48 +0530</pubDate>
+      <pubDate>Sun, 07 Feb 2021 18:23:45 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;   Anonymous Function  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;   Anonymous Function  &amp;emsp;   Closures  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Closures</title>
+      <link>https://pratikjagrut.dev/blog/golang/closures/</link>
+      <pubDate>Sun, 07 Feb 2021 18:23:12 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/closures/</guid>
+      <description>Golang supports anonymous functions which are then used to form closure functions. Anonymous functions are function without any name. Before going any further read about anonymous function .
+Closure is a special type of function value which references variable declared outside its body. The purpose of this function is to close over a variable of upper function to form a closure. The function may access and assign to the referenced variables; in this sense, the function is &amp;ldquo;bound&amp;rdquo; to the variables.</description>
     </item>
     
     <item>
       <title>Anonymous Function</title>
       <link>https://pratikjagrut.dev/blog/golang/anonymous_func/</link>
-      <pubDate>Wed, 13 Jan 2021 13:08:36 +0530</pubDate>
+      <pubDate>Sun, 07 Feb 2021 18:22:14 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/anonymous_func/</guid>
       <description>The anonymous function is a feature in Golang which let us define a function without a name. This feature is also called a function literal. This is useful when you want an inline function or to form a closure.
