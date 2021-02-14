@@ -190,9 +190,9 @@
     
   </div>
   <div class="meta">
-    <time datetime="2021-02-07 18:23:12 &#43;0530 IST">February 7, 2021</time>
+    <time datetime="2021-02-14 19:08:25 &#43;0530 IST">February 14, 2021</time>
     <p>Pratik Jagrut</p>
-    <p>2-Minute Read</p>
+    <p>3-Minute Read</p>
   </div>
 </header>
 
@@ -245,9 +245,9 @@
       
       <p>Golang supports anonymous functions which are then used to form closure functions.
 Anonymous functions are function without any name. Before going any further read about <em><strong><a href="/blog/golang/anonymous_func" style="color:DodgerBlue"> anonymous function </a></strong></em>.</p>
-<p>Closure is a special type of function value which references variable declared outside its body. The purpose of this function is to close over a variable of upper function to form a closure. The function may access and assign to the referenced variables; in this sense, the function is &ldquo;bound&rdquo; to the variables.</p>
+<p>The closure is a special type of function value which references variable declared outside its body. The purpose of this function is to close over a variable of upper function to form a closure. The function may access and assign to the referenced variables; in this sense, the function is &ldquo;bound&rdquo; to the variables.</p>
 <p>Let&rsquo;s see an example.
-In this example we create a closure which keeps track of page hit or say counter.</p>
+In this example, we create a closure which keeps track of page hit or as a counter.</p>
 <pre><code>package main
 
 import &quot;fmt&quot;
@@ -268,8 +268,8 @@ func main() {
 </code></pre><pre><code>1
 2
 3
-</code></pre><p>In above example we bound the closure to <code>hit</code> variable which is not passed to it but accessed as global variable.</p>
-<p>The problem with above code is, <code>hit</code> is a global variable. Hence other function has access to it. So any other operation can change the value of <code>hit</code>. To avoid this closure can isolate the data.</p>
+</code></pre><p>In the above example, we bound the closure to <code>hit</code> variable which is not passed to it but accessed as a global variable.</p>
+<p>The problem with the above code is, <code>hit</code> is a global variable. Hence another function has access to it. So any other operation can change the value of <code>hit</code>. To avoid this closure can isolate the data.</p>
 <pre><code>package main
 
 import &quot;fmt&quot;
@@ -285,15 +285,56 @@ func Counter() func() int {
   hit := 0
   return func() int {
     hit++
-	return hit
+  return hit
   }
 }
 </code></pre><pre><code>1
 2
 3
 </code></pre><p>In the above example closure is bound to or references to the <code>hit</code> variable which is still can be accessed after the function call. This means closure has access to the data and no other function has access to it and hence this data can be tracked and isolated. This is one of the benefits of closure.</p>
-<p><em><strong>You can refer <a href="https://github.com/pratikjagrut/go-tutorial/blob/master/11_closures/main.go" style="color:DodgerBlue" target="_blank">main.go</a> file for examples</strong></em></p>
-<hr>
+<h2 id="some-closure-use-cases">Some closure use cases</h2>
+<h3 id="isolating-the-data">Isolating the data</h3>
+<p>Suppose we want to create a function that persists data after the functional call exists. For example, we create a Fibonacci series generator where we want to keep all variables away from the user&rsquo;s eye, so no one can manipulate it.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func fibonacci() func() int {
+  n1 := 0
+  n2 := 1
+  return func() int {
+    n1, n2 = n2, (n1+n2)
+    return n1
+  }
+}
+
+func main() {
+  f := fibonacci()
+  fmt.Println(0)
+  for i := 0; i &lt; 10; i++ {
+    fmt.Println(f())
+  }
+}
+</code></pre><h3 id="search-in-sorting-package">Search in sorting package</h3>
+<p>A common use of Search is to find the index i for a value x in a sorted, indexable data structure such as an array or slice. In this case, the argument f, typically a closure, captures the value to be searched for, and how the data structure is indexed and ordered.</p>
+<pre><code>func Search(n int, f func(int) bool) int
+</code></pre><pre><code>package main
+
+import (
+  &quot;fmt&quot;
+  &quot;sort&quot;
+)
+
+func main() {
+  nums := []int{1, 3, 6, 8, 10, 15, 21, 28, 36, 45, 55}
+  x := 8
+
+  i := sort.Search(len(nums), func(i int) bool {
+      return nums[i] &gt;= x 
+    })
+  fmt.Printf(&quot;Index of %d is %d&quot;, x, i)
+}
+</code></pre><hr>
 <a href="/blog/golang/anonymous_func">
   <b style="color:DodgerBlue">
     <i>🡄 Anonymous Function</i>
@@ -374,7 +415,7 @@ func Counter() func() int {
   </a>
         <header>
           <h2><a href="/blog/golang/contents/">Golang</a></h2>
-          <time class="published" datetime="2021-02-07 18:23:45 &#43;0530 IST">February 7, 2021</time>
+          <time class="published" datetime="2021-02-14 19:08:46 &#43;0530 IST">February 14, 2021</time>
         </header>
       </article>
       
@@ -382,7 +423,7 @@ func Counter() func() int {
           
         <header>
           <h2><a href="/blog/golang/closures/">Closures</a></h2>
-          <time class="published" datetime="2021-02-07 18:23:12 &#43;0530 IST">February 7, 2021</time>
+          <time class="published" datetime="2021-02-14 19:08:25 &#43;0530 IST">February 14, 2021</time>
         </header>
       </article>
       
@@ -390,7 +431,7 @@ func Counter() func() int {
           
         <header>
           <h2><a href="/blog/golang/anonymous_func/">Anonymous Function</a></h2>
-          <time class="published" datetime="2021-02-07 18:22:14 &#43;0530 IST">February 7, 2021</time>
+          <time class="published" datetime="2021-02-14 19:07:57 &#43;0530 IST">February 14, 2021</time>
         </header>
       </article>
       
