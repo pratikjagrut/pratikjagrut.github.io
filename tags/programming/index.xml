@@ -5,14 +5,24 @@
     <link>https://pratikjagrut.dev/tags/programming/</link>
     <description>Recent content in programming on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 14 Feb 2021 19:08:46 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Feb 2021 22:20:26 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Sun, 14 Feb 2021 19:08:46 +0530</pubDate>
+      <pubDate>Mon, 22 Feb 2021 22:20:26 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;   Anonymous Function  &amp;emsp;   Closures  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;   Anonymous Function  &amp;emsp;   Closures  &amp;emsp;   Pointers  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Pointers</title>
+      <link>https://pratikjagrut.dev/blog/golang/pointers/</link>
+      <pubDate>Sun, 21 Feb 2021 18:28:54 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/pointers/</guid>
+      <description>The pointer is a special variable in Go that stores the memory address of other variables.
+Variables are used to store some type of data. All variables are assigned a particular memory where they store data and this memory has a memory address that is in hexadecimal format. The number that starts with 0x is hexadecimal like (0x14 which is equivalent to 20 in decimal). Go allows us to store this memory address in variables but only pointers will understand that the stored value is pointing to some memory whereas other variables will treat it just as a value.</description>
     </item>
     
     <item>
