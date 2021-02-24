@@ -267,7 +267,7 @@ func main() {
 }
 </code></pre><pre><code>The value of i is:  42
 The memory address of i is 0xc00002c008
-</code></pre><p><em><strong><a href="https://play.golang.org/p/DRmvVzN-gFK" style="color:DodgerBlue" target="_blank">Run the the code in Go Playground</a></strong></em></p>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/DRmvVzN-gFK" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <h3 id="shorthand-declaration">Shorthand declaration</h3>
 <p>In Golang shorthand declaration(:=) is used to narrow down the variable declaration. The Golang compiler will decide if the RHS variable is a pointer variable if we&rsquo;re assigning the memory address of the LHS variable using <code>&amp;</code>.</p>
 <pre><code>i := 42
@@ -293,7 +293,7 @@ The value of *p1 is:  0
 The value of p1 0xc00002c008
 </code></pre><p>In the above example, we can not dereference pointer <code>p</code> because it has <code>&lt;nil&gt;</code> value. Trying to dereference it will throw an error.</p>
 <pre><code>panic: runtime error: invalid memory address or nil pointer dereference
-</code></pre><p><em><strong><a href="https://play.golang.org/p/C8gmExWxJ5B" style="color:DodgerBlue" target="_blank">Run the the code in Go Playground</a></strong></em></p>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/C8gmExWxJ5B" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <h2 id="passing-pointer-to-the-function">Passing pointer to the function</h2>
 <p>We can pass a pointer to the function as we pass other variables. We can create a pointer to the variable and then pass it to the function or we can just pass an address of that variable using <code>&amp;</code>.</p>
 <p>In the below example we initialize a variable i with the value 10. We&rsquo;ve function <code>addTen(i *int)</code> which takes a pointer as an argument and then it adds 10 by dereferencing the pointer hence mutating the original value. Below are shown both the ways of passing pointer the function.</p>
@@ -317,7 +317,7 @@ func main() {
 </code></pre><pre><code>10
 20
 30
-</code></pre><p><em><strong><a href="https://play.golang.org/p/gz-qxg5IT3Q" style="color:DodgerBlue" target="_blank">Run the the code in Go Playground</a></strong></em></p>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/gz-qxg5IT3Q" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <h2 id="pass-by-value-vs-pass-by-pointer">Pass-by-value vs Pass-by-pointer</h2>
 <p>When we write a function we decide parameters to be passed <code>by-value</code> or <code>by-pointer</code>.</p>
 <p><strong>Pass by value</strong></p>
@@ -341,7 +341,7 @@ func main() {
 </code></pre><pre><code>Original variable: 10
 Variable copy from add function: 20
 Original variable: 10
-</code></pre><p><em><strong><a href="https://play.golang.org/p/uSHAuPe4dEn" style="color:DodgerBlue" target="_blank">Run the the code in Go Playground</a></strong></em></p>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/uSHAuPe4dEn" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <p><strong>Pass by Pointer</strong></p>
 <p>When we pass parameter by-pointer Go makes the copy of that pointer to the new location. This pointer copy has the same memory address stored in it hence it is pointing to the original variable and any changes done using this pointer will change the value of the original variable.</p>
 <pre><code>package main
@@ -362,7 +362,7 @@ func main() {
 </code></pre><pre><code>Original variable: 10
 Variable copy from add function: 20
 Original variable: 20
-</code></pre><p><em><strong><a href="https://play.golang.org/p/ojMMRRkIeo3" style="color:DodgerBlue" target="_blank">Run the the code in Go Playground</a></strong></em></p>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/ojMMRRkIeo3" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <p><em>In some way we can say pass-by-pointer is an implementation of pass-by-value.</em></p>
 <h2 id="container-typesslices-maps-etc-and-pointers">Container types(slices, maps etc) and pointers</h2>
 <pre><code>package main
@@ -395,7 +395,7 @@ Original map:  map[1:5 2:2 3:3]
 <code>func makemap(t *maptype, hint int, h *hmap) *hmap</code>.</p>
 <p>So as we see, the return type of runtime.makemap is a pointer to the <code>runtime.hmap structure</code>. So when we passed a map to the function we actually passed a pointer to the runtime.hmap structure of map m and hence the original map was modified.</p>
 <p>Instead of map if we try above program using slice we will get the similar output because slice variable stores the pointer to underlying array. <em><strong><a href="/blog/golang/array_slice" style="color:DodgerBlue" target="_blank">Read more about Arrays and Slices here.</a></strong></em></p>
-<p><em><strong><a href="https://play.golang.org/p/ORs5UkdECmS" style="color:DodgerBlue" target="_blank">Run the the code in Go Playground</a></strong></em></p>
+<p><em><strong><a href="https://play.golang.org/p/ORs5UkdECmS" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <hr>
 <a href="/blog/golang/closures">
   <b style="color:DodgerBlue">
