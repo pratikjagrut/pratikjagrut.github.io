@@ -21,8 +21,8 @@
       <pubDate>Sun, 21 Feb 2021 18:28:54 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/pointers/</guid>
-      <description>The pointer is a special variable in Go that stores the memory address of other variables.
-Variables are used to store some type of data. All variables are assigned a particular memory where they store data and this memory has a memory address that is in hexadecimal format. The number that starts with 0x is hexadecimal like (0x14 which is equivalent to 20 in decimal). Go allows us to store this memory address in variables but only pointers will understand that the stored value is pointing to some memory whereas other variables will treat it just as a value.</description>
+      <description>The pointer is a special variable in Golang that stores the memory address of other variables.
+Variables are used to store some type of data. All variables are assigned a particular memory where they store data and this memory has a memory address that is in hexadecimal format. The number that starts with 0x is hexadecimal like (0x14 which is equivalent to 20 in decimal). Golang allows us to store this memory address in variables but only pointers will understand that the stored value is pointing to some memory whereas other variables will treat it just as a value.</description>
     </item>
     
     <item>

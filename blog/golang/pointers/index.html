@@ -192,7 +192,7 @@
   <div class="meta">
     <time datetime="2021-02-21 18:28:54 &#43;0530 IST">February 21, 2021</time>
     <p>Pratik Jagrut</p>
-    <p>3-Minute Read</p>
+    <p>6-Minute Read</p>
   </div>
 </header>
 
@@ -243,8 +243,8 @@
     </div>
     <div class="content">
       
-      <p>The pointer is a special variable in Go that stores the memory address of other variables.</p>
-<p>Variables are used to store some type of data. All variables are assigned a particular memory where they store data and this memory has a memory address that is in hexadecimal format. The number that starts with <code>0x</code> is hexadecimal like (<code>0x14</code> which is equivalent to 20 in decimal). Go allows us to store this memory address in variables but only pointers will understand that the stored value is pointing to some memory whereas other variables will treat it just as a value.</p>
+      <p>The pointer is a special variable in Golang that stores the memory address of other variables.</p>
+<p>Variables are used to store some type of data. All variables are assigned a particular memory where they store data and this memory has a memory address that is in hexadecimal format. The number that starts with <code>0x</code> is hexadecimal like (<code>0x14</code> which is equivalent to 20 in decimal). Golang allows us to store this memory address in variables but only pointers will understand that the stored value is pointing to some memory whereas other variables will treat it just as a value.</p>
 <h2 id="declaring-pointer">Declaring Pointer</h2>
 <p>The type <code>*T</code> is a pointer to a <code>T</code> value. It&rsquo;s zero value is <code>&lt;nil&gt;</code>.</p>
 <pre><code>var pointer_name *Data_Type
@@ -259,19 +259,21 @@ import &quot;fmt&quot;
 
 func main() {
   i := 42
-  
+
   var p *int = &amp;i
-  
+
   fmt.Println(&quot;The value of i is: &quot;, *p)
   fmt.Println(&quot;The memory address of i is&quot;, p)
 }
 </code></pre><pre><code>The value of i is:  42
 The memory address of i is 0xc00002c008
-</code></pre><h3 id="shorthand-declaration">Shorthand declaration</h3>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/DRmvVzN-gFK" style="color:DodgerBlue" target="_blank">Run the the code in Go Playground</a></strong></em></p>
+<h3 id="shorthand-declaration">Shorthand declaration</h3>
+<p>In Golang shorthand declaration(:=) is used to narrow down the variable declaration. The Golang compiler will decide if the RHS variable is a pointer variable if we&rsquo;re assigning the memory address of the LHS variable using <code>&amp;</code>.</p>
 <pre><code>i := 42
 p := &amp;i
 </code></pre><h3 id="declaring-pointer-with-the-new-function">Declaring pointer with the new function</h3>
-<p>Golang has a built-in allocating primitive function called <code>new</code>. The <code>new</code> allocates memory but does not initialize memory it only zeros it(zero-value). The <code>new</code> function returns a pointer to the memory location. The <code>new(T)</code> allocates zeroed storage to T and returns the memory address as <code>*T</code>. In Go terminology, it returns a pointer to a newly allocated zero value of type T.</p>
+<p>Golang has a built-in allocating primitive function called <code>new</code>. The <code>new(T)</code> allocates memory, initializes it with zero-value of type T and returns the pointer to that memory. In Go terminology, it returns a pointer to a newly allocated zero value of type T.</p>
 <p><strong>What is the difference between <code>var p *int</code> and <code>p := new(int)</code>?</strong></p>
 <p>The expression <code>var p *int</code> only declares the pointer and does not initialize it with any memory address, i.e pointer does not point to any memory location. Whereas in <code>new(T)</code> function returns the pointer pointing to the memory location in the system.</p>
 <pre><code>package main
@@ -281,8 +283,8 @@ import &quot;fmt&quot;
 func main() {
   var p *int
   fmt.Println(&quot;The value of p&quot;, p)
-  
-    p1 := new(int)
+
+  p1 := new(int)
   fmt.Println(&quot;The value of *p1 is: &quot;, *p1)
   fmt.Println(&quot;The value of p1&quot;, p1)
 }
@@ -291,7 +293,8 @@ The value of *p1 is:  0
 The value of p1 0xc00002c008
 </code></pre><p>In the above example, we can not dereference pointer <code>p</code> because it has <code>&lt;nil&gt;</code> value. Trying to dereference it will throw an error.</p>
 <pre><code>panic: runtime error: invalid memory address or nil pointer dereference
-</code></pre><h2 id="passing-pointer-to-the-function">Passing pointer to the function</h2>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/C8gmExWxJ5B" style="color:DodgerBlue" target="_blank">Run the the code in Go Playground</a></strong></em></p>
+<h2 id="passing-pointer-to-the-function">Passing pointer to the function</h2>
 <p>We can pass a pointer to the function as we pass other variables. We can create a pointer to the variable and then pass it to the function or we can just pass an address of that variable using <code>&amp;</code>.</p>
 <p>In the below example we initialize a variable i with the value 10. We&rsquo;ve function <code>addTen(i *int)</code> which takes a pointer as an argument and then it adds 10 by dereferencing the pointer hence mutating the original value. Below are shown both the ways of passing pointer the function.</p>
 <pre><code>package main
@@ -311,11 +314,89 @@ func main() {
   addTen(&amp;i) // Pass by address
   fmt.Println(i)
 }
-
 </code></pre><pre><code>10
 20
 30
-</code></pre><hr>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/gz-qxg5IT3Q" style="color:DodgerBlue" target="_blank">Run the the code in Go Playground</a></strong></em></p>
+<h2 id="pass-by-value-vs-pass-by-pointer">Pass-by-value vs Pass-by-pointer</h2>
+<p>When we write a function we decide parameters to be passed <code>by-value</code> or <code>by-pointer</code>.</p>
+<p><strong>Pass by value</strong></p>
+<p>Every time variable is passed as a parameter the new copy of that variable is created and passed to the function. This copy has a different memory location hence any changed to this copy will not affect the original variable.</p>
+<p>In the below example we pass the parameter by value.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func add(i int) {
+  i = i + 10
+  fmt.Println(&quot;Variable copy from add function:&quot;, i)
+}
+
+func main() {
+  i := 10
+  fmt.Println(&quot;Original variable:&quot;, i)
+  add(i)
+  fmt.Println(&quot;Original variable:&quot;, i)
+}
+</code></pre><pre><code>Original variable: 10
+Variable copy from add function: 20
+Original variable: 10
+</code></pre><p><em><strong><a href="https://play.golang.org/p/uSHAuPe4dEn" style="color:DodgerBlue" target="_blank">Run the the code in Go Playground</a></strong></em></p>
+<p><strong>Pass by Pointer</strong></p>
+<p>When we pass parameter by-pointer Go makes the copy of that pointer to the new location. This pointer copy has the same memory address stored in it hence it is pointing to the original variable and any changes done using this pointer will change the value of the original variable.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func add(i *int) {
+  *i = *i + 10
+  fmt.Println(&quot;Variable copy from add function:&quot;, *i)
+}
+
+func main() {
+  i := 10
+  fmt.Println(&quot;Original variable:&quot;, i)
+  add(&amp;i)
+  fmt.Println(&quot;Original variable:&quot;, i)
+}
+</code></pre><pre><code>Original variable: 10
+Variable copy from add function: 20
+Original variable: 20
+</code></pre><p><em><strong><a href="https://play.golang.org/p/ojMMRRkIeo3" style="color:DodgerBlue" target="_blank">Run the the code in Go Playground</a></strong></em></p>
+<p><em>In some way we can say pass-by-pointer is an implementation of pass-by-value.</em></p>
+<h2 id="container-typesslices-maps-etc-and-pointers">Container types(slices, maps etc) and pointers</h2>
+<pre><code>package main
+
+import (
+	&quot;fmt&quot;
+)
+
+func modify(h map[int]int) {
+	h[1] = 5
+	fmt.Println(&quot;Modified map: &quot;, h)
+
+}
+
+func main() {
+	m := make(map[int]int)
+	m[1] = 1
+	m[2] = 2
+	m[3] = 3
+	fmt.Println(&quot;Original map: &quot;, m)
+	modify(m)
+	fmt.Println(&quot;Original map: &quot;, m)
+}
+</code></pre><p>In the above example, we&rsquo;re creating a map and passing it to the modify function. With the general look, it seems like we&rsquo;re passing an argument by-value because we&rsquo;re not passing the address of map m using &amp;. So this means the copy of map m should be created and the original map is untouched. But if we run this we get an output as follows.</p>
+<pre><code>Original map:  map[1:1 2:2 3:3]
+Modified map:  map[1:5 2:2 3:3]
+Original map:  map[1:5 2:2 3:3]
+</code></pre><p><em><strong>We passed an argument by-value then why did the original map was updated?</strong></em></p>
+<p>When we create a map using <code>m := make(map[int]int)</code> the compiler makes call to the <code>runtime.makemap</code> function whose signature is as
+<code>func makemap(t *maptype, hint int, h *hmap) *hmap</code>.</p>
+<p>So as we see, the return type of runtime.makemap is a pointer to the <code>runtime.hmap structure</code>. So when we passed a map to the function we actually passed a pointer to the runtime.hmap structure of map m and hence the original map was modified.</p>
+<p>Instead of map if we try above program using slice we will get the similar output because slice variable stores the pointer to underlying array. <em><strong><a href="/blog/golang/array_slice" style="color:DodgerBlue" target="_blank">Read more about Arrays and Slices here.</a></strong></em></p>
+<p><em><strong><a href="https://play.golang.org/p/ORs5UkdECmS" style="color:DodgerBlue" target="_blank">Run the the code in Go Playground</a></strong></em></p>
+<hr>
 <a href="/blog/golang/closures">
   <b style="color:DodgerBlue">
     <i>🡄 Closures</i>
