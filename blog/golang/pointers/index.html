@@ -394,7 +394,7 @@ Original map:  map[1:5 2:2 3:3]
 <p>When we create a map using <code>m := make(map[int]int)</code> the compiler makes call to the <code>runtime.makemap</code> function whose signature is as
 <code>func makemap(t *maptype, hint int, h *hmap) *hmap</code>.</p>
 <p>So as we see, the return type of runtime.makemap is a pointer to the <code>runtime.hmap structure</code>. So when we passed a map to the function we actually passed a pointer to the runtime.hmap structure of map m and hence the original map was modified.</p>
-<p>Instead of map if we try above program using slice we will get the similar output because slice variable stores the pointer to underlying array <em><strong><a href="/blog/golang/array_slice" style="color:DodgerBlue" target="_blank">read more about Array and Slices here.</a></strong></em></p>
+<p>Instead of map if we try above program using slice we will get the similar output because slice variable stores the pointer to underlying array <em><strong><a href="/blog/golang/array_slice" style="color:DodgerBlue" target="_blank">read more about Arrays and Slices here.</a></strong></em></p>
 <p><em><strong><a href="https://play.golang.org/p/ORs5UkdECmS" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <hr>
 <a href="/blog/golang/closures">
