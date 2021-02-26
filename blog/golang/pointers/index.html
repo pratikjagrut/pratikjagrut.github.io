@@ -296,7 +296,7 @@ The value of p1 0xc00002c008
 </code></pre><p><em><strong><a href="https://play.golang.org/p/C8gmExWxJ5B" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <h2 id="passing-pointer-to-the-function">Passing pointer to the function</h2>
 <p>We can pass a pointer to the function as we pass other variables. We can create a pointer to the variable and then pass it to the function or we can just pass an address of that variable using <code>&amp;</code>.</p>
-<p>In the below example we initialize a variable i with the value 10. We&rsquo;ve function <code>addTen(i *int)</code> which takes a pointer as an argument and then it adds 10 by dereferencing the pointer hence mutating the original value. Below are shown both the ways of passing pointer the function.</p>
+<p>In the below example we initialize a variable i with the value 10. We&rsquo;ve function <code>addTen(i *int)</code> which takes a pointer as an argument and then it adds 10 by dereferencing the pointer hence mutating the original value.</p>
 <pre><code>package main
 
 import &quot;fmt&quot;
@@ -309,9 +309,9 @@ func main() {
   i := 10
   p := &amp;i
   fmt.Println(i)
-  addTen(p) // Pass by pointer
+  addTen(p) // Pass a pointer
   fmt.Println(i)
-  addTen(&amp;i) // Pass by address
+  addTen(&amp;i) // Pass address using &amp; operator
   fmt.Println(i)
 }
 </code></pre><pre><code>10
@@ -386,7 +386,7 @@ func main() {
 	modify(m)
 	fmt.Println(&quot;Original map: &quot;, m)
 }
-</code></pre><p>In the above example, we&rsquo;re creating a map and passing it to the modify function. With the general look, it seems like we&rsquo;re passing an argument by-value because we&rsquo;re not passing the address of map m using &amp;. So this means the copy of map m should be created and the original map is untouched. But if we run this we get an output as follows.</p>
+</code></pre><p>In the above example, we&rsquo;re creating a map and passing it to the modify function. With the cursory look, it seems like we&rsquo;re passing an argument by-value because we&rsquo;re not passing the address of map m using &amp; or by creating a pointer to map m. So this means the copy of map m should be created and the original map is untouched. But if we run this we get an output as follows.</p>
 <pre><code>Original map:  map[1:1 2:2 3:3]
 Modified map:  map[1:5 2:2 3:3]
 Original map:  map[1:5 2:2 3:3]
@@ -394,7 +394,7 @@ Original map:  map[1:5 2:2 3:3]
 <p>When we create a map using <code>m := make(map[int]int)</code> the compiler makes call to the <code>runtime.makemap</code> function whose signature is as
 <code>func makemap(t *maptype, hint int, h *hmap) *hmap</code>.</p>
 <p>So as we see, the return type of runtime.makemap is a pointer to the <code>runtime.hmap structure</code>. So when we passed a map to the function we actually passed a pointer to the runtime.hmap structure of map m and hence the original map was modified.</p>
-<p>Instead of map if we try above program using slice we will get the similar output because slice variable stores the pointer to underlying array. <em><strong><a href="/blog/golang/array_slice" style="color:DodgerBlue" target="_blank">Read more about Arrays and Slices here.</a></strong></em></p>
+<p>Instead of map if we try above program using slice we will get the similar output because slice variable stores the pointer to underlying array <em><strong><a href="/blog/golang/array_slice" style="color:DodgerBlue" target="_blank">read more about it here.</a></strong></em></p>
 <p><em><strong><a href="https://play.golang.org/p/ORs5UkdECmS" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <hr>
 <a href="/blog/golang/closures">
