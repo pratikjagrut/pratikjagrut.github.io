@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Structs part-2 - Pratik Jagrut</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+  <meta property="og:title" content="Structs part-2">
+  <meta property="og:description" content="Portfolio and Blog">
+  <meta property="description" content="Portfolio and Blog">
+  <meta property="og:url" content="https://pratikjagrut.dev/blog/golang/structs_part_2/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://pratikjagrut.dev/img/main/IMG_0239.JPG">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/resume/" class="nav link"><i class='far fa-id-card'></i> Resume</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Structs%20part-2&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fstructs_part_2%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fstructs_part_2%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fstructs_part_2%2f&amp;title=Structs%20part-2" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fstructs_part_2%2f&amp;title=Structs%20part-2" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fstructs_part_2%2f&amp;description=Structs%20part-2" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fstructs_part_2%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://pratikjagrut.dev/img/main/IMG_0239.JPG" class="circle" width="100" alt="Desktop Picture" /></a>
+  <header>
+    <h1>Pratik Jagrut</h1>
+  </header>
+  <main>
+    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/golang/structs_part_2/">Structs part-2</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-03-04 21:53:38 &#43;0530 IST">March 4, 2021</time>
+    <p>Pratik Jagrut</p>
+    <p>8-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Structs%20part-2&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fstructs_part_2%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fstructs_part_2%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fstructs_part_2%2f&amp;title=Structs%20part-2" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fstructs_part_2%2f&amp;title=Structs%20part-2" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fstructs_part_2%2f&amp;description=Structs%20part-2" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fstructs_part_2%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      
+      <p><a href="/blog/golang/structs_part_1"><b style="color:DodgerBlue"><i>🡄 Structs part-1</i></b></a></p>
+<h2 id="nested-structs">Nested Structs</h2>
+<p>Golang allows us to use struct as a field of another struct, this pattern is called nesting. A nested struct can be defined using the following syntax.</p>
+<pre><code>type struct1 struct{
+    // fields
+}
+
+type struct2 struct{
+    // fields
+    s struct1
+}
+</code></pre><p>Suppose we need to collect the data of a person, person&rsquo;s name, age and address. In address, we need to collect the city and country of that person. So we can do this using nested structs as shown below:</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person struct {
+    name    string
+    age     int
+    address Address
+}
+
+type Address struct {
+    city, country string
+}
+
+func main() {
+    person := &amp;Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+        address: Address{
+            city:    &quot;London&quot;,
+            country: &quot;UK&quot;,
+        },
+    }
+
+    fmt.Printf(&quot;%#v&quot;, person)
+}
+</code></pre><pre><code>&amp;main.Person{name:&quot;James Bond&quot;, age:34, address:main.Address{city:&quot;London&quot;, country:&quot;UK&quot;}}
+</code></pre><p><em><strong><a href="https://play.golang.org/p/e4A9YhIirqW" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<h3 id="accessing-fields-of-nested-struct">Accessing fields of nested struct</h3>
+<p>To access the fields of nested struct we can do <code>structObj1.structObj2.structObj3........fieldName</code>.</p>
+<p>Below is an example:</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person struct {
+    name    string
+    age     int
+    address Address
+}
+
+type Address struct {
+    city, country string
+}
+
+func main() {
+    person := &amp;Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+        address: Address{
+            city:    &quot;London&quot;,
+            country: &quot;UK&quot;,
+        },
+    }
+
+    fmt.Printf(&quot;Name: %v\n&quot;, person.name)
+    fmt.Printf(&quot;Age: %v\n&quot;, person.age)
+    fmt.Printf(&quot;City: %v\n&quot;, person.address.city)
+    fmt.Printf(&quot;Country: %v\n&quot;, person.address.country)
+}
+</code></pre><pre><code>Name: James Bond
+Age: 34
+City: London
+Country: UK
+</code></pre><p><em><strong><a href="https://play.golang.org/p/OTkVLWQRf3Q" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<h3 id="promoted-fields">Promoted fields</h3>
+<p>When the struct has another struct as an anonymous field then fields of anonymous structs are called promoted fields. This means we can access the fields of the nested struct without using the object of the nested struct, we can access them just by using the parent struct.</p>
+<p>For example:</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person struct {
+    name string
+    age  int
+    Address
+}
+
+type Address struct {
+    city, country string
+}
+
+func main() {
+    person := &amp;Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+        Address: Address{
+            city:    &quot;London&quot;,
+            country: &quot;UK&quot;,
+        },
+    }
+
+    fmt.Printf(&quot;Name: %v\n&quot;, person.name)
+    fmt.Printf(&quot;Age: %v\n&quot;, person.age)
+    fmt.Printf(&quot;City: %v\n&quot;, person.city) // Instead of person.address.city we used person.city
+    fmt.Printf(&quot;Country: %v\n&quot;, person.country) // Instead of person.address.country we used person.country
+}
+</code></pre><pre><code>Name: James Bond
+Age: 34
+City: London
+Country: UK
+</code></pre><p><em><strong><a href="https://play.golang.org/p/wkxWR0u6zoT" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p><em><strong>Only unique fields of nested anonymous struct gets promoted.</strong></em></p>
+<p>If the parent struct and nested anonymous struct has the same name field then that field will not be promoted.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person struct {
+    name string
+    age  int
+    City
+}
+
+type City struct {
+    name, country string
+}
+
+func main() {
+    person := &amp;Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+        City: City{
+            name:    &quot;London&quot;,
+            country: &quot;UK&quot;,
+        },
+    }
+
+    fmt.Printf(&quot;Name: %v\n&quot;, person.name)
+    fmt.Printf(&quot;Age: %v\n&quot;, person.age)
+    fmt.Printf(&quot;City: %v\n&quot;, person.City.name)
+    fmt.Printf(&quot;Country: %v\n&quot;, person.country)
+}
+</code></pre><p><em><strong><a href="https://play.golang.org/p/gklcUfcRJV9" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p>In this example, we have <code>City</code> a nested anonymous struct, whose fields are <code>name</code> and <code>country</code>. The <code>name</code> field is also available in <code>Person</code> struct. So when we try <code>person.name</code> then the compiler will give us access to Person&rsquo;s name field by default hence to access the name field from City struct we&rsquo;ve to do <code>person.City.name</code>. The country field from City struct is unique here so we can just access it by using <code>person.country</code>.</p>
+<h2 id="comparing-struct">Comparing struct</h2>
+<p>Structs in golang are value type and so they can be compared.</p>
+<p>Two struct values may be equal if:</p>
+<ul>
+<li>They&rsquo;re of the same type.</li>
+<li>Their corresponding fields are equal.</li>
+<li>Their corresponding fields should be comparable.</li>
+</ul>
+<p>For example:</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person struct {
+    name string
+    age  int
+}
+
+func main() {
+    p1 := Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+    }
+
+    p2 := Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+    }
+
+    fmt.Println(p1 == p2) // true
+}
+</code></pre><p><em><strong><a href="https://play.golang.org/p/KZrnjv-8qC1" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p><em><strong>Comparing pointers to the struct will always be false, we need to compare dereferenced pointer values.</strong></em></p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person struct {
+    name string
+    age  int
+}
+
+func main() {
+    p1 := &amp;Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+    }
+
+    p2 := &amp;Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+    }
+    fmt.Println(p1 == p2) // false
+    fmt.Println(*p1 == *p2) // true
+}
+</code></pre><p><em><strong><a href="https://play.golang.org/p/qcQYTF_BUcP" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p>If structs contain incomparable values then struct values can not be compared using <code>==</code> operator, it will throw an error.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person struct {
+    name     string
+    age      int
+    measures map[string]float32
+}
+
+func main() {
+    p1 := Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+        measures: map[string]float32{
+            &quot;Height&quot;: 183,
+            &quot;Weight&quot;: 76,
+        },
+    }
+
+    p2 := Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+        measures: map[string]float32{
+            &quot;Height&quot;: 183,
+            &quot;Weight&quot;: 76,
+        },
+    }
+    fmt.Println(p1 == p2)
+}
+</code></pre><pre><code>./prog.go:30:18: invalid operation: p1 == p2 (struct containing map[string]float32 cannot be compared)
+</code></pre><p>In the above code, a map is used as a field in a struct and a map is an incomparable type. To compare such structs we can use <code>reflect.DeepEqual()</code> function.</p>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;reflect&quot;
+)
+
+type Person struct {
+    name     string
+    age      int
+    measures map[string]float32
+}
+
+func main() {
+    p1 := Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+        measures: map[string]float32{
+            &quot;Height&quot;: 183,
+            &quot;Weight&quot;: 76,
+        },
+    }
+
+    p2 := Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+        measures: map[string]float32{
+            &quot;Height&quot;: 183,
+            &quot;Weight&quot;: 76,
+        },
+    }
+    fmt.Println(reflect.DeepEqual(p1, p2)) // true
+}
+</code></pre><p><em><strong><a href="https://play.golang.org/p/R1nK7gPUcrt" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<h2 id="structs-and-methodsreciever-function">Structs and methods/reciever function</h2>
+<p>Golang supports both function and method. A method is a function that is defined for a particular type or with a receiver. A method in Golang also called a receiver function. Following is the example.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person struct {
+    name string
+    age  int
+}
+
+func (p Person) GetInfo() string {
+    return fmt.Sprintf(&quot;\&quot;%v\&quot; is \&quot;%v\&quot; years old.&quot;, p.name, p.age)
+}
+
+func main() {
+    p := Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+    }
+
+    fmt.Println(p.GetInfo())
+}
+</code></pre><pre><code>&quot;James Bond&quot; is &quot;34&quot; years old.
+</code></pre><p><em><strong><a href="https://play.golang.org/p/NnCg1hi-t2d" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p>We can also use a pointer as the receiver of the method. The difference between value as receiver and pointer as a receiver is, golang passes everything as value and hence in value receiver the function will get a copy of struct and function will not touch original struct whereas in pointer as a receiver function will get a copy of a pointer which will be pointing to an original struct.</p>
+<p>The below examples illustrates the difference between pointer and value as a receiver.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person struct {
+    name string
+    age  int
+}
+
+// Value as receiver
+func (p Person) UpdateAge(age int) {
+    p.age = age
+}
+
+// Pointer as receiver
+func (p *Person) UpdateName(name string) {
+    p.name = name
+}
+
+func main() {
+    p := Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+    }
+
+    // Value as receiver example
+    fmt.Println(&quot;Age before update: &quot;, p.age)
+    p.UpdateAge(24)
+    fmt.Println(&quot;Age after update: &quot;, p.age)
+
+    fmt.Println()
+
+    // Pointer as receiver
+    fmt.Println(&quot;Name before update: &quot;, p.name)
+    p.UpdateName(&quot;Jon Snow&quot;)
+    fmt.Println(&quot;Name after update: &quot;, p.name)
+}
+</code></pre><p>In above example <code>UpdateAge()</code> is using value as receiver and <code>UpdateName()</code> is using pointer as a receiver.</p>
+<pre><code>Age before update:  34
+Age after update:  34
+
+Name before update:  James Bond
+Name after update:  Jon Snow
+</code></pre><p><em><strong><a href="https://play.golang.org/p/gvDMobx70PK" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<h2 id="empty-struct">Empty Struct</h2>
+<p>In GOlang, we can have an empty struct. A struct without any field is called an empty struct. Below is the signature of an empty struct.</p>
+<pre><code>type T struct{}
+var s struct{}
+</code></pre><p>Empty struct does not have any field so it does not occupy any memory i.e it occupies <code>zero bytes</code> of storage.</p>
+<pre><code>var s struct{}
+fmt.Println(unsafe.Sizeof(s)) // prints 0
+</code></pre><p>We can create an array of the empty struct and still it occupies zero bytes.</p>
+<pre><code>var arr [100000]struct{}
+fmt.Println(unsafe.Sizeof(arr)) // prints 0
+</code></pre><p>The slice of structs will consume some byte just to store pointer, length and capacity of an underlying array but structs still will be of zero bytes.</p>
+<pre><code>sls := make([]struct{}, 100000)
+fmt.Println(unsafe.Sizeof(sls)) // prints 24
+</code></pre><pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;unsafe&quot;
+)
+
+func main() {
+    var s struct{}
+    fmt.Println(&quot;Size of an empty struct: &quot;, unsafe.Sizeof(s)) // prints 0
+
+    var arr [100000]struct{}
+    fmt.Println(&quot;Size of an array of an empty struct: &quot;, unsafe.Sizeof(arr)) // prints 0
+
+    sls := make([]struct{}, 100000)
+    fmt.Println(&quot;Size of a slice of an empty struct: &quot;, unsafe.Sizeof(sls)) // prints 24
+}
+</code></pre><pre><code>Size of an empty struct:  0
+Size of an array of an empty struct:  0
+Size of a slice of an empty struct:  24
+</code></pre><p><em><strong><a href="https://play.golang.org/p/SB9x1tSICW1" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p>Read more about the empty struct and its use cases at <em><strong><a href="https://dave.cheney.net/2014/03/25/the-empty-struct" style="color:DodgerBlue" target="_blank">Dave Cheney&rsquo;s blog.</a></strong></em></p>
+<h2 id="arrayslice-of-structs">Array/Slice of structs</h2>
+<p>The <em><strong><a href="/blog/golang/array_slice" style="color:DodgerBlue" target="_blank">Array/Slice</a></strong></em> is a collection of the same type of element in a contiguous memory location. We can create an array/slice of structs.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person struct {
+    name string
+    age  int
+}
+
+func newPerson(name string, age int) *Person {
+    return &amp;Person{
+        name: name,
+        age:  age,
+    }
+}
+
+func main() {
+    people := make([]*Person, 0) // slice of a struct Person with initial length 0
+
+    people = append(people, newPerson(&quot;James Bond&quot;, 34))
+    people = append(people, newPerson(&quot;Jon Snow&quot;, 24))
+    people = append(people, newPerson(&quot;Joey Tribbiani&quot;, 32))
+
+    for _, person := range people {
+        fmt.Println(person)
+    }
+
+    fmt.Println(&quot;Name of friends character: &quot;, people[2].name)
+}
+</code></pre><pre><code>&amp;{James Bond 34}
+&amp;{Jon Snow 24}
+&amp;{Joey Tribbiani 32}
+Name of friends character:  Joey Tribbiani
+</code></pre><p><em><strong><a href="https://play.golang.org/p/g9-754U92un" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p><em><strong>Thank you for reading this blog please give your feedback in the comment section below.</strong></em></p>
+<hr>
+<a href="/blog/golang/structs_part_1">
+  <b style="color:DodgerBlue">
+    <i>🡄 Structs part-1</i>
+  </b>
+</a> &emsp;
+<a href="/blog/golang/contents">
+  <b style="color:DodgerBlue">
+    <i>• Contents</i>
+  </b>
+</a>  &emsp;
+<!-- <a href="/blog/golang/">
+    <b style="color:DodgerBlue">
+        <i> 🡆</i>
+    </b>
+</a>  &emsp; -->
+<br>
+<a href="https://github.com/pratikjagrut/go-tutorial" target="_blank">
+  <b style="color:DodgerBlue" class="fab fa-github">
+    <i>Github Repo</i>
+  </b>
+</a>  &emsp;
+<a href="https://github.com/pratikjagrut/go-tutorial/blob/master/REFERENCE.md" target="_blank">
+  <b style="color:DodgerBlue">
+    <i>&#128279; Reference</i>
+  </b>
+</a>
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/golang/">golang</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/golang/">golang</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/programming/">programming</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pratikjagrut-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/golang/contents/" class="button left"><span>Golang</span></a>
+    
+    
+      <a href="/blog/golang/structs_part_1/" class="button right"><span>Structs part-1</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/golang/contents/" class="image" style="--bg-image: url('https://pratikjagrut.dev/img/golang/logo.jpg');">
+    <img class="stretchV" src="https://pratikjagrut.dev/img/golang/logo.jpg" alt="golang">
+  </a>
+        <header>
+          <h2><a href="/blog/golang/contents/">Golang</a></h2>
+          <time class="published" datetime="2021-03-04 22:05:18 &#43;0530 IST">March 4, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/structs_part_2/">Structs part-2</a></h2>
+          <time class="published" datetime="2021-03-04 21:53:38 &#43;0530 IST">March 4, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/structs_part_1/">Structs part-1</a></h2>
+          <time class="published" datetime="2021-03-04 18:02:10 &#43;0530 IST">March 4, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/pointers/">Pointers</a></h2>
+          <time class="published" datetime="2021-02-26 16:49:28 &#43;0530 IST">February 26, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/closures/">Closures</a></h2>
+          <time class="published" datetime="2021-02-14 19:08:25 &#43;0530 IST">February 14, 2021</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Category</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">16</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2021 Pratik Jagrut
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-189051592-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>
