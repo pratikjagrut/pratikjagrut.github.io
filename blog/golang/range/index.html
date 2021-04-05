@@ -192,7 +192,7 @@
   <div class="meta">
     <time datetime="2021-01-11 23:41:28 &#43;0530 IST">January 11, 2021</time>
     <p>Pratik Jagrut</p>
-    <p>2-Minute Read</p>
+    <p>3-Minute Read</p>
   </div>
 </header>
 
@@ -246,9 +246,15 @@
       <p>The range keyword is used to iterate over various data types. It is used in for loops and its return values are dependent on the data types over which we&rsquo;re using range keyword.</p>
 <h3 id="range-over-slicearray">Range over slice/array</h3>
 <p>Range on <strong>Array and Slice</strong> returns the first value as an index and second value as an element located at that index.</p>
-<pre><code>nums := []int{1, 2, 3, 4, 5}
-for i, v := range nums{
-    fmt.Printf(&quot;Index :%d, value: %d\n&quot;, i, v)
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+	nums := []int{1, 2, 3, 4, 5}
+	for i, v := range nums {
+		fmt.Printf(&quot;Index :%d, value: %d\n&quot;, i, v)
+	}
 }
 </code></pre><p>Output:</p>
 <pre><code>Index :0, value: 1
@@ -256,20 +262,34 @@ Index :1, value: 2
 Index :2, value: 3
 Index :3, value: 4
 Index :4, value: 5
-</code></pre><h3 id="range-over-maps">Range over maps</h3>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/WwdJkWeMfpA" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<h3 id="range-over-maps">Range over maps</h3>
 <p>Range on <strong>Map</strong> returns the first value as a key and second value is a value associated with that key.</p>
-<pre><code>m := map[string]int{&quot;foo&quot;: 0, &quot;bar&quot;: 1}
-for k, v:= range m {
-  fmt.Printf(&quot;Key :%s, value: %d\n&quot;, k, v)
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+	m := map[string]int{&quot;foo&quot;: 0, &quot;bar&quot;: 1}
+	for k, v := range m {
+		fmt.Printf(&quot;Key :%s, value: %d\n&quot;, k, v)
+	}
 }
 </code></pre><p>Output:</p>
 <pre><code>Key :foo, value: 0
 Key :bar, value: 1
-</code></pre><h3 id="range-over-a-string">Range over a string</h3>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/DA_QyJzPFB7" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<h3 id="range-over-a-string">Range over a string</h3>
 <p>Range on <strong>String</strong> returns the first value as an index and second value is rune int.</p>
-<pre><code>str := &quot;golang&quot;
-for i, s:= range str {
-  fmt.Printf(&quot;Index :%d, Rune value: %d\n&quot;, i, s)
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+	str := &quot;golang&quot;
+	for i, s := range str {
+		fmt.Printf(&quot;Index :%d, Rune value: %d\n&quot;, i, s)
+	}
 }
 </code></pre><p>Output:</p>
 <pre><code>Index :0, Rune value: 103
@@ -278,32 +298,47 @@ Index :2, Rune value: 108
 Index :3, Rune value: 97
 Index :4, Rune value: 110
 Index :5, Rune value: 103
-</code></pre><p><em>Rune int value can be type cast string using string() method. e.g. string(103) == g</em></p>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/lRFYbsOObFc" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p><em>Rune int value can be type cast string using string() method. e.g. string(103) == g</em></p>
 <h3 id="range-over-a-channel">Range over a channel</h3>
 <p>Range on <strong>Channel</strong> returns only one value that is the value received from the channel.</p>
-<pre><code>channel := make(chan string, 2)
-channel &lt;- &quot;Hello&quot;
-channel &lt;- &quot;World&quot;
-close(channel)
+<pre><code>package main
 
-for v := range channel {
-  fmt.Printf(&quot;%s &quot;, v)
+import &quot;fmt&quot;
+
+func main() {
+	channel := make(chan string, 2)
+	channel &lt;- &quot;Hello&quot;
+	channel &lt;- &quot;World&quot;
+	close(channel)
+
+	for v := range channel {
+		fmt.Println(v)
+	}
 }
-</code></pre><p><em><strong>*KEEP IN MIND*</strong></em></p>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/YPHa5RvPGbP" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p><em><strong>*KEEP IN MIND*</strong></em></p>
 <p>You can not update the value in the range loop.</p>
-<pre><code>nums := []int{1, 2, 3, 4, 5}
-fmt.Println(&quot;Slice before range: &quot;, nums)
+<pre><code>package main
 
-for _, v := range nums {
-    v += 1
+import &quot;fmt&quot;
+
+func main() {
+	nums := []int{1, 2, 3, 4, 5}
+	fmt.Println(&quot;Slice before range: &quot;, nums)
+
+	for _, v := range nums {
+		v += 1
+	}
+
+	fmt.Println(&quot;Slice after range: &quot;, nums)
 }
-
-fmt.Println(&quot;Slice after range: &quot;, nums)```
 </code></pre><p>Output:</p>
 <pre><code>Slice before range:  [1 2 3 4 5]
 Slice after range:  [1 2 3 4 5]
-</code></pre><p>In the above example, I try to increment all the values of the slice by 1 but the slice is unaffected. This is because the range loop copies the value from slice to local variable. So to update the slice we&rsquo;ll need to use traditional way <code>nums[i] += 1</code>.</p>
-<p><em><strong>You can refer <a href="https://github.com/pratikjagrut/go-tutorial/blob/master/09_range/main.go" style="color:DodgerBlue" target="_blank">main.go</a> file for examples</strong></em></p>
+</code></pre><p><em><strong><a href="https://play.golang.org/p/iGimIFCgcL_J" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p>In the above example, I try to increment all the values of the slice by 1 but the slice is unaffected. This is because the range loop copies the value from slice to local variable. So to update the slice we&rsquo;ll need to use traditional way <code>nums[i] += 1</code>.</p>
+<p><em><strong>Thank you for reading this blog please give your feedback in the comment section below.</strong></em></p>
 <hr>
 <a href="/blog/golang/maps">
   <b style="color:DodgerBlue">

@@ -77,7 +77,7 @@ func(parameter_list)(return_type){ return }() Parameter list and return type are
       <description>A function is a block of statements which performs a specific task. Functions is a well organized and reusable code. It improves the code readability, maintainability and testability. The general function is:
 func function_name( [parameter list] ) [return_types] { body of the function } Declaring and calling functions The function is declared using func keyword.
 func sayCheeze() { fmt.Println(&amp;quot;Cheeeeeeeeeeeeze&amp;quot;) } Calling the function is pretty easy.
-sayCheeze() You may pass input parameters func addition(i int, j int) { fmt.</description>
+sayCheeze() package main import &amp;quot;fmt&amp;quot; func sayCheeze() { fmt.</description>
     </item>
     
     <item>
@@ -88,7 +88,7 @@ sayCheeze() You may pass input parameters func addition(i int, j int) { fmt.</de
       <guid>https://pratikjagrut.dev/blog/golang/range/</guid>
       <description>The range keyword is used to iterate over various data types. It is used in for loops and its return values are dependent on the data types over which we&amp;rsquo;re using range keyword.
 Range over slice/array Range on Array and Slice returns the first value as an index and second value as an element located at that index.
-nums := []int{1, 2, 3, 4, 5} for i, v := range nums{ fmt.</description>
+package main import &amp;quot;fmt&amp;quot; func main() { nums := []int{1, 2, 3, 4, 5} for i, v := range nums { fmt.</description>
     </item>
     
     <item>
@@ -110,7 +110,7 @@ map[KeyType]ValueType The KeyType could be anything that is comparable such as s
       <guid>https://pratikjagrut.dev/blog/golang/array_slice/</guid>
       <description>Array The array is a collection of the same type of element in a contiguous memory location. The array has fixed length i.e the number of elements to be stored is fixed before memory allocation.
 Array Declarations An array type definition specifies length and type of element. The array [n]T is of length n and type T.
-// This array can hold 3 integers. var i [3]int Arrays can be indexed in usual way, to access the n&amp;lt;sup&amp;gt;th&amp;lt;/sup&amp;gt; element we can do a[n].</description>
+// This array can hold 3 integers. var i [3]int Arrays can be indexed in usual way, to access the nth element we can do a[n].</description>
     </item>
     
     <item>
