@@ -5,14 +5,37 @@
     <link>https://pratikjagrut.dev/tags/golang/</link>
     <description>Recent content in golang on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 04 Mar 2021 22:05:18 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Apr 2021 11:15:00 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://pratikjagrut.dev/blog/golang/contents/</link>
-      <pubDate>Thu, 04 Mar 2021 22:05:18 +0530</pubDate>
+      <pubDate>Sun, 25 Apr 2021 11:15:00 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
-      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;   Anonymous Function  &amp;emsp;   Closures  &amp;emsp;   Pointers  &amp;emsp;   Structs Part-1  &amp;emsp;   Structs Part-2  &amp;emsp;  </description>
+      <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;   Anonymous Function  &amp;emsp;   Closures  &amp;emsp;   Pointers  &amp;emsp;   Structs Part-1  &amp;emsp;   Structs Part-2  &amp;emsp;   Interface Part-1  &amp;emsp;   Interface Part-2  &amp;emsp;  </description>
+    </item>
+    
+    <item>
+      <title>Interface Part-2</title>
+      <link>https://pratikjagrut.dev/blog/golang/interface_part_2/</link>
+      <pubDate>Sun, 25 Apr 2021 10:46:37 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/interface_part_2/</guid>
+      <description>Type assertion Type assertion is used to get the underlying concrete value of the interface variable. i.(Type) this is the syntax of type assertion, where:
+i -&amp;gt; interface variable
+Type -&amp;gt; type that implements interface
+Let&amp;rsquo;s see an example of type assertion.
+package main import &amp;quot;fmt&amp;quot; type Person interface { info() string } type Student struct { name string } func (s Student) info() string { return fmt.Sprintf(&amp;quot;Student name is %s\n&amp;quot;, s.</description>
+    </item>
+    
+    <item>
+      <title>Interface Part-1</title>
+      <link>https://pratikjagrut.dev/blog/golang/interface_part_1/</link>
+      <pubDate>Sun, 07 Mar 2021 20:14:16 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/interface_part_1/</guid>
+      <description>In Golang, an interface is a set of method signatures. When any type defines all the methods from an interface then that type implements the interface. So we can state that interface defines the behaviour of the object/type.
+For example, an animal walks, eats and sleeps so we can have an interface Animal which declares the methods walk, eat and sleep and any animal e.g. Tiger, who walks, eats and sleeps so we say Tiger implements the animal interface.</description>
     </item>
     
     <item>
