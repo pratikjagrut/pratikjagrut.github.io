@@ -44,8 +44,7 @@ For example, an animal walks, eats and sleeps so we can have an interface Animal
       <pubDate>Thu, 04 Mar 2021 21:53:38 +0530</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/structs_part_2/</guid>
-      <description>🡄 Structs part-1
-Nested Structs Golang allows us to use struct as a field of another struct, this pattern is called nesting. A nested struct can be defined using the following syntax.
+      <description>Nested Structs Golang allows us to use struct as a field of another struct, this pattern is called nesting. A nested struct can be defined using the following syntax.
 type struct1 struct{ // fields } type struct2 struct{ // fields s struct1 } Suppose we need to collect the data of a person, person&amp;rsquo;s name, age and address. In address, we need to collect the city and country of that person.</description>
     </item>
     
