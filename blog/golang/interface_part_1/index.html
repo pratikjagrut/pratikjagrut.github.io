@@ -265,39 +265,39 @@ In OOP programming we might have to use the <code>implement</code> keyword to ex
 import &quot;fmt&quot;
 
 type Person struct {
-	name    string
-	age     int
-	address Address
+    name    string
+    age     int
+    address Address
 }
 
 type Address struct {
-	city, country string
-	pincode       int
+    city, country string
+    pincode       int
 }
 
 func (p Person) String() string {
-	return fmt.Sprintf(&quot;My name is '%s', I'm '%d' years old, I love in '%s', '%s'&quot;, p.name, p.age, p.address.city, p.address.country)
+    return fmt.Sprintf(&quot;My name is '%s', I'm '%d' years old, I love in '%s', '%s'&quot;, p.name, p.age, p.address.city, p.address.country)
 }
 
 func main() {
-	person := Person{
-		name: &quot;James Bond&quot;,
-		age:  34,
-		address: Address{
-			city:    &quot;London&quot;,
-			pincode: 123456,
-			country: &quot;UK&quot;,
-		},
-	}
+    person := Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+        address: Address{
+            city:    &quot;London&quot;,
+            pincode: 123456,
+            country: &quot;UK&quot;,
+        },
+    }
 
-	address := Address{
-		city:    &quot;London&quot;,
-		country: &quot;UK&quot;,
-		pincode: 123456,
-	}
+    address := Address{
+        city:    &quot;London&quot;,
+        country: &quot;UK&quot;,
+        pincode: 123456,
+    }
 
-	fmt.Println(person)
-	fmt.Println(address)
+    fmt.Println(person)
+    fmt.Println(address)
 }
 </code></pre><pre><code>My name is 'James Bond', I'm '34' years old, I love in 'London', 'UK'
 {London UK 123456}
@@ -309,28 +309,28 @@ only the <code>Person</code> struct implements the <code>Stringer</code> interfa
 <pre><code>package main
 
 import (
-	&quot;fmt&quot;
+    &quot;fmt&quot;
 )
 
 type Shape interface {
-	Area()
+    Area()
 }
 
 type Square struct {
-	side int
+    side int
 }
 
 func (s Square) Area() {
-	fmt.Printf(&quot;Area of the square is %d\n&quot;, s.side*s.side)
+    fmt.Printf(&quot;Area of the square is %d\n&quot;, s.side*s.side)
 }
 
 func main() {
-	sq := Square{
-		side: 10,
-	}
-	var sh Shape = sq
-	sq.Area()
-	sh.Area()
+    sq := Square{
+        side: 10,
+    }
+    var sh Shape = sq
+    sq.Area()
+    sh.Area()
 }
 </code></pre><pre><code>Area of the square is 100
 Area of the square is 100
