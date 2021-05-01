@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Pratik Jagrut</title>
+    <link>https://pratikjagrut.dev/categories/git/</link>
+    <description>Recent content in git on Pratik Jagrut</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 29 Apr 2021 08:23:36 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git aliases</title>
+      <link>https://pratikjagrut.dev/blog/git/aliases/</link>
+      <pubDate>Thu, 29 Apr 2021 08:23:36 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/git/aliases/</guid>
+      <description>Git is the most widely used Version Control System (VCS) or Source Code Management(CMS) software. It is a day-to-day go-to tool for many of the developers out there. And many developers use terminal/command line to operate it.
+In the terminal we type git commands git &amp;lt;sub-command&amp;gt; &amp;lt;flag&amp;gt; it runs if it succeeds we&amp;rsquo;re happy. On day-to-day basis we mostly use repetitive commands like git pull &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;, git push &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;, git commit and many other and sometimes we use prolonged commands like this one git log --graph --pretty=format:&#39;%Cred%h%Creset %Cgreen%cr%Creset -%C(yellow)%d%Creset %s %C(bold blue)[%cn]%Creset&#39; --abbrev-commit --date=relative which prints commit history in custom fashion.</description>
+    </item>
+    
+  </channel>
+</rss>
