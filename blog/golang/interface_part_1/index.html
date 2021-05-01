@@ -192,7 +192,7 @@
   <div class="meta">
     <time datetime="2021-03-07 20:14:16 &#43;0530 IST">March 7, 2021</time>
     <p>Pratik Jagrut</p>
-    <p>7-Minute Read</p>
+    <p>8-Minute Read</p>
   </div>
 </header>
 
@@ -264,42 +264,78 @@ In OOP programming we might have to use the <code>implement</code> keyword to ex
 
 import &quot;fmt&quot;
 
-type Day string
+type Person struct {
+	name    string
+	age     int
+	address Address
+}
 
-func (day Day) String() string {
-    return string(day)
+type Address struct {
+	city, country string
+	pincode       int
+}
+
+func (p Person) String() string {
+	return fmt.Sprintf(&quot;My name is '%s', I'm '%d' years old, I love in '%s', '%s'&quot;, p.name, p.age, p.address.city, p.address.country)
 }
 
 func main() {
-    var day Day
-    day = &quot;Monday&quot;
-    fmt.Println(&quot;The day is &quot;, day.String())
+	person := Person{
+		name: &quot;James Bond&quot;,
+		age:  34,
+		address: Address{
+			city:    &quot;London&quot;,
+			pincode: 123456,
+			country: &quot;UK&quot;,
+		},
+	}
+
+	address := Address{
+		city:    &quot;London&quot;,
+		country: &quot;UK&quot;,
+		pincode: 123456,
+	}
+
+	fmt.Println(person)
+	fmt.Println(address)
 }
-</code></pre><p><em><strong><a href="https://play.Golang.org/p/XCUokhp2VfZ" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+</code></pre><pre><code>My name is 'James Bond', I'm '34' years old, I love in 'London', 'UK'
+{London UK 123456}
+</code></pre><p><em><strong><a href="https://play.golang.org/p/0C_8uGzb04A" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p>In the above example, we&rsquo;ve two structs one is <code>Person</code> and the other one is <code>Address</code> and
+only the <code>Person</code> struct implements the <code>Stringer</code> interface by implementing the <code>String()</code> method because of which we could print the custom string format output.</p>
+<p>Notice the output, the <code>person</code> variable has its custom string and the <code>address</code> variable prints output in curly braces.</p>
 <p>Once a type implements an interface then the method implemented by that type can also be called using interface variable.</p>
 <pre><code>package main
 
-import &quot;fmt&quot;
+import (
+	&quot;fmt&quot;
+)
 
-type Day string
+type Shape interface {
+	Area()
+}
 
-func (day Day) String() string {
-    return string(day)
+type Square struct {
+	side int
+}
+
+func (s Square) Area() {
+	fmt.Printf(&quot;Area of the square is %d\n&quot;, s.side*s.side)
 }
 
 func main() {
-    var day Day
-    day = &quot;Monday&quot;
-    fmt.Println(&quot;The day is&quot;, day.String())
-
-    var day1 Day = &quot;Tuesday&quot;
-    var s fmt.Stringer = day1
-    fmt.Println(&quot;The day is&quot;, s.String())
+	sq := Square{
+		side: 10,
+	}
+	var sh Shape = sq
+	sq.Area()
+	sh.Area()
 }
-</code></pre><pre><code>The day is Monday
-The day is Tuesday
-</code></pre><p><em><strong><a href="https://play.golang.org/p/6TgX_V_o5Xu" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
-<p>In the above program, type <code>Day</code> is implementing <code>fmt.Stringer</code> interface. In the main function, we call the implemented <code>string</code> method on the <code>day</code> variable which is of type <code>Day</code> and on the <code>s</code> variable which is of type <code>fmt.Stringer</code> interface and the program still works fine.</p>
+</code></pre><pre><code>Area of the square is 100
+Area of the square is 100
+</code></pre><p><em><strong><a href="https://play.golang.org/p/cQmfCtE3GMC" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p>In the above program, type <code>Square</code> is implementing the <code>Shape</code> interface. In the main function, we call the implemented method <code>Area</code> on variable <code>sq</code> of type <code>Square</code> and on variable <code>sh</code> of type <code>Shape</code> interface and the program still works fine.</p>
 <h2 id="interfaces-types-and-values">Interface&rsquo;s types and values</h2>
 <p>The variable of an interface stores, a concrete value and the type of that concrete value called concrete type. This representation can be envisaged as a tuple <code>(type, value)</code>. An interface variable can store any concrete type and value as long as that type and value implement the interface&rsquo;s method. The below program illustrate the type and value of the interface.</p>
 <pre><code>package main
