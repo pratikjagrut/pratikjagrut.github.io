@@ -8,10 +8,10 @@
     <lastBuildDate>Sun, 25 Apr 2021 11:15:00 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
-      <link>https://pratikjagrut.dev/blog/golang/contents/</link>
+      <link>https://pratikjagrut.dev/blog/golang/series/contents/</link>
       <pubDate>Sun, 25 Apr 2021 11:15:00 +0530</pubDate>
       
-      <guid>https://pratikjagrut.dev/blog/golang/contents/</guid>
+      <guid>https://pratikjagrut.dev/blog/golang/series/contents/</guid>
       <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;   Anonymous Function  &amp;emsp;   Closures  &amp;emsp;   Pointers  &amp;emsp;   Structs Part-1  &amp;emsp;   Structs Part-2  &amp;emsp;   Interface Part-1  &amp;emsp;   Interface Part-2  &amp;emsp;  </description>
     </item>
     

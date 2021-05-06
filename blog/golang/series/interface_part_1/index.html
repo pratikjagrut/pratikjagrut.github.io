@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Interface Part-1 - Pratik Jagrut</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+  <meta property="og:title" content="Interface Part-1">
+  <meta property="og:description" content="Blog">
+  <meta property="description" content="Blog">
+  <meta property="og:url" content="https://pratikjagrut.dev/blog/golang/series/interface_part_1/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://pratikjagrut.dev/img/main/IMG_0239.JPG">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-sitemap'></i> Tags</a>
+        
+      
+        
+          
+          <a href="/resume/" class="nav link"><i class='far fa-id-card'></i> Resume</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Interface%20Part-1&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_1%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_1%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_1%2f&amp;title=Interface%20Part-1" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_1%2f&amp;title=Interface%20Part-1" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_1%2f&amp;description=Interface%20Part-1" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_1%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://pratikjagrut.dev/img/main/IMG_0239.JPG" class="circle" width="100" alt="Desktop Picture" /></a>
+  <header>
+    <h1>Pratik Jagrut</h1>
+  </header>
+  <main>
+    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/golang/series/interface_part_1/">Interface Part-1</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-03-07 20:14:16 &#43;0530 IST">March 7, 2021</time>
+    <p>Pratik Jagrut</p>
+    <p>8-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Interface%20Part-1&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_1%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_1%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_1%2f&amp;title=Interface%20Part-1" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_1%2f&amp;title=Interface%20Part-1" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_1%2f&amp;description=Interface%20Part-1" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_1%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      
+      <p>In Golang, an interface is a set of method signatures. When any type defines all the methods from an interface then that type implements the interface. So we can state that interface defines the behaviour of the object/type.</p>
+<p>For example, an animal walks, eats and sleeps so we can have an interface <code>Animal</code> which declares the methods <code>walk, eat and sleep</code> and any animal e.g. <code>Tiger</code>, who walks, eats and sleeps so we say Tiger implements the animal interface.</p>
+<p>Another example could be of shapes, any shape has an area and perimeter. So the <code>Shape</code> interface can declare <code>area</code> and <code>perimeter</code> methods and any shape such as rectangle or triangle can implement a shape interface.</p>
+<p>It is much similar to the OOP world&rsquo;s interface, where the interface specifies the methods and type decides how to implement them.
+In OOP programming we might have to use the <code>implement</code> keyword to explicitly implement the interface, but in Golang, if a type defines all the method from an interface then it <code>implicitly implements</code> interface.</p>
+<h2 id="declaring-and-implementing-interface">Declaring and Implementing Interface</h2>
+<p>To declare an interface in Golang we use the <code>type</code> and <code>interface</code> keyword. Below is a syntax:</p>
+<pre><code>type InterfaceName interface {
+  // Method declaration
+}
+</code></pre><p><code>Stringer</code> interface is declared in the <code>fmt</code> package, which has a signature of the only one method <code>String</code>.</p>
+<p><em><strong><a href="https://Golang.org/pkg/fmt/#Stringer" style="color:DodgerBlue" target="_blank">fmt.Stringer doc</a></strong></em></p>
+<pre><code>type Stringer interface {
+    String() string
+}
+</code></pre><p>To implement a particular interface a type needs to implement all the methods with exact name and signature defined in that interface. <code>Interfaces in Go are implicitly implemented.</code></p>
+<p>Below is an implementation of the <code>fmt.Stringer</code> interface from the standard library.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person struct {
+    name    string
+    age     int
+    address Address
+}
+
+type Address struct {
+    city, country string
+    pincode       int
+}
+
+func (p Person) String() string {
+    return fmt.Sprintf(&quot;My name is '%s', I'm '%d' years old, I love in '%s', '%s'&quot;, p.name, p.age, p.address.city, p.address.country)
+}
+
+func main() {
+    person := Person{
+        name: &quot;James Bond&quot;,
+        age:  34,
+        address: Address{
+            city:    &quot;London&quot;,
+            pincode: 123456,
+            country: &quot;UK&quot;,
+        },
+    }
+
+    address := Address{
+        city:    &quot;London&quot;,
+        country: &quot;UK&quot;,
+        pincode: 123456,
+    }
+
+    fmt.Println(person)
+    fmt.Println(address)
+}
+</code></pre><pre><code>My name is 'James Bond', I'm '34' years old, I love in 'London', 'UK'
+{London UK 123456}
+</code></pre><p><em><strong><a href="https://play.golang.org/p/0C_8uGzb04A" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>In the above example, we&rsquo;ve two structs one is <code>Person</code> and the other one is <code>Address</code> and
+only the <code>Person</code> struct implements the <code>Stringer</code> interface by implementing the <code>String()</code> method because of which we could print the custom string format output.</p>
+<p>Notice the output, the <code>person</code> variable has its custom string and the <code>address</code> variable prints output in curly braces.</p>
+<p>Once a type implements an interface then the method implemented by that type can also be called using interface variable.</p>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+)
+
+type Shape interface {
+    Area()
+}
+
+type Square struct {
+    side int
+}
+
+func (s Square) Area() {
+    fmt.Printf(&quot;Area of the square is %d\n&quot;, s.side*s.side)
+}
+
+func main() {
+    sq := Square{
+        side: 10,
+    }
+    var sh Shape = sq
+    sq.Area()
+    sh.Area()
+}
+</code></pre><pre><code>Area of the square is 100
+Area of the square is 100
+</code></pre><p><em><strong><a href="https://play.golang.org/p/cQmfCtE3GMC" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>In the above program, type <code>Square</code> is implementing the <code>Shape</code> interface. In the main function, we call the implemented method <code>Area</code> on variable <code>sq</code> of type <code>Square</code> and on variable <code>sh</code> of type <code>Shape</code> interface and the program still works fine.</p>
+<h2 id="interfaces-types-and-values">Interface&rsquo;s types and values</h2>
+<p>The variable of an interface stores, a concrete value and the type of that concrete value called concrete type. This representation can be envisaged as a tuple <code>(type, value)</code>. An interface variable can store any concrete type and value as long as that type and value implement the interface&rsquo;s method. The below program illustrate the type and value of the interface.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Int int
+
+func (i Int) String() string {
+    return fmt.Sprintf(&quot;Value of Int is %d&quot;, i)
+}
+
+type Float float32
+
+func (f Float) String() string {
+    return fmt.Sprintf(&quot;Value of Float is %f&quot;, f)
+}
+
+func describe(s fmt.Stringer) {
+    fmt.Printf(&quot;Concrete type of an interface is %T\n&quot;, s)
+    fmt.Printf(&quot;%v\n&quot;, s)
+    fmt.Println()
+}
+
+func main() {
+    var s fmt.Stringer
+    describe(s)
+
+    var i Int = 10
+    s = i
+    describe(s)
+
+    var f Float = 15.0005
+    s = f
+    describe(f)
+}
+</code></pre><pre><code>Concrete type of an interface is &lt;nil&gt;
+&lt;nil&gt;
+
+Concrete type of an interface is main.Int
+Value of Int is 10
+
+Concrete type of an interface is main.Float
+Value of Float is 15.000500
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/9_yZVvc3gsa" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>In the above program:</p>
+<p>We create two customs types Int and Float whose underlying types are int and float32 respectively.
+Both types implement fmt.Stringer interface by implementing <code>String() string</code> function.</p>
+<p>The statement <code>var s fmt.Stringer</code> creates variable of an interface fmt.Stringer with zero value <code>&lt;nil&gt;</code>.</p>
+<p>In the main function, we assign variable of type Int and Float to the interface variable s.
+This means when a particular type implements an interface then the variable of that type can also be represented as the type of an interface.</p>
+<p>The type and value of the interface depend on the type and which implements that interface.
+Sometimes the concrete type and value of an interface are also called dynamic type and value.
+We call it dynamic because we can assign any type to the interface as long as that type implements the interface.</p>
+<h3 id="zero-value-of-an-interface">Zero Value of an interface</h3>
+<p>The zero value of an interface is <code>&lt;nil&gt;</code>.
+A nil interface has its concrete value and concrete type nil.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    var s fmt.Stringer
+    fmt.Printf(&quot;The concrete type of a nil interface is %T\n&quot;, s)
+    fmt.Printf(&quot;The concrete value of a nil interface is %v&quot;, s)
+}
+</code></pre><pre><code>The concrete type of a nil interface is &lt;nil&gt;
+The concrete value of a nil interface is &lt;nil&gt;
+</code></pre><p><em><strong><a href="https://play.golang.org/p/8GKGXSwOEOw" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>If we try to call a method on a nil interface, the program will panic.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Day string
+
+func (day Day) String() string {
+    return string(day)
+}
+
+func main() {
+    var s fmt.Stringer
+    fmt.Println(&quot;The day is &quot;, s.String())
+}
+</code></pre><pre><code>panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x497683]
+
+goroutine 1 [running]:
+main.main()
+    /tmp/sandbox117008893/prog.go:13 +0x23
+</code></pre><p><em><strong><a href="https://play.golang.org/p/9KwItPMGxWD" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>The error pretty much is self-explanatory. The underlying concrete value and type are nil so the method can not be called on that object.</p>
+<h2 id="empty-interface">Empty Interface</h2>
+<p>An interface with zero methods is called an empty interface.
+The empty interface is represented by <code>interface{}</code>.</p>
+<p>Since an empty interface has no methods it is implemented by all the types.
+Let&rsquo;s dive into an example:</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func getType(s interface{}) {
+    fmt.Printf(&quot;%T\n&quot;, s)
+}
+
+func main() {
+    i := 10
+    getType(i)
+
+    s := &quot;Hola&quot;
+    getType(s)
+
+    f := 12.24
+    getType(f)
+
+    b := true
+    getType(b)
+}
+</code></pre><pre><code>int
+string
+float64
+bool
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/m6GMNMIBAUo" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>The function <code>getType(s interface{})</code> accepts an empty interface as an argument hence we were able to pass any type of variable to the function.</p>
+<p>Have you ever wondered how the <code>Println</code> function can accept any number of values of different different types and print it?
+The answer is <code>interface{}</code>.</p>
+<p>This is the signature of Println function <code>func Println(a ...interface{}) (n int, err error)</code>.
+The Println function is a <code>variadic function</code> which can take arguments of type <code>interface{}</code>.</p>
+<h2 id="implementing-multiple-interfaces">Implementing multiple interfaces</h2>
+<p>A type can implement more than one interface. Let&rsquo;s see how it is done.</p>
+<pre><code>package main
+
+import (
+   &quot;fmt&quot;
+)
+
+type Shape interface {
+   Area()
+}
+
+type Quadrilateral interface {
+   isQuadrilateral() bool
+}
+
+type square struct {
+   noOfSides int
+   side      int
+}
+
+func (s square) Area() {
+   fmt.Printf(&quot;Area of the square is %d\n&quot;, s.side*s.side)
+}
+
+func (s square) isQuadrilateral() bool {
+   if s.noOfSides == 4 {
+       return true
+   }
+   return false
+}
+
+func main() {
+   s := square{
+       noOfSides: 4,
+       side:      10,
+   }
+
+   var sh Shape = s
+   sh.Area()
+
+   var q Quadrilateral = s
+   fmt.Println(q.isQuadrilateral())
+}
+</code></pre><pre><code>Area of the square is 100
+true
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/1alfdI_h-DW" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>In the above example, we&rsquo;ve two interfaces <code>Shape</code> and <code>Quadrilateral</code>. Type <code>square</code> implements both interfaces. The program is easy and self-explanatory.</p>
+<h2 id="embedding-interfaces">Embedding interfaces</h2>
+<p>In Golang, one interface can embed any other interface.
+Golang does not support inheritance but this embedding of interfaces can give a sense of inheritance.
+Below is an illustrative example:</p>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+)
+
+type Shape interface {
+    Area()
+}
+
+type Quadrilateral interface {
+    Shape
+    fmt.Stringer
+    isQuadrilateral() bool
+}
+
+type square struct {
+    noOfSides int
+    side      int
+}
+
+func (s square) Area() {
+    fmt.Printf(&quot;Area of the square is %d\n&quot;, s.side*s.side)
+}
+
+func (s square) isQuadrilateral() bool {
+    if s.noOfSides == 4 {
+        return true
+    }
+    return false
+}
+
+func (s square) String() string {
+    return fmt.Sprintf(&quot;Number of sides are %d and dimension of side is %d&quot;, s.noOfSides, s.side)
+}
+
+func main() {
+    s := square{
+        noOfSides: 4,
+        side:      10,
+    }
+    var q Quadrilateral = s
+    fmt.Println(s.String())
+    s.Area()
+    fmt.Println(q.isQuadrilateral())
+}
+</code></pre><pre><code>Number of sides are 4 and dimension of side is 10
+Area of the square is 100
+true
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/UOQv16mFLn7" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>In the above example, we have <code>Shape</code> and <code>fmt.Stringer</code> interfaces which are embedded in the <code>Quadrilateral</code> interface.
+The type <code>square</code> implements method from <code>Shape</code>, <code>fmt.Stringer</code> and <code>Quadrilateral</code> interfaces.
+In the main function, we&rsquo;re creating a variable of type <code>square</code> and assigning it to the variable of the <code>Quadrilateral</code> interface.
+After that, we&rsquo;re calling all the method implemented by type <code>square</code> using only the variable of the <code>Quadrilateral</code> interface.</p>
+<p><em><strong>Thank you for reading this blog please give your feedback in the comment section below.</strong></em></p>
+<hr>
+<a href="/blog/golang/series/structs_part_2">
+  <b style="color:DodgerBlue">
+    <i>🡄 Structs Part-2</i>
+  </b>
+</a> &emsp;
+<a href="/blog/golang/series/contents">
+  <b style="color:DodgerBlue">
+    <i>• Contents</i>
+  </b>
+</a>  &emsp;
+<a href="/blog/golang/series/interface_part_2">
+    <b style="color:DodgerBlue">
+        <i>Interface Part-2 🡆</i>
+    </b>
+</a>  &emsp;
+<br>
+<a href="https://github.com/pratikjagrut/go-tutorial" target="_blank">
+  <b style="color:DodgerBlue" class="fab fa-github">
+    <i>Github Repo</i>
+  </b>
+</a>  &emsp;
+<a href="https://github.com/pratikjagrut/go-tutorial/blob/master/REFERENCE.md" target="_blank">
+  <b style="color:DodgerBlue">
+    <i>&#128279; Reference</i>
+  </b>
+</a>
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/golang/">golang</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/golang/">golang</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/programming/">programming</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/2021/">2021</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pratikjagrut-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/golang/series/interface_part_2/" class="button left"><span>Interface Part-2</span></a>
+    
+    
+      <a href="/blog/golang/series/structs_part_2/" class="button right"><span>Structs part-2</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/git/aliases/" class="image">
+    <img src="https://pratikjagrut.dev/img/git/aliases.jpg" alt="git aliases">
+  </a>
+        <header>
+          <h2><a href="/blog/git/aliases/">Git aliases</a></h2>
+          <time class="published" datetime="2021-04-29 08:23:36 &#43;0530 IST">April 29, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/golang/series/contents/" class="image" style="--bg-image: url('https://pratikjagrut.dev/img/golang/logo.jpg');">
+    <img class="stretchV" src="https://pratikjagrut.dev/img/golang/logo.jpg" alt="golang">
+  </a>
+        <header>
+          <h2><a href="/blog/golang/series/contents/">Golang</a></h2>
+          <time class="published" datetime="2021-04-25 11:15:00 &#43;0530 IST">April 25, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/interface_part_2/">Interface Part-2</a></h2>
+          <time class="published" datetime="2021-04-25 10:46:37 &#43;0530 IST">April 25, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/interface_part_1/">Interface Part-1</a></h2>
+          <time class="published" datetime="2021-03-07 20:14:16 &#43;0530 IST">March 7, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/structs_part_2/">Structs part-2</a></h2>
+          <time class="published" datetime="2021-03-04 21:53:38 &#43;0530 IST">March 4, 2021</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">18</span></a>
+          
+          <li>
+              <a href="/categories/git/">git<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2021 Pratik Jagrut
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-189051592-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

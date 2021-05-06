@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Classic hello world program - Pratik Jagrut</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+  <meta property="og:title" content="Classic hello world program">
+  <meta property="og:description" content="Blog">
+  <meta property="description" content="Blog">
+  <meta property="og:url" content="https://pratikjagrut.dev/blog/golang/series/helloworld/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://pratikjagrut.dev/img/main/IMG_0239.JPG">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-sitemap'></i> Tags</a>
+        
+      
+        
+          
+          <a href="/resume/" class="nav link"><i class='far fa-id-card'></i> Resume</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Classic%20hello%20world%20program&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fhelloworld%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fhelloworld%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fhelloworld%2f&amp;title=Classic%20hello%20world%20program" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fhelloworld%2f&amp;title=Classic%20hello%20world%20program" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fhelloworld%2f&amp;description=Classic%20hello%20world%20program" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fhelloworld%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://pratikjagrut.dev/img/main/IMG_0239.JPG" class="circle" width="100" alt="Desktop Picture" /></a>
+  <header>
+    <h1>Pratik Jagrut</h1>
+  </header>
+  <main>
+    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/golang/series/helloworld/">Classic hello world program</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-12-19 21:48:51 &#43;0530 IST">December 19, 2020</time>
+    <p>Pratik Jagrut</p>
+    <p>2-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Classic%20hello%20world%20program&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fhelloworld%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fhelloworld%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fhelloworld%2f&amp;title=Classic%20hello%20world%20program" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fhelloworld%2f&amp;title=Classic%20hello%20world%20program" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fhelloworld%2f&amp;description=Classic%20hello%20world%20program" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fhelloworld%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      
+      <h3 id="first-thing-packages">First thing, packages</h3>
+<p>In Go, source files are organized into system directories called packages, which enable code reusability.
+When you build reusable pieces of code, you will develop a package as a shared library. But when you develop executable programs, you will use the package <code>main</code> for making the package as an executable program. The package <code>main</code> tells the Go compiler that the package should compile as an executable program instead of a shared library.</p>
+<pre><code>package main
+</code></pre><h3 id="import">Import</h3>
+<p>The keyword <code>import</code> is used for importing a package into other packages.
+When you import packages, the Go compiler will look on the locations specified by the environment variable <code>ROOT</code> and <code>PATH</code>.</p>
+<pre><code>// Single pkg/lib import
+import &quot;fmt&quot;
+// Multiple pkg/lib import
+import(
+    &quot;fmt&quot;
+    &quot;os&quot;
+)
+</code></pre><h3 id="main-function">Main function</h3>
+<p>The <code>main</code> function in the package <code>main</code> will be the entry point of our executable program.
+When you build shared libraries, you will not have any main package and main function in the package.</p>
+<pre><code>func main(){}
+</code></pre><h3 id="hello-world">Hello World</h3>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    fmt.Println(&quot;Hello, World!&quot;)
+}
+</code></pre><p>Save it as <code>main.go</code> or <code>any-name-you-prefer.go</code></p>
+<p>To run this program:</p>
+<pre><code>go run main.go
+
+Hello, World!
+</code></pre><p><em><strong><a href="https://play.golang.org/p/FAszkU0xQZo" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p><em><strong>Thank you for reading this blog please give your feedback in the comment section below.</strong></em></p>
+<hr>
+<a href="/blog/golang/series/introduction">
+  <b style="color:DodgerBlue">
+    <i>🡄 Introduction and Installation</i>
+  </b>
+</a> &emsp;
+<a href="/blog/golang/series/contents">
+  <b style="color:DodgerBlue">
+    <i>• Contents</i>
+  </b>
+</a>  &emsp;
+<a href="/blog/golang/series/vdc">
+  <b style="color:DodgerBlue">
+    <i>Variables, data types and constants 🡆</i>
+  </b>
+</a>  &emsp;
+<br>
+<a href="https://github.com/pratikjagrut/go-tutorial/tree/master/01_helloworld" target="_blank">
+  <b style="color:DodgerBlue" class="fab fa-github">
+    <i>Github Repo</i>
+  </b>
+</a>  &emsp;
+<a href="https://github.com/pratikjagrut/go-tutorial/blob/master/REFERENCE.md" target="_blank">
+  <b style="color:DodgerBlue">
+    <i>&#128279; Reference</i>
+  </b>
+</a>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/golang/">golang</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/golang/">golang</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/programming/">programming</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/2020/">2020</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pratikjagrut-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/golang/series/vdc/" class="button left"><span>Variables, data types and constants</span></a>
+    
+    
+      <a href="/blog/golang/series/introduction/" class="button right"><span>Go Introduction and Installation</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/git/aliases/" class="image">
+    <img src="https://pratikjagrut.dev/img/git/aliases.jpg" alt="git aliases">
+  </a>
+        <header>
+          <h2><a href="/blog/git/aliases/">Git aliases</a></h2>
+          <time class="published" datetime="2021-04-29 08:23:36 &#43;0530 IST">April 29, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/golang/series/contents/" class="image" style="--bg-image: url('https://pratikjagrut.dev/img/golang/logo.jpg');">
+    <img class="stretchV" src="https://pratikjagrut.dev/img/golang/logo.jpg" alt="golang">
+  </a>
+        <header>
+          <h2><a href="/blog/golang/series/contents/">Golang</a></h2>
+          <time class="published" datetime="2021-04-25 11:15:00 &#43;0530 IST">April 25, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/interface_part_2/">Interface Part-2</a></h2>
+          <time class="published" datetime="2021-04-25 10:46:37 &#43;0530 IST">April 25, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/interface_part_1/">Interface Part-1</a></h2>
+          <time class="published" datetime="2021-03-07 20:14:16 &#43;0530 IST">March 7, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/structs_part_2/">Structs part-2</a></h2>
+          <time class="published" datetime="2021-03-04 21:53:38 &#43;0530 IST">March 4, 2021</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">18</span></a>
+          
+          <li>
+              <a href="/categories/git/">git<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2021 Pratik Jagrut
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-189051592-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

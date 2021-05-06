@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Go Introduction and Installation - Pratik Jagrut</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+  <meta property="og:title" content="Go Introduction and Installation">
+  <meta property="og:description" content="Blog">
+  <meta property="description" content="Blog">
+  <meta property="og:url" content="https://pratikjagrut.dev/blog/golang/series/introduction/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://pratikjagrut.dev/img/main/IMG_0239.JPG">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-sitemap'></i> Tags</a>
+        
+      
+        
+          
+          <a href="/resume/" class="nav link"><i class='far fa-id-card'></i> Resume</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Go%20Introduction%20and%20Installation&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fintroduction%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fintroduction%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fintroduction%2f&amp;title=Go%20Introduction%20and%20Installation" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fintroduction%2f&amp;title=Go%20Introduction%20and%20Installation" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fintroduction%2f&amp;description=Go%20Introduction%20and%20Installation" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fintroduction%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://pratikjagrut.dev/img/main/IMG_0239.JPG" class="circle" width="100" alt="Desktop Picture" /></a>
+  <header>
+    <h1>Pratik Jagrut</h1>
+  </header>
+  <main>
+    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/golang/series/introduction/">Go Introduction and Installation</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-12-19 17:23:49 &#43;0530 IST">December 19, 2020</time>
+    <p>Pratik Jagrut</p>
+    <p>3-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Go%20Introduction%20and%20Installation&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fintroduction%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fintroduction%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fintroduction%2f&amp;title=Go%20Introduction%20and%20Installation" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fintroduction%2f&amp;title=Go%20Introduction%20and%20Installation" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fintroduction%2f&amp;description=Go%20Introduction%20and%20Installation" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2fintroduction%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      
+      <p>Go is an open-source, statically typed, compiled programing language built by Google.
+It combines the simplest of both statically typed and dynamically typed languages and provides you with the proper mixture of efficiency and simple programming.
+It is primarily fitted to building fast, efficient, and reliable server-side or system applications.</p>
+<p>Following are some noted features of Go -</p>
+<ul>
+<li>Safety</li>
+<li>Concurrency</li>
+<li>Efficient Garbage Collection</li>
+<li>High-speed compilation</li>
+<li>Excellent Tooling support</li>
+</ul>
+<h2 id="installing-go">Installing GO</h2>
+<p>Go binary distributions are available for all major operating systems like Linux, Windows, and macOS.
+It’s easy to install Go from the binary distributions or <a href="https://golang.org/doc/install/source" style="color:DodgerBlue" target="_blank">you can try installing Go from source.</a></p>
+<h3 id="linux">Linux</h3>
+<ul>
+<li>
+<p>Download Go for Linux from Go’s official <a href="https://golang.org/dl/">download</a> page.</p>
+<pre><code>tar -xvf go1.15.6.linux-amd64.tar.gz
+</code></pre><p>It will create a directory named <code>go</code>.</p>
+</li>
+<li>
+<p>Move that dir to <code>/usr/local</code> where all other binaries reside.</p>
+<pre><code>export PATH=$PATH:/usr/local/go/bin
+</code></pre></li>
+<li>
+<p>Custom Installation directory</p>
+<p>Instead of moving dir to <code>/usr/local</code> you can choose any other dir.</p>
+<pre><code>mv go $HOME/
+</code></pre><p>Then set this custom location to <code>GOROOT</code> environment variable.</p>
+<pre><code>export GOROOT=$HOME/go
+</code></pre><p>To make <code>GOROOT</code> permanent add it to <code>.bashrc</code> or <code>.zshrc</code> depending on which shell you are using or else your <code>GOROOT</code> will be unset once you end your terminal session or start a new terminal session.</p>
+</li>
+</ul>
+<h3 id="macos-x">MacOS X</h3>
+<p>Install GO in MacOS using Homebrew.</p>
+<pre><code>brew install go
+</code></pre><h3 id="windows">Windows</h3>
+<p>Download the Windows installer from Go’s official <a href="https://golang.org/dl/">download</a> page. Open the installer and follow the on-screen instructions to install Go.
+By default, the installer installs Go in <code>C:\Go</code>.</p>
+<p><em>Once installed try <code>go version</code> to check the installation.</em></p>
+<h2 id="go-code-organization">Go Code organization</h2>
+<p><span style="color:DodgerBlue"><i>
+Note: After the introduction of <b>Go modules in Go 1.11</b>, its no longer required to store Go code in the Go workspace. You can create your Go project in any directory outside of <b>GOPATH</b>. You can refer to <b><a href="https://golang.org/doc/code.html">go docs on code organization</a></b>. The following Go Code organization is still widely in use mostly because of its elegant organizing structure.
+</i></span></p>
+<h3 id="workspace">Workspace</h3>
+<p>Go requires you to organize your code in a specific way -</p>
+<p>By convention, all your Go code and the code must reside in a single workspace whose path is stored in the environment variable <code>GOPATH</code>.</p>
+<p>The <code>workspace</code> dir is supposed to contain the following sub-dir:</p>
+<ul>
+<li>
+<p><code>src</code>: contains Go source files.</p>
+<p>The src directory typically contains many version control repositories containing one or more Go packages. Every Go source file belongs to a package. You generally create a new subdirectory inside your repository for every separate Go package. The tree for this looks like the following:</p>
+<pre><code>go
+└── src
+    └── github.com
+        ├── pratikjagrut
+        │   └── go-tutorial
+        │       └── helloworld
+        │           └── main.go
+        └── user
+            └── project
+</code></pre></li>
+<li>
+<p><code>bin</code>: contains the executable binaries.</p>
+<p>The <code>Go tool</code> builds and installs executable binaries to this directory.</p>
+</li>
+<li>
+<p><code>pkg</code>: contains Go package archives.</p>
+<p>All the non-executable packages (shared libraries) are stored in this directory. This is typically imported and used inside other executable packages.</p>
+</li>
+</ul>
+<h3 id="setting-gopath">Setting GOPATH</h3>
+<h4 id="linux-and-macos">Linux and macOS</h4>
+<pre><code>mkdir $HOME/go_workspace
+export GOPATH=$HOME/go_workspace
+</code></pre><p><em>To make <code>GOPATH</code> permanent add it to <code>.bashrc</code> or <code>.zshrc</code> depending on which shell you are using or else your <code>GOPATH</code> will be unset once you end your terminal session or start a new terminal session.</em></p>
+<h4 id="windows-system">Windows System</h4>
+<ul>
+<li>
+<p>Create the workspace folder at C:\go-workspace.</p>
+</li>
+<li>
+<p>Right-click on Start → click Control Panel → Select System and Security → click on System.</p>
+</li>
+<li>
+<p>From the menu on the left, select the Advanced system&rsquo;s settings.</p>
+</li>
+<li>
+<p>Click the Environment Variables button at the bottom.</p>
+</li>
+<li>
+<p>Click New from the User variables section.</p>
+</li>
+<li>
+<p>Type GOPATH into the Variable name field.</p>
+</li>
+<li>
+<p>Type C:\go-workspace into the Variable value field.</p>
+</li>
+<li>
+<p>Click OK.</p>
+</li>
+</ul>
+<p><em><strong>Note: GOPATH must be different than the path of your Go installation.</strong></em></p>
+<p><em><strong>Thank you for reading this blog please give your feedback in the comment section below.</strong></em></p>
+<hr>
+<a href="/blog/golang/series/contents">
+  <b style="color:DodgerBlue">
+    <i>• Contents</i>
+  </b>
+</a>  &emsp;
+<a href="/blog/golang/series/helloworld">
+    <b style="color:DodgerBlue">
+        <i>🡆 First program in Go: Hello World</i>
+    </b>
+</a>  &emsp;
+<br>
+<a href="https://github.com/pratikjagrut/go-tutorial/tree/master/00_installation" target="_blank">
+  <b style="color:DodgerBlue" class="fab fa-github">
+    <i>Github Repo</i>
+  </b>
+</a>  &emsp;
+<a href="https://github.com/pratikjagrut/go-tutorial/blob/master/REFERENCE.md" target="_blank">
+  <b style="color:DodgerBlue">
+    <i>&#128279; Reference</i>
+  </b>
+</a>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/golang/">golang</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/golang/">golang</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/programming/">programming</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/2020/">2020</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pratikjagrut-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/golang/series/helloworld/" class="button left"><span>Classic hello world program</span></a>
+    
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/git/aliases/" class="image">
+    <img src="https://pratikjagrut.dev/img/git/aliases.jpg" alt="git aliases">
+  </a>
+        <header>
+          <h2><a href="/blog/git/aliases/">Git aliases</a></h2>
+          <time class="published" datetime="2021-04-29 08:23:36 &#43;0530 IST">April 29, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/golang/series/contents/" class="image" style="--bg-image: url('https://pratikjagrut.dev/img/golang/logo.jpg');">
+    <img class="stretchV" src="https://pratikjagrut.dev/img/golang/logo.jpg" alt="golang">
+  </a>
+        <header>
+          <h2><a href="/blog/golang/series/contents/">Golang</a></h2>
+          <time class="published" datetime="2021-04-25 11:15:00 &#43;0530 IST">April 25, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/interface_part_2/">Interface Part-2</a></h2>
+          <time class="published" datetime="2021-04-25 10:46:37 &#43;0530 IST">April 25, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/interface_part_1/">Interface Part-1</a></h2>
+          <time class="published" datetime="2021-03-07 20:14:16 &#43;0530 IST">March 7, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/structs_part_2/">Structs part-2</a></h2>
+          <time class="published" datetime="2021-03-04 21:53:38 &#43;0530 IST">March 4, 2021</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">18</span></a>
+          
+          <li>
+              <a href="/categories/git/">git<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2021 Pratik Jagrut
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-189051592-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

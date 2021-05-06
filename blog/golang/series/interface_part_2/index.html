@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Interface Part-2 - Pratik Jagrut</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+  <meta property="og:title" content="Interface Part-2">
+  <meta property="og:description" content="Blog">
+  <meta property="description" content="Blog">
+  <meta property="og:url" content="https://pratikjagrut.dev/blog/golang/series/interface_part_2/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://pratikjagrut.dev/img/main/IMG_0239.JPG">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-sitemap'></i> Tags</a>
+        
+      
+        
+          
+          <a href="/resume/" class="nav link"><i class='far fa-id-card'></i> Resume</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Interface%20Part-2&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_2%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_2%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_2%2f&amp;title=Interface%20Part-2" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_2%2f&amp;title=Interface%20Part-2" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_2%2f&amp;description=Interface%20Part-2" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_2%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://pratikjagrut.dev/img/main/IMG_0239.JPG" class="circle" width="100" alt="Desktop Picture" /></a>
+  <header>
+    <h1>Pratik Jagrut</h1>
+  </header>
+  <main>
+    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/golang/series/interface_part_2/">Interface Part-2</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-04-25 10:46:37 &#43;0530 IST">April 25, 2021</time>
+    <p>Pratik Jagrut</p>
+    <p>9-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Interface%20Part-2&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_2%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_2%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_2%2f&amp;title=Interface%20Part-2" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_2%2f&amp;title=Interface%20Part-2" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_2%2f&amp;description=Interface%20Part-2" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2finterface_part_2%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      
+      <h2 id="type-assertion">Type assertion</h2>
+<p>Type assertion is used to get the underlying concrete value of the interface variable.
+<code>i.(Type)</code> this is the syntax of type assertion, where:</p>
+<p><code>i -&gt; interface variable</code></p>
+<p><code>Type -&gt; type that implements interface</code></p>
+<p>Let&rsquo;s see an example of type assertion.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person interface {
+    info() string
+}
+
+type Student struct {
+    name string
+}
+
+func (s Student) info() string {
+    return fmt.Sprintf(&quot;Student name is %s\n&quot;, s.name)
+}
+
+func main() {
+    s := Student{
+        name: &quot;Barry Allen&quot;,
+    }
+    var p Person = s
+    name := p.(Student)
+    fmt.Println(name)
+}
+</code></pre><pre><code>{Barry Allen}
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/fzNWgZvcdVk" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>In the above example, we create a Person interface which is then implicitly implemented by the Student struct by implementing the info method.
+<code>var p Person = s</code> this statement creates interface variable <code>p</code> and assign Student struct type variable <code>s</code> to it.
+<code>name := p.(Student)</code> this statement extracts the concrete value of type <code>Student</code> and assign it to the <code>name</code> variable.</p>
+<p>In the above program, type Student implements the Person interface hence <code>p.(Student)</code> can hold the concrete value of type Student.
+But if <code>Type</code> from <code>i.(Type)</code> does not implement the interface then Go will throw a compilation error. Below is an illustrative example.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person interface {
+    info() string
+}
+
+type Student struct {
+    name string
+}
+
+func main() {
+    var p Person
+    name := p.(Student)
+    fmt.Println(name)
+}
+</code></pre><pre><code>./prog.go:15:11: impossible type assertion:
+    Student does not implement Person (missing info method)
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/o7rOeX5EYKa" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>If the <code>Type</code> implements the interface but the concrete value of that type is not available then Go will panic in runtime.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person interface {
+    info() string
+}
+
+type Student struct {
+    name string
+}
+
+func (s Student) info() string {
+    return fmt.Sprintf(&quot;Student name is %s\n&quot;, s.name)
+}
+
+func main() {
+    var p Person
+    name := p.(Student)
+    fmt.Println(name)
+}
+</code></pre><pre><code>panic: interface conversion: main.Person is nil, not main.Student
+
+goroutine 1 [running]:
+main.main()
+    /tmp/sandbox657831697/prog.go:19 +0x45
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/yuLoDEbO3zr" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>Similarly, if the concrete type of interface variable does not match with <code>Type</code> of <code>i.(Type)</code> then Go will panic in runtime.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person interface {
+    info() string
+}
+
+type Student struct {
+    name string
+}
+
+func (s Student) info() string {
+    return fmt.Sprintf(&quot;Student name is %s\n&quot;, s.name)
+}
+
+type Teacher struct {
+    name string
+}
+
+func (s Teacher) info() string {
+    return fmt.Sprintf(&quot;Teacher name is %s\n&quot;, s.name)
+}
+
+func main() {
+    t := Teacher{
+        name: &quot;Richard Feynman&quot;,
+    }
+    var p Person = t
+    name := p.(Student)
+    fmt.Println(name)
+}
+</code></pre><pre><code>panic: interface conversion: main.Person is main.Teacher, not main.Student
+
+goroutine 1 [running]:
+main.main()
+    /tmp/sandbox133075599/prog.go:30 +0x45
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/-6kfh5zgUXj" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>To avoid the above panic errors Go has another way for type assertion.</p>
+<p><code>value, ok := i.(Type)</code></p>
+<p>In the above syntax, <code>Ok</code> is a boolean variable. It will be false if i.(Type) has no concrete value and vice versa.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Person interface {
+    info() string
+}
+
+type Student struct {
+    name string
+}
+
+func (s Student) info() string {
+    return fmt.Sprintf(&quot;Student name is %s\n&quot;, s.name)
+}
+
+type Teacher struct {
+    name string
+}
+
+func (s Teacher) info() string {
+    return fmt.Sprintf(&quot;Teacher name is %s\n&quot;, s.name)
+}
+
+func main() {
+    var p Person
+    name, ok := p.(Student)
+    fmt.Println(name, ok)
+
+    t := Teacher{
+        name: &quot;Richard Feynman&quot;,
+    }
+    var p1 Person = t
+    name, ok = p1.(Student)
+    fmt.Println(name, ok)
+}
+</code></pre><pre><code>{} false
+{} false
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/8ox44oLj9d_4" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<h2 id="type-switch">Type switch</h2>
+<p>Type switch is similar to switch case statement where type switch compares the concrete type of an interface against types specified in cases. Below is the syntax of the type switch:</p>
+<pre><code>switch i.(type) {
+    case float32:
+        // Something to do
+    case int:
+        // Logic
+    default:
+        // Default logic
+    }
+</code></pre><p>Here <code>i.(type)</code> syntax is fairly similar to type assertion syntax, where <code>i</code> is interface but instead of <code>value type</code> we use keyword <code>type</code>.</p>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func guessType(i interface{}) {
+    switch i.(type) {
+    case string:
+        fmt.Println(&quot;It is string&quot;)
+    case int:
+        fmt.Println(&quot;It is Int&quot;)
+    case bool:
+        fmt.Println(&quot;It is boolean&quot;)
+    default:
+        fmt.Println(&quot;IDK&quot;)
+    }
+}
+
+func main() {
+    guessType(10)
+    guessType(&quot;Hello&quot;)
+    guessType(true)
+    guessType(10.11)
+}
+</code></pre><pre><code>It is Int
+It is string
+It is boolean
+IDK
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/Z5RM_vGPSWF" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>In the above example, we&rsquo;re passing an empty interface as an argument to function.
+The empty interface is implemented by all the type so we can pass any type of parameter while calling that function.</p>
+<p><code>i.(type)</code> evaluates the concrete type of an interface and then a matching case is executed if none of the cases is matched then the default case is executed.</p>
+<h2 id="implementing-interfaces-using-pointer-receivers-vs-value-receivers">Implementing interfaces using pointer receivers vs value receivers</h2>
+<p>In Golang methods can have both pointer or value as a receiver which restricts the accessibility of methods only to the type of its receiver.
+Methods from an interface can also pointer or value as a receiver in their implementation.</p>
+<p><em><strong>Implementing interface with value receiver</strong></em></p>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+)
+
+type Car interface {
+    information()
+}
+
+type Ferrari struct {
+    name   string
+    colour string
+}
+
+func (f Ferrari) information() {
+    fmt.Printf(&quot;Name of the car: %s\n&quot;, f.name)
+    fmt.Printf(&quot;Colour of the car: %s\n&quot;, f.colour)
+    fmt.Println()
+}
+
+func main() {
+    var c1 Car
+
+    f := Ferrari{
+        name:   &quot;SF90 STRADALE&quot;,
+        colour: &quot;ROSSO CORSA&quot;,
+    }
+    c1 = f
+    c1.information()
+
+}
+</code></pre><pre><code>Name of the car: SF90 STRADALE
+Colour of the car: ROSSO CORSA
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/D0hHbX-1g90" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>In the above code, type <code>Ferrari</code> is implementing method <code>information</code> from an interface <code>Car</code> with a value receiver and in the main function, we&rsquo;re assigning variable <code>f</code> of struct <code>Ferrari</code> to variable <code>c1</code> of an interface <code>Car</code> and then calling <code>information</code> method using interface variable.</p>
+<p><em><strong>Implementing interface with pointer receiver</strong></em></p>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+)
+
+type Car interface {
+    information()
+}
+type Porsche struct {
+    name   string
+    colour string
+}
+
+func (p *Porsche) information() {
+    fmt.Printf(&quot;Name of the car: %s\n&quot;, p.name)
+    fmt.Printf(&quot;Colour of the car: %s\n&quot;, p.colour)
+    fmt.Println()
+}
+
+func main() {
+
+    p := &amp;Porsche{
+        name:   &quot;718 SPYDER&quot;,
+        colour: &quot;BLACK&quot;,
+    }
+    var c2 Car = p
+    c2.information()
+}
+</code></pre><pre><code>Name of the car: 718 SPYDER
+Colour of the car: BLACK
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/fGVGiYL3qrJ" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>In the above code, type <code>Porsche</code> is implementing method <code>information</code> from an interface <code>Car</code> with a pointer receiver and in the main function we&rsquo;re assigning variable pointer <code>p</code> of struct <code>Porsche</code> to variable <code>c2</code> of an interface <code>Car</code> and then calling <code>information</code> method using interface variable.</p>
+<p>In Golang, a method with value receiver or pointer receiver can be called on either value or pointer.
+It means if you&rsquo;re implementing a method with a value receiver then you can use a value or pointer of that type to call that method.</p>
+<p><strong>But in the case of an interface does this phenomenon work?</strong></p>
+<p><em><strong>Calling method with value receiver on pointer type</strong></em></p>
+<p>In the below code, we implement the method <code>information</code> with value receiver and call it on pointer type.</p>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+)
+
+type Car interface {
+    information()
+}
+
+type Ferrari struct {
+    name   string
+    colour string
+}
+
+func (f Ferrari) information() {
+    fmt.Printf(&quot;Name of the car: %s\n&quot;, f.name)
+    fmt.Printf(&quot;Colour of the car: %s\n&quot;, f.colour)
+    fmt.Println()
+}
+
+func main() {
+    var c Car
+    f1 := &amp;Ferrari{
+        name:   &quot;SF90 STRADALE&quot;,
+        colour: &quot;ROSSO CORSA&quot;,
+    }
+    c = f1
+    c.information()
+}
+</code></pre><pre><code>Name of the car: SF90 STRADALE
+Colour of the car: ROSSO CORSA
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/6OS8urGqkA5" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>In the above code, the pointer to value conversion is done by Golang implicitly.
+It is valid to call a method with value type on any value or anything whose value can be dereferenced.</p>
+<p><em><strong>Calling method with pointer receiver on value type</strong></em></p>
+<p>In the below code, we implement the method <code>information</code> with pointer receiver and call it on the value type.</p>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+)
+
+type Car interface {
+    information()
+}
+
+type Porsche struct {
+    name   string
+    colour string
+}
+
+func (p *Porsche) information() {
+    fmt.Printf(&quot;Name of the car: %s\n&quot;, p.name)
+    fmt.Printf(&quot;Colour of the car: %s\n&quot;, p.colour)
+    fmt.Println()
+}
+
+func main() {
+    var c Car
+
+    p := Porsche{
+        name:   &quot;718 SPYDER&quot;,
+        colour: &quot;BLACK&quot;,
+    }
+    c = p
+    c.information()
+
+}
+</code></pre><pre><code>./prog.go:29:4: cannot use p (type Porsche) as type Car in assignment:
+    Porsche does not implement Car (information method has pointer receiver)
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/cP0WQqvbQbr" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<p>In the above code, we&rsquo;re implementing the <code>information</code> method using pointer receiver and then calling it on value type instead of a pointer, and we&rsquo;re getting compilation error.
+<em>So what&rsquo;s happening?</em></p>
+<p>If we look at the implementation of the <code>information</code> method it has a pointer receiver and we&rsquo;re calling it on <code>p</code> which is a value type and does not implement the <code>Car</code> interface.
+Hence we see the compilation error.</p>
+<p>But in Golang, the method with value receiver or pointer receiver can be called on either value or pointer then why is this failing here?</p>
+<p>This is because: it is completely valid to call the pointer receiver method on a pointer or on anything value whose address can be acquired that value which is addressable.
+In this case, the value type is assigned to the interface variable which is now a concrete value of the interface whose address can not be obtained and hence we get that compilation error.</p>
+<p><em><strong>Note: If we call a method directly with struct variable then this issue will not occur.</strong></em></p>
+<h2 id="comparing-interfaces-variables">Comparing interface&rsquo;s variables</h2>
+<p>The two interface variables are comparable only if the <code>concrete value and concrete type</code> are comparable.
+Interface variables can be compared with <code>==</code> and <code>!=</code> operators.</p>
+<p>If the concrete types or concrete values are not the same then the interface variables are not equal.
+If the concrete types or concrete values are the same then the interface variables are equal.
+Variables of an empty interface are always equal.
+<em><strong><a href="https://Golang.org/ref/spec#Comparison_operators" style="color:DodgerBlue" target="_blank">Read more on Golang comparison operators.</a></strong></em></p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Int int
+
+func (i Int) String() string {
+    return fmt.Sprintf(&quot;Value of Int is %d&quot;, i)
+}
+
+type Float float32
+
+func (f Float) String() string {
+    return fmt.Sprintf(&quot;Value of Float is %f&quot;, f)
+}
+
+func main() {
+    var i Int = 10
+    var f Float = 5.5
+
+    var v1 fmt.Stringer = i
+    var v2 fmt.Stringer = f
+
+    fmt.Println(v1 == v2) // false, because concrete types are not same
+
+    var i1 Int = 6
+    var v3 fmt.Stringer = i1
+
+    fmt.Println(v1 == v3) // false, because concrete values are not same
+
+    var f2 Float = 5.5
+    var v4 fmt.Stringer = f2
+
+    fmt.Println(v2 == v4) // true
+
+    var m, n interface{}
+    fmt.Println(m == n) // true
+}
+</code></pre><p><em><strong><a href="https://play.Golang.org/p/crqoWj9PbmQ" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
+<h3 id="some-good-resources-to-read">Some good resources to read</h3>
+<p><em><strong><a href="https://research.swtch.com/interfaces" style="color:#2eb8ac" target="_blank">Go Data Structures: Interfaces by Russ Cox</a></strong></em></p>
+<p><em><strong><a href="https://blog.golang.org/laws-of-reflection" style="color:#2eb8ac" target="_blank">The Laws of Reflection by Rob Pike</a></strong></em></p>
+<p><em><strong>Thank you for reading this blog please give your feedback in the comment section below.</strong></em></p>
+<hr>
+<a href="/blog/golang/series/interface_part_1">
+  <b style="color:DodgerBlue">
+    <i>🡄 Interface Part-1</i>
+  </b>
+</a> &emsp;
+<a href="/blog/golang/series/contents">
+  <b style="color:DodgerBlue">
+    <i>• Contents</i>
+  </b>
+</a>  &emsp;
+<!-- <a href="/blog/golang/series/">
+    <b style="color:DodgerBlue">
+        <i> 🡆</i>
+    </b>
+</a>  &emsp; -->
+<br>
+<a href="https://github.com/pratikjagrut/go-tutorial" target="_blank">
+  <b style="color:DodgerBlue" class="fab fa-github">
+    <i>Github Repo</i>
+  </b>
+</a>  &emsp;
+<a href="https://github.com/pratikjagrut/go-tutorial/blob/master/REFERENCE.md" target="_blank">
+  <b style="color:DodgerBlue">
+    <i>&#128279; Reference</i>
+  </b>
+</a>
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/golang/">golang</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/golang/">golang</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/programming/">programming</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/2021/">2021</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pratikjagrut-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/golang/series/contents/" class="button left"><span>Golang</span></a>
+    
+    
+      <a href="/blog/golang/series/interface_part_1/" class="button right"><span>Interface Part-1</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/git/aliases/" class="image">
+    <img src="https://pratikjagrut.dev/img/git/aliases.jpg" alt="git aliases">
+  </a>
+        <header>
+          <h2><a href="/blog/git/aliases/">Git aliases</a></h2>
+          <time class="published" datetime="2021-04-29 08:23:36 &#43;0530 IST">April 29, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/golang/series/contents/" class="image" style="--bg-image: url('https://pratikjagrut.dev/img/golang/logo.jpg');">
+    <img class="stretchV" src="https://pratikjagrut.dev/img/golang/logo.jpg" alt="golang">
+  </a>
+        <header>
+          <h2><a href="/blog/golang/series/contents/">Golang</a></h2>
+          <time class="published" datetime="2021-04-25 11:15:00 &#43;0530 IST">April 25, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/interface_part_2/">Interface Part-2</a></h2>
+          <time class="published" datetime="2021-04-25 10:46:37 &#43;0530 IST">April 25, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/interface_part_1/">Interface Part-1</a></h2>
+          <time class="published" datetime="2021-03-07 20:14:16 &#43;0530 IST">March 7, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/structs_part_2/">Structs part-2</a></h2>
+          <time class="published" datetime="2021-03-04 21:53:38 &#43;0530 IST">March 4, 2021</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">18</span></a>
+          
+          <li>
+              <a href="/categories/git/">git<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2021 Pratik Jagrut
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-189051592-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

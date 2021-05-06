@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2020 on Pratik Jagrut</title>
+    <link>https://pratikjagrut.dev/tags/2020/</link>
+    <description>Recent content in 2020 on Pratik Jagrut</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 22 Dec 2020 16:08:06 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/2020/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arrays and Slices</title>
+      <link>https://pratikjagrut.dev/blog/golang/series/array_slice/</link>
+      <pubDate>Tue, 22 Dec 2020 16:08:06 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/series/array_slice/</guid>
+      <description>Array The array is a collection of the same type of element in a contiguous memory location. The array has fixed length i.e the number of elements to be stored is fixed before memory allocation.
+Array Declarations An array type definition specifies length and type of element. The array [n]T is of length n and type T.
+// This array can hold 3 integers. var i [3]int Arrays can be indexed in usual way, to access the nth element we can do a[n].</description>
+    </item>
+    
+    <item>
+      <title>Switch</title>
+      <link>https://pratikjagrut.dev/blog/golang/series/switch/</link>
+      <pubDate>Tue, 22 Dec 2020 14:35:42 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/series/switch/</guid>
+      <description>A switch statement is another way to write a sequence of if - else statements.
+Go&amp;rsquo;s switch is like the one in C and C++ except that it only runs the selected case, not all the cases that follows so we don&amp;rsquo;t need break statement here.
+switch expression { case exp1: //Executes if expression matches exp1 case exp2: //Executes if expression matches exp2 default: //Executes if expression does not matches with any case } Switch evaluation order Switch cases evaluate cases from top to bottom and stops when a case succeeds.</description>
+    </item>
+    
+    <item>
+      <title>Conditional Statements</title>
+      <link>https://pratikjagrut.dev/blog/golang/series/if_else/</link>
+      <pubDate>Mon, 21 Dec 2020 22:18:32 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/series/if_else/</guid>
+      <description>Conditional Statements are part of every programming language. They help us to decide which instruction is suppose to run when certain condition is met. e.g. If I&amp;rsquo;m hungry then I&amp;rsquo;ll eat else I&amp;rsquo;ll wait. e.g. If score is greater than 35%, you passed, else you failed.
+If statement in Go if condition/expression { //instruction to be performed } Condition needs to be true to perform the given set of instructions.</description>
+    </item>
+    
+    <item>
+      <title>Looping Construct</title>
+      <link>https://pratikjagrut.dev/blog/golang/series/for_loop/</link>
+      <pubDate>Mon, 21 Dec 2020 19:34:10 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/series/for_loop/</guid>
+      <description>Go has only one looping construct, the for loop.
+Basic for loop The basic for loop has three components separated by semicolons:
+ init statement: i := 0 exec before 1st iteration condition expression: i &amp;lt; n eval on every interation post statement: i++ exec after each iteration  The expression is not surrounded by parentheses ( ) but the braces { } around set of instructions are required.
+for i := 0; i &amp;lt; n; i++ { //business logic //set of instructions } Init and post statement are optional.</description>
+    </item>
+    
+    <item>
+      <title>Variables, data types and constants</title>
+      <link>https://pratikjagrut.dev/blog/golang/series/vdc/</link>
+      <pubDate>Sun, 20 Dec 2020 18:34:48 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/series/vdc/</guid>
+      <description>Variable Variable is a symbolic name given to the storage location which contains some value which can be changed at any time during the execution of the program. A variable must be defined with the type of data or value it is holding.
+Data types There are several data types in Go.
+bool int uint float32 complex64 string int8 uint8 float64 complex128 byte int16 uint16 rune int32 uint32 error int64 uint64 Zero value In some programming languages variable holds a null or undefined value when not initialized, Go gives it a zero-value of its data type.</description>
+    </item>
+    
+    <item>
+      <title>Classic hello world program</title>
+      <link>https://pratikjagrut.dev/blog/golang/series/helloworld/</link>
+      <pubDate>Sat, 19 Dec 2020 21:48:51 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/series/helloworld/</guid>
+      <description>First thing, packages In Go, source files are organized into system directories called packages, which enable code reusability. When you build reusable pieces of code, you will develop a package as a shared library. But when you develop executable programs, you will use the package main for making the package as an executable program. The package main tells the Go compiler that the package should compile as an executable program instead of a shared library.</description>
+    </item>
+    
+    <item>
+      <title>Go Introduction and Installation</title>
+      <link>https://pratikjagrut.dev/blog/golang/series/introduction/</link>
+      <pubDate>Sat, 19 Dec 2020 17:23:49 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/series/introduction/</guid>
+      <description>Go is an open-source, statically typed, compiled programing language built by Google. It combines the simplest of both statically typed and dynamically typed languages and provides you with the proper mixture of efficiency and simple programming. It is primarily fitted to building fast, efficient, and reliable server-side or system applications.
+Following are some noted features of Go -
+ Safety Concurrency Efficient Garbage Collection High-speed compilation Excellent Tooling support  Installing GO Go binary distributions are available for all major operating systems like Linux, Windows, and macOS.</description>
+    </item>
+    
+  </channel>
+</rss>
