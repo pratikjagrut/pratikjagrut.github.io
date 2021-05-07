@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Git aliases - Pratik Jagrut</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+  <meta property="og:title" content="Git aliases">
+  <meta property="og:description" content="Blog">
+  <meta property="description" content="Blog">
+  <meta property="og:url" content="https://pratikjagrut.dev/blog/git/2021/aliases/">
+  <meta property="og:type" content="article">
+  
+    
+      <meta property="og:image" content="https://pratikjagrut.dev/img/git/aliases.jpg">
+      <meta property="og:image:alt" content="git aliases">
+    
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-sitemap'></i> Tags</a>
+        
+      
+        
+          
+          <a href="/resume/" class="nav link"><i class='far fa-id-card'></i> Resume</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Git%20aliases&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgit%2f2021%2faliases%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgit%2f2021%2faliases%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgit%2f2021%2faliases%2f&amp;title=Git%20aliases" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgit%2f2021%2faliases%2f&amp;title=Git%20aliases" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgit%2f2021%2faliases%2f&amp;description=Git%20aliases" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgit%2f2021%2faliases%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://pratikjagrut.dev/img/main/IMG_0239.JPG" class="circle" width="100" alt="Desktop Picture" /></a>
+  <header>
+    <h1>Pratik Jagrut</h1>
+  </header>
+  <main>
+    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/git/2021/aliases/">Git aliases</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-04-29 08:23:36 &#43;0530 IST">April 29, 2021</time>
+    <p>Pratik Jagrut</p>
+    <p>7-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Git%20aliases&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgit%2f2021%2faliases%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgit%2f2021%2faliases%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgit%2f2021%2faliases%2f&amp;title=Git%20aliases" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgit%2f2021%2faliases%2f&amp;title=Git%20aliases" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgit%2f2021%2faliases%2f&amp;description=Git%20aliases" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgit%2f2021%2faliases%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/git/2021/aliases/" class="image">
+    <img src="https://pratikjagrut.dev/img/git/aliases.jpg" alt="git aliases">
+  </a>
+      <p>Git is the most widely used <em><strong><code>Version Control System (VCS)</code></strong></em> or <em><strong><code>Source Code Management(SCM)</code></strong></em> software.
+It is a day-to-day go-to tool for many of the developers out there.
+And many developers use terminal/command line to operate it.</p>
+<p>In the terminal we type git commands <em><strong><code>git &lt;sub-command&gt; &lt;flag&gt;</code></strong></em> it runs if it succeeds we&rsquo;re happy.
+On day-to-day basis we mostly use repetitive commands like <em><strong><code>git pull &lt;remote&gt; &lt;branch&gt;</code></strong></em>, <em><strong><code>git push &lt;remote&gt; &lt;branch&gt;</code></strong></em>, <em><strong><code>git commit</code></strong></em> and many other and sometimes we use prolonged commands like this one <em><strong><code>git log --graph --pretty=format:'%Cred%h%Creset %Cgreen%cr%Creset -%C(yellow)%d%Creset %s %C(bold blue)[%cn]%Creset' --abbrev-commit --date=relative</code></strong></em> which prints commit history in custom fashion.</p>
+<p>Typing those repetitive or lengthy, complex commands with too many arguments could be erroneous and could decrease our efficiency ensuing less productivity.</p>
+<p>In this article, we&rsquo;ll learn how to run Git command efficiently and develop a more productive Git workflow using Aliases.</p>
+<p><em><strong>NOTE: The aliases in this article are my personal choice influenced by my day-to-day Git interaction.</strong></em></p>
+<h2 id="what-is-an-alias">What is an alias?</h2>
+<p>Aliases are short commands assigned to a particular command. It can be visualized as a shortcut for any command.</p>
+<p>Creating an alias serves some basic needs:</p>
+<ul>
+<li>
+<p>It helps to shorten the lengthy command and saves us from tedious, erroneous typing.</p>
+</li>
+<li>
+<p>It saves us from memorizing complex commands.</p>
+</li>
+<li>
+<p>Creates abridged commands for regularly used commands ensuing in an increase in productivity.</p>
+</li>
+</ul>
+<p><em><strong>We can use two types of aliases for Git commands:</strong></em></p>
+<ul>
+<li>Bash alias</li>
+<li>Git alias</li>
+</ul>
+<p>We&rsquo;ll look into both.</p>
+<h2 id="bash-alias">Bash Alias</h2>
+<p>Defining a bash alias is a simple task. Below is a command for it.</p>
+<pre><code>alias g='git'
+</code></pre><p>And done, we&rsquo;ve <code>g</code> as an alias for the <code>git</code> command.</p>
+<p>But this alias is not persistent as soon as you end the terminal session the alias is gone.
+To make it persistent we&rsquo;ve to add this alias in <em><strong><code>.bashrc</code></strong></em> if you use the bash shell or <em><strong><code>.zshrc</code></strong></em> if you use zsh.
+These files are mostly located in you&rsquo;re home directory.</p>
+<p>To know what shell you&rsquo;re using type echo</p>
+<pre><code>echo &quot;$SHELL&quot;
+/usr/bin/zsh
+</code></pre><p>For the git command, I&rsquo;ve two bash aliases <code>g</code> and <code>gt</code>.
+Sometimes due to old habit, I tend to type <code>git</code> instead of <code>g</code> and while doing that sometimes I miss the <code>i</code> in <code>git</code> so to avoid throwing an error I added <code>gt</code> as an alias in <code>.zshrc</code>.</p>
+<pre><code>alias g='git'
+alias gt='git'
+</code></pre><h2 id="git-alias">Git alias</h2>
+<p>To define a git alias we use the <em><strong><code>git config</code></strong></em> command.
+We can define two types of aliases in Git.</p>
+<ul>
+<li>
+<p><em><strong><code>Global aliases</code></strong></em>, which are stored in <em><strong><code>.gitconfig</code></strong></em> file which is mainly located in the home directory. These aliases are available to all git repositories present in the system. Command to define global alias:</p>
+<pre><code>git config --global alias.&lt;alias_name&gt; '&lt;command&gt;'
+</code></pre><pre><code>or you can directly edit the .gitconfig file.
+</code></pre></li>
+<li>
+<p><em><strong><code>Local aliases</code></strong></em>, which are stored in <em><strong><code>.git/config</code></strong></em> file of the particular project. These aliases are not available to any other repository. Command to define local alias:</p>
+<pre><code>git config alias.&lt;alias_name&gt; '&lt;command&gt;'
+</code></pre><pre><code>or you can directly edit the .git/config file.
+</code></pre></li>
+</ul>
+<h3 id="some-useful-git-aliases">Some useful git aliases</h3>
+<ul>
+<li>
+<h4 id="git-status">Git Status</h4>
+<p><em><strong><code>git status</code></strong></em> is a command which is used very frequently to see changed or untracked files.</p>
+<pre><code>git config --global alias.st 'status'
+</code></pre><p>So now instead of <em><strong><code>git status</code></strong></em> we can just type <em><strong><code>git st</code></strong></em> or <em><strong><code>g st</code></strong></em> if bash alias <em><strong><code>g=git</code></strong></em> is set.
+This is the benefit of using aliases, the whole command can be converted into few characters.</p>
+<pre><code>$ g st
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+</code></pre><p>The git will store this alias in .gitconfig file under <code>[alias]</code> section as <code>st = status</code>.</p>
+</li>
+<li>
+<h4 id="git-pull">Git Pull</h4>
+<p><em><strong><code>git pull &lt;remote&gt; &lt;ref/branch&gt;</code></strong></em> this command pulls the code from specified remote branch.</p>
+<pre><code>git config --global alias.pl 'pull'
+</code></pre><p>Now the pull command will be <em><strong><code>git pl &lt;remote&gt; &lt;ref/branch&gt;</code></strong></em>.</p>
+<p>We can shorten it further depending on remote and branch.</p>
+<pre><code>git config --global alias.plo 'pull origin'
+</code></pre><p>Now the command <em><strong><code>git plo main</code></strong></em> is the same as <em><strong><code>git pull origin main</code></strong></em>.</p>
+<p>We can create dedicated alias for <em><strong><code>git pull origin main</code></strong></em></p>
+<pre><code>git config --global alias.plom 'pull origin main'
+</code></pre><p>Now the entire command is abridged, <em><strong><code>git plom</code></strong></em>.</p>
+</li>
+<li>
+<h4 id="git-checkout">Git Checkout</h4>
+<p><em><strong><code>git checkout</code></strong></em> Switch branches or restore working tree files.</p>
+<pre><code>git config --global alias.co 'checkout'
+</code></pre><p>Now we can use <em><strong><code>git co &lt;branch&gt;</code></strong></em> to checkout that branch.</p>
+<p>To create new branch we use <em><strong><code>git checkout -b &lt;new_branch&gt; &lt;start_point&gt;</code></strong></em></p>
+<pre><code>git config --global alias.cnb 'checkout -b'
+</code></pre><p>So now we can ues <em><strong><code>git cnb &lt;new_branch&gt; &lt;start_point&gt;</code></strong></em></p>
+</li>
+<li>
+<h4 id="git-branch">Git Branch</h4>
+<p><em><strong><code>git branch</code></strong></em> List, create, or delete branches</p>
+<pre><code>git config --global alias.br 'branch'
+</code></pre><pre><code>$ git br
+
+* branch1
+main
+</code></pre></li>
+<li>
+<h4 id="git-add">Git add</h4>
+<p><em><strong><code>git add &lt;pathspec&gt;...</code></strong></em> adds file contents to the index</p>
+<pre><code>git config --global alias.a 'add'
+</code></pre><p>The command will be <code>git a &lt;pathspec&gt;...</code></p>
+<p>To add all the files (changed + untracked) we can do <em><strong><code>git add .</code></strong></em>.</p>
+<pre><code>git config --global alias.aa 'add .'
+</code></pre><p>Now to add all files we can use <em><strong><code>git aa</code></strong></em></p>
+</li>
+<li>
+<h4 id="git-commit">Git commit</h4>
+<p>After adding files to the index we use <em><strong><code>git commit</code></strong></em> to record changes to the repository.
+For git commit alias could be:</p>
+<pre><code>git config --global alias.ci 'commit'
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git ci
+
+<span style="color:#f92672">[</span>update.theme 89f083e<span style="color:#f92672">]</span> Update CR yaml
+<span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">1</span> insertion<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>
+create mode <span style="color:#ae81ff">100644</span> cr.yaml
+</code></pre></div></li>
+<li>
+<h4 id="git-push">Git push</h4>
+<p>Once your changes are committed and you need to update the remote reference with new changes we use <em><strong><code>git push &lt;remote&gt; &lt;branch&gt;</code></strong></em></p>
+<pre><code>git config --global alias.p 'push'
+</code></pre><p>We can shorten it further depending on remote and branch.</p>
+<pre><code>git config --global alias.po 'push origin'
+</code></pre><p>Now the command <em><strong><code>git po main</code></strong></em> is the same as <em><strong><code>git push origin main</code></strong></em>.</p>
+<p>We can create dedicated alias for <em><strong><code>git push origin main</code></strong></em></p>
+<pre><code>git config --global alias.pom 'push origin main'
+</code></pre><p>Now the entire command is abridged, <em><strong><code>git pom</code></strong></em>.</p>
+</li>
+<li>
+<h4 id="git-log">Git log</h4>
+<p><em><strong><code>git log</code></strong></em> is one of the most important commands in git. It shows us the commit history.
+Now there are various ways of seeing commit history, depending on how we wanna see commit history we can use the flags.</p>
+<p>I usually use these three aliases for log.</p>
+<p>This alias shows complete commit logs with the addition and deletion stats.</p>
+<pre><code>git config --global alias.lg 'log --stat'
+</code></pre><pre><code>$ git lg
+  
+commit 8b6ac3a9789002a2c578139c830f17b9e18b53f7 (HEAD -&gt; git.aliases, origin/main, origin/HEAD, update.theme)
+Author: Pratik Jagrut &lt;26519653+pratikjagrut@users.noreply.github.com&gt;
+Date:   Sat May 1 21:47:48 2021 +0530
+
+    Update public directory
+
+public | 2 +-
+1 file changed, 1 insertion(+), 1 deletion(-)
+</code></pre><p>This alias draws a text-based graphical representation of the commit history printed in between commits with relative time.</p>
+<pre><code>git config --global alias.lgdr &quot;log --graph --pretty=format:'%Cred%h%Creset %Cgreen%cr%Creset -%C(yellow)%d%Creset %s %C(bold blue)[%cn]%Creset' --abbrev-commit --date=relative&quot;
+</code></pre><pre><code>$ git lgdr
+
+* 8b6ac3a 6 hours ago - (HEAD -&gt; git.aliases, origin/main, origin/HEAD, update.theme) Update public directory [Pratik Jagrut]
+* f47c1c6 6 hours ago - Update theme [Pratik Jagrut]
+</code></pre><p>This alias draws a text-based graphical representation of the commit history printed in between commits with a short format of the date.</p>
+<pre><code>git config --global alias.lgds &quot;log --graph --pretty=format:'%Cred%h%Creset %Cgreen%cr%Creset -%C(yellow)%d%Creset %s %C(bold blue)[%cn]%Creset' --abbrev-commit --date=short
+</code></pre><pre><code>$ git lgds
+
+* 8b6ac3a 2021-05-01 - (HEAD -&gt; git.aliases, origin/main, origin/HEAD, update.theme) Update public directory [Pratik Jagrut]
+* f47c1c6 2021-05-01 - Update theme [Pratik Jagrut]
+</code></pre></li>
+</ul>
+<p><em><strong>Here&rsquo;s the .gitconfig file for all the above aliases.</strong></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#f92672">[</span>alias<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  st <span style="color:#f92672">=</span> status<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  pl <span style="color:#f92672">=</span> pull<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  plo <span style="color:#f92672">=</span> pull origin<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  plom <span style="color:#f92672">=</span> pull origin main<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  co <span style="color:#f92672">=</span> checkout<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  cnb <span style="color:#f92672">=</span> checkout -b<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  br <span style="color:#f92672">=</span> branch<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  a <span style="color:#f92672">=</span> add<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  aa <span style="color:#f92672">=</span> add .<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  ci <span style="color:#f92672">=</span> commit<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  p <span style="color:#f92672">=</span> push<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  po <span style="color:#f92672">=</span> push origin<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  pom <span style="color:#f92672">=</span> push origin main<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  lg <span style="color:#f92672">=</span> log --stat<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  lgdr <span style="color:#f92672">=</span> log --graph --pretty<span style="color:#f92672">=</span>format:<span style="color:#e6db74">&#39;%Cred%h%Creset %Cgreen%cr%Creset -%C(yellow)%d%Creset %s %C(bold blue)[%cn]%Creset&#39;</span> --abbrev-commit --date<span style="color:#f92672">=</span>relative<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  lgds <span style="color:#f92672">=</span> log --graph --pretty<span style="color:#f92672">=</span>format:<span style="color:#e6db74">&#39;%Cred%h%Creset %Cgreen%cd%Creset -%C(yellow)%d%Creset %s %C(bold blue)[%cn]%Creset&#39;</span> --abbrev-commit --date<span style="color:#f92672">=</span>short<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p><b style="color:#3269a8"><i>These were some of the aliases from my list, you can make more aliases for sub-commands like branch, remote, diff, config, etc&hellip;</i></b></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Git aliases are a very useful feature. They help to improve the overall efficiency and productivity of git workflow.
+We can define as many aliases as we want, Git is too generous. It is always good to have aliases for regularly used and lengthy commands.</p>
+<p><b style="color:#cc3300"><i><em><strong>Thank you for reading this blog please give your feedback in the comment section below.</strong></em></i></b></p>
+<hr>
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/git/">git</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/2021/">2021</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/git/">git</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/programming/">programming</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pratikjagrut-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/blog/golang/series/contents/" class="button right"><span>Golang</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/git/2021/aliases/" class="image">
+    <img src="https://pratikjagrut.dev/img/git/aliases.jpg" alt="git aliases">
+  </a>
+        <header>
+          <h2><a href="/blog/git/2021/aliases/">Git aliases</a></h2>
+          <time class="published" datetime="2021-04-29 08:23:36 &#43;0530 IST">April 29, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/golang/series/contents/" class="image" style="--bg-image: url('https://pratikjagrut.dev/img/golang/logo.jpg');">
+    <img class="stretchV" src="https://pratikjagrut.dev/img/golang/logo.jpg" alt="golang">
+  </a>
+        <header>
+          <h2><a href="/blog/golang/series/contents/">Golang</a></h2>
+          <time class="published" datetime="2021-04-25 11:15:00 &#43;0530 IST">April 25, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/interface_part_2/">Interface Part-2</a></h2>
+          <time class="published" datetime="2021-04-25 10:46:37 &#43;0530 IST">April 25, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/interface_part_1/">Interface Part-1</a></h2>
+          <time class="published" datetime="2021-03-07 20:14:16 &#43;0530 IST">March 7, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/structs_part_2/">Structs part-2</a></h2>
+          <time class="published" datetime="2021-03-04 21:53:38 &#43;0530 IST">March 4, 2021</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">18</span></a>
+          
+          <li>
+              <a href="/categories/git/">git<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2021 Pratik Jagrut
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-189051592-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>
