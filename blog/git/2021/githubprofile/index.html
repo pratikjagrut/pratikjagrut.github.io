@@ -254,7 +254,7 @@
     <img src="https://pratikjagrut.dev/img/git/github.png" alt="github banner">
   </a>
       <p>Today Github is the behemoth platform for opensource projects.
-There would not be a single person in opensource community who don&rsquo;t use GitHub.
+There would not be a single person in the opensource community who don&rsquo;t use GitHub.
 And there could be a very little or minuscule number of the developer who doesn&rsquo;t have GitHub profile.
 Github is not only the home for best opensource projects but also a place where developers could showcase their talent via a panoply of projects.</p>
 <p>Below is the default GitHub profile page that shows the name, contact information and some repositories.</p>
@@ -262,7 +262,9 @@ Github is not only the home for best opensource projects but also a place where 
 <p>A few months back, Github launched a new feature that lets us customize our profile page using the README file.
 README is a repository or project level file used for documenting the project.
 README.md is written in <code>Markdown(lightweight markup language)</code> that converts text to HTML.</p>
-<p>In this blog post, I will show how I customized my Github profile using the README file.</p>
+<h4 id="in-this-blog-post-i-will-show-how-i-customized-my-mundane-github-profile-using-the-readme-file">In this blog post, I will show how I customized my mundane Github profile using the README file.</h4>
+<p><a href="https://github.com/pratikjagrut" target="_blank"><img src="/img/git/ghprofile.png" alt="GitHub default profile page"></a>
+</p>
 <h2 id="create-a-new-repository-with-the-username">Create a new repository with the username</h2>
 <pre><code>1. Make sure your repository name matches the Github username.
 2. Make a public repository.
@@ -275,10 +277,14 @@ They have a good collection of free templates.</p>
 <p><img src="/img/git/ghbanner.png" alt="Create repo"></p>
 <p>I&rsquo;m keeping this image in the <code>img</code> directory.
 Now I want it to be at the top, so I put the link to the banner image on the first line of my README file.</p>
-<p>Below is the markdown syntax for linking an image with a URL.</p>
+<p>To add an image in the README file, use the following syntax.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile">!<span style="color:#f92672">[</span>Pratik<span style="color:#960050;background-color:#1e0010">&#39;</span>s GitHub Banner<span style="color:#f92672">](</span>./img/banner1.png<span style="color:#f92672">)</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>If you want to make an image, a link that will open your blog or some other sites, use the following syntax.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#f92672">[</span>!<span style="color:#f92672">[</span>Pratik<span style="color:#960050;background-color:#1e0010">&#39;</span>s GitHub Banner<span style="color:#f92672">](</span>./img/banner1.png<span style="color:#f92672">)](</span>https://pratikjagrut.dev<span style="color:#f92672">)</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><h2 id="add-a-bio">Add a bio</h2>
-<p>GitHub initializes README with a few bullet points. README is written using Markdown. This is the <em><strong><a href="https://www.markdownguide.org/basic-syntax/" style="color:#2eb8ac" target="_blank">Markdown syntax guide</a></strong></em></p>
+<p>GitHub initializes README with a few bullet points. I used the same template to add my bio.</p>
+<p>README file is highly customizable, we can use Markdown to add more creative bio.
+This is the <em><strong><a href="https://www.markdownguide.org/basic-syntax/" style="color:#2eb8ac" target="_blank">Markdown syntax guide</a></strong></em></p>
 <p><img src="/img/git/bio.png" alt="Create repo"></p>
 <p>I&rsquo;ve added some badges under look me up bullet point, which I created using <em><strong><a href="http://shields.io/" style="color:#2eb8ac" target="_blank">shields.io</a></strong></em>. They lets us design customize badges with the links or without links. I used badges from <em><strong><a href="https://shields.io/category/social" style="color:#2eb8ac" target="_blank">social category</a></strong></em>.</p>
 <p>Once we&rsquo;ve got the badge, we can then put it anywhere we want.</p>
@@ -288,16 +294,21 @@ Now I want it to be at the top, so I put the link to the banner image on the fir
 <p><img src="/img/git/blogs.png" alt="Blogs lists"></p>
 <h2 id="showing-github-statistics">Showing GitHub statistics</h2>
 <p><em><strong><a href="https://github.com/anuraghazra/github-readme-stats" style="color:#2eb8ac" target="_blank">Github Readme stats</a></strong></em> shows the statistics of our profile in various beautiful cards.</p>
-<p><img src="/img/git/stats.png" alt="Github stats"></p>
-<h2 id="some-useful-references-and-links-to-make-more-customization">Some useful references and links to make more customization</h2>
+<p><img src="/img/git/stats.png" alt="Github stats">e</p>
+<h5 id="span-stylecolorgreen-there-are-tone-of-customization-we-can-do-with-github-profile-using-readme-not-everything-is-not-covered-in-this-below-are-some-useful-resources-which-will-help-to-add-some-advanced-elementsspan"><span style="color:green"> There are tone of customization we can do with GitHub profile using README, not everything is not covered in this. Below are some useful resources which will help to add some advanced elements.</span>.</h5>
 <ul>
-<li><em><strong><a href="https://github.com/pratikjagrut/pratikjagrut" style="color:#2eb8ac" target="_blank">My Github profile README</a></strong></em></li>
-<li><em><strong><a href="https://shields.io/" style="color:#2eb8ac" target="_blank">Create badges: shields.io</a></strong></em></li>
-<li><em><strong><a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme" style="color:#2eb8ac" target="_blank">Awesome github profile readme templates</a></strong></em></li>
-<li><em><strong><a href="https://www.youtube.com/watch?v=ECuqb5Tv9qI&t=716s" style="color:#2eb8ac" target="_blank">Next Level GitHub Profile README by codeSTACKr</a></strong></em></li>
-<li><em><strong><a href="" style="color:#2eb8ac" target="_blank">UPDATE: Next Level GitHub Profile README (NEW) | GitHub Actions | Vercel | Spotify by codeSTACKr</a></strong></em></li>
+<li><em><strong><a href="https://github.com/pratikjagrut/pratikjagrut" target="_blank">My Github profile README</a>
+</strong></em></li>
+<li><em><strong><a href="https://shields.io/" target="_blank">Create badges: shields.io</a>
+</strong></em></li>
+<li><em><strong><a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme" target="_blank">Awesome github profile readme templates</a>
+</strong></em></li>
+<li><em><strong><a href="https://www.youtube.com/watch?v=ECuqb5Tv9qI&amp;t=716s" target="_blank">Next Level GitHub Profile README by codeSTACKr</a>
+</strong></em></li>
+<li><em><strong><a href="https://www.youtube.com/watch?v=n6d4KHSKqGk&amp;t=181s" target="_blank">UPDATE: Next Level GitHub Profile README (NEW) | GitHub Actions | Vercel | Spotify by codeSTACKr</a>
+</strong></em></li>
 </ul>
-<p><b style="color:#cc3300"><i><em><strong>I hope you fond this blog helpful and thank you for reading it please give your feedback in the comment section below.</strong></em></i></b></p>
+<p><b style="color:#cc3300"><i><em><strong>I hope you found this blog helpful and thank you for reading it please give your feedback in the comment section below.</strong></em></i></b></p>
 <hr>
 
     </div>
