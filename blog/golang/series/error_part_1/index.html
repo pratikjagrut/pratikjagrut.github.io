@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Error Handling (Part-1) - Pratik Jagrut</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+  <meta property="og:title" content="Error Handling (Part-1)">
+  <meta property="og:description" content="Blog">
+  <meta property="description" content="Blog">
+  <meta property="og:url" content="https://pratikjagrut.dev/blog/golang/series/error_part_1/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="https://pratikjagrut.dev/img/main/IMG_0239.JPG">
+  
+  
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
+          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/tags/" class="nav link"><i class='fas fa-sitemap'></i> Tags</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Error%20Handling%20%28Part-1%29&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2ferror_part_1%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2ferror_part_1%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2ferror_part_1%2f&amp;title=Error%20Handling%20%28Part-1%29" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2ferror_part_1%2f&amp;title=Error%20Handling%20%28Part-1%29" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2ferror_part_1%2f&amp;description=Error%20Handling%20%28Part-1%29" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2ferror_part_1%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://pratikjagrut.dev/img/main/IMG_0239.JPG" class="circle" width="100" alt="Desktop Picture" /></a>
+  <header>
+    <h1>Pratik Jagrut</h1>
+  </header>
+  <main>
+    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/golang/series/error_part_1/">Error Handling (Part-1)</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-05-16 12:53:34 &#43;0530 IST">May 16, 2021</time>
+    <p>Pratik Jagrut</p>
+    <p>7-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Error%20Handling%20%28Part-1%29&amp;url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2ferror_part_1%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2ferror_part_1%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2ferror_part_1%2f&amp;title=Error%20Handling%20%28Part-1%29" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2ferror_part_1%2f&amp;title=Error%20Handling%20%28Part-1%29" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2ferror_part_1%2f&amp;description=Error%20Handling%20%28Part-1%29" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by Pratik%20Jagrut&amp;body=https%3a%2f%2fpratikjagrut.dev%2fblog%2fgolang%2fseries%2ferror_part_1%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      
+      <p><code>Error</code> is a result of unexpected circumstances or abnormal behavior of the program.
+For example, a network connection error, a user entering incorrect data, a function invoked with inaccurate values or file not found, and many other scenarios could cause an error.
+<code>Error Handling</code> is a process of knowing where an error could befall, and having a mechanism to handle it.</p>
+<p>In Golang, <code>an error is a value type whose zero value is nil</code> i.e, the error is a built-in type.
+This coerces developers to treat the error as a <em><strong><a href="https://en.wikipedia.org/wiki/First-class_citizen" target="_blank">first class citizen</a>
+</strong></em>.
+Errors are treated similarly as int, string, bool, etc.
+An error may return from any function, it may pass as a parameter, and it may store into a variable.</p>
+<p>Golang has errors but not exceptions. Its way to handle the exception is not to have an exception in the first place.
+Please read Dave Cheney&rsquo;s blog about <em><strong><a href="https://dave.cheney.net/2012/01/18/why-go-gets-exceptions-right" target="_blank">Why Go gets exceptions right</a>
+</strong></em>.</p>
+<p>Golang has support for multiple return values from the function. This feature, primarily used for returning a result and an error.
+Below is a signature of a Read method from <em><strong><a href="https://golang.org/src/bufio/bufio.go?s=4875:4925#L188" target="_blank">bufio package.</a>
+</strong></em></p>
+<pre><code>func (b *Reader) Read(p []byte) (n int, err error)
+</code></pre><p><code>Read</code> method returns the number of bytes read into p and returns variable <code>err</code> of type <code>error</code>.
+So, for some reason, if this function fails, then the caller will be apprised by returning a custom-defined error. The caller should first inspect an <code>error</code> to determine if an error has occurred or not and only after that returned result should be used.
+Below is an idiomatic way of handling errors in Golang.</p>
+<pre><code>if err != nil {
+  // handle error
+}
+</code></pre><p>The above block of code is pervasive in Golang based projects. If the error value is not equal to nil that means the function has returned an error.
+This idiomatic way of handling errors gives us more control over error handling.
+We can decorate the error and make it more informative.
+Below is an example of error handling.</p>
+<pre><code>package main
+
+import (
+  &quot;fmt&quot;
+  &quot;os&quot;
+)
+
+func main() {
+  f, err := os.Open(&quot;README.md&quot;)
+  if err != nil {
+    fmt.Println(err)
+    os.Exit(1)
+  }
+  fmt.Println(f.Name(), &quot;opened successfully&quot;)
+}
+</code></pre><pre><code>open README.md: no such file or directory
+Program exited: status 1.
+</code></pre><p><em><strong><a href="https://play.golang.org/p/m6f5_P8Brqz" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p>In the above program, we are trying to open the README.md file that is not present, so os.Open function returns an error that we are inspecting and handling.</p>
+<h2 id="representation-of-error-type">Representation of error type</h2>
+<p>In Golang, an error is a built-in type, but actually, the error is an <code>interface type made available globally</code>.
+<em><strong><a href="https://golang.org/ref/spec#Errors" target="_blank">It is a single method interface.</a>
+</strong></em>
+Please read this <em><strong><a href="/blog/golang/series/interface_part_1">blog on interface</a>
+</strong></em>, if you don&rsquo;t know what interface is.</p>
+<pre><code>type error interface {
+  Error() string
+}
+</code></pre><p>Any type that implements the error interface is a valid error.
+To create a custom error, a type needs to define the <code>Error</code> method.
+In above example of opening file, the error returned from os.Open function was of type <em><strong><a href="https://github.com/golang/go/blob/master/src/os/file.go#L316" target="_blank">*pathError</a>
+</strong></em>. <code>pathError</code> is a custom error which <em><strong><a href="https://golang.org/pkg/io/fs/#PathError" target="_blank">implements the error interface</a>
+</strong></em>.</p>
+<h2 id="create-an-error-type">Create an error type</h2>
+<p>From the above section, we know that error is an interface, and any type which implements that interface is an error.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type httpError struct {
+  code   int
+  method string
+  fn     string
+}
+
+func (h *httpError) Error() string {
+  return fmt.Sprintf(&quot;ERROR:%d:%s:%s&quot;, h.code, h.method, h.fn)
+}
+
+//Mock function to demo some operation
+func getUser(uid int) (interface{}, error) {
+  // some business logic
+  authorized := false
+  if authorized {
+    //find user logic
+    return &quot;User found&quot;, nil
+  }
+  return &quot;&quot;, &amp;httpError{code: 401, method: &quot;GET&quot;, fn: &quot;getUser&quot;}
+}
+
+func main() {
+  _, err := getUser(1)
+  if err != nil {
+    fmt.Println(err)
+  }
+
+  // Inline variant
+  // if _, err = getUser(2); err != nil {
+  //  fmt.Println(err)
+  // }
+}
+
+</code></pre><pre><code>ERROR:401:GET:getUser
+</code></pre><p><em><strong><a href="https://play.golang.org/p/dFSDoh2fBjz" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p>In the above example, the <code>httpError</code> struct implements the<code> error</code> interface by defining the <code>Error</code> method.
+<code>getUser</code> is a mock function that mocks the getUser operation.</p>
+<p>Here, the main function is the caller for the methods. So the main function is supposed to handle the returned errors.
+In the main function, this statement <code>_, err := getUser(1)</code> executes the getUser function, stores the error in the <code>err</code> variable and ignores the result using <code>_</code>.</p>
+<p>After the function call, the caller is checking if the function is returning an error or not using an if-else statement.</p>
+<p>If you see the return type of an error in <code>getUser</code> function is <code>error interface type</code> but the return statement is returning a struct or say address of the struct variable <code>&amp;httpError{code: 401, method: &quot;GET&quot;, fn: &quot;getUser&quot;}</code>.</p>
+<p><em><strong>If the return type of a function and the type of actual return value is different, then how can this function be returning anything?</strong></em></p>
+<p>This is because type <code>httpError</code> implements the <code>error interface</code>.
+Under the hood, interface variable will hold the value and type that implements it.
+Read more about interface types and values in <em><strong><a href="/blog/golang/series/interface_part_1">interface blog post.</a>
+</strong></em></p>
+<p>Another thing to notice is the output.</p>
+<pre><code>ERROR:401:GET:getUser
+</code></pre><p>We are passing variable <code>err</code> of type <code>httpError struct</code> to the <code>fmt.Println</code> function, and it is printing nicely documented output, instead of messy struct variable.</p>
+<p><em><strong>How?</strong></em></p>
+<p>This is happening because we have defined the <code>Error</code> method that returns a custom error message string.
+So under the hood, the <code>fmt.Println</code> function is called the <code>Error</code> method and prints the returned string.
+So we never have to explicitly call the Error method to get a custom error message.</p>
+<h2 id="handling-error-using-the-type-assertion">Handling error using the type assertion</h2>
+<p>In the above example, the variable <code>err</code> is of type interface. err variable will not have access to fields of httpError.
+But err being variable of error interface and that interface is implemented by type httpError we can use type assertion to extract the underlying concrete value of interface variable.</p>
+<p>In <em><strong><a href="/blog/golang/series/interface_part_2/">interfaces</a>
+</strong></em> blog we&rsquo;ve seen how type assertion is performed.
+By extracting this underlying value, we can gain more control over the error value, and we can decide how to return this information to the caller.
+Below is an illustrative example:</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type httpError struct {
+  code   int
+  method string
+  fn     string
+}
+
+func (h *httpError) Error() string {
+  return fmt.Sprintf(&quot;ERROR: %d:%s:%s\n&quot;, h.code, h.method, h.fn)
+}
+
+//Mock function to demo some operation
+func getUser(uid int) (interface{}, error) {
+  // some business logic
+  authorized := false
+  if authorized {
+  //find user logic
+  return &quot;User found&quot;, nil
+  }
+  return &quot;&quot;, &amp;httpError{code: 401, method: &quot;GET&quot;, fn: &quot;getUser&quot;}
+}
+
+func main() {
+  _, err := getUser(1)
+  if err != nil {
+    if errVal, ok := err.(*httpError); ok {
+      fmt.Printf(&quot;Status Code: %d\n&quot;, errVal.code)
+      fmt.Printf(&quot;Method: %s\n&quot;, errVal.method)
+      fmt.Printf(&quot;function returned error: %s\n&quot;, errVal.fn)
+    }
+  }
+}
+</code></pre><pre><code>Status Code: 401
+Method: GET
+function returned error: getUser
+</code></pre><p><em><strong><a href="https://play.golang.org/p/cVIHQEKs1a5" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p>This one is the same example as the previous one with a small tweak. Instead of printing the <code>err</code> variable, we are performing type assertion on it.
+Here <code>errVal, ok := err.(*httpError)</code> will return a pointer to the instance of the <code>httpError</code>.
+Now we can access the fields of the <code>httpError</code> struct using <code>errVal</code>.</p>
+<p>In case the underlying error is not of type <code>*httpError</code>, then the <code>ok</code> variable will be set to false returning control outside the if block.</p>
+<h2 id="handling-error-using-type-switch">Handling error using type switch</h2>
+<p>Using type switch we can check the type of error and handle it accordingly.
+Read more about type switch in <em><strong><a href="/blog/golang/series/interface_part_2/">interfaces blog.</a>
+</strong></em>
+Below is an illustrative example:</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type fooError struct {
+  msg string
+}
+
+func (f *fooError) Error() string {
+  return fmt.Sprintf(&quot;Error: %s&quot;, f.msg)
+
+}
+
+type barError struct {
+  msg string
+}
+
+func (b *barError) Error() string {
+  return fmt.Sprintf(&quot;Error: %s&quot;, b.msg)
+}
+
+func doSomething() error {
+  return &amp;fooError{&quot;Something is wrong with foo!&quot;}
+}
+
+func main() {
+  err := doSomething()
+
+  switch err.(type) {
+  case nil:
+    fmt.Println(&quot;Everything is fine.&quot;)
+  case *fooError:
+    fmt.Println(&quot;Foo: &quot;, err)
+  case *barError:
+    fmt.Println(&quot;Bar: &quot;, err)
+  }
+}
+</code></pre><pre><code>Foo:  Error: Something is wrong with foo!
+</code></pre><p><em><strong><a href="https://play.golang.org/p/7tbNi8TmkBg" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
+<p>In the above example, <code>switch err.(type)</code> will discern the underlying type of the err variable and after comparing it with all the cases, the error will be handled by matched case.</p>
+<p><em><strong>In this blog, we have seen:</strong></em></p>
+<ul>
+<li><em>What is an error in Golang?</em></li>
+<li><em>How error is represented in Golang?</em></li>
+<li><em>Implementing error interface to create error</em></li>
+<li><em>Using type assertion and type switch to extract more information about the error</em></li>
+</ul>
+<p><em>In the next blog, we&rsquo;ll see more about creating custom errors and handling them gracefully.</em></p>
+<p><em><strong>Thank you for reading this blog, and please give your feedback in the comment section below.</strong></em></p>
+<hr>
+<a href="/blog/golang/series/interface_part_2">
+  <b style="color:DodgerBlue">
+    <i>🡄 Interface (Part-2)</i>
+  </b>
+</a> &emsp;
+<a href="/blog/golang/contents">
+  <b style="color:DodgerBlue">
+    <i>• Contents</i>
+  </b>
+</a>  &emsp;
+<a href="/blog/golang/series/error_part_2">
+    <b style="color:DodgerBlue">
+        <i>Error Handling (Part-2)🡆</i>
+    </b>
+</a>  &emsp;
+<br>
+<a href="https://github.com/pratikjagrut/go-tutorial" target="_blank">
+  <b style="color:DodgerBlue" class="fab fa-github">
+    <i>Github Repo</i>
+  </b>
+</a>  &emsp;
+<a href="https://github.com/pratikjagrut/go-tutorial/blob/master/REFERENCE.md" target="_blank">
+  <b style="color:DodgerBlue">
+    <i>&#128279; Reference</i>
+  </b>
+</a>
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/golang/">golang</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/golang/">golang</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/programming/">programming</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "pratikjagrut-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/golang/series/contents/" class="button left"><span>Golang</span></a>
+    
+    
+      <a href="/blog/golang/series/error_part_2/" class="button right"><span>Error Handling (Part-2)</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/golang/series/contents/" class="image" style="--bg-image: url('https://pratikjagrut.dev/img/golang/logo.jpg');">
+    <img class="stretchV" src="https://pratikjagrut.dev/img/golang/logo.jpg" alt="golang">
+  </a>
+        <header>
+          <h2><a href="/blog/golang/series/contents/">Golang</a></h2>
+          <time class="published" datetime="2021-05-16 13:08:13 &#43;0530 IST">May 16, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/error_part_1/">Error Handling (Part-1)</a></h2>
+          <time class="published" datetime="2021-05-16 12:53:34 &#43;0530 IST">May 16, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/blog/golang/series/error_part_2/">Error Handling (Part-2)</a></h2>
+          <time class="published" datetime="2021-05-16 12:53:34 &#43;0530 IST">May 16, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/git/2021/githubprofile/" class="image">
+    <img src="https://pratikjagrut.dev/img/git/github.png" alt="github banner">
+  </a>
+        <header>
+          <h2><a href="/blog/git/2021/githubprofile/">Transform pedestrian Github profile into dynamic portfolio</a></h2>
+          <time class="published" datetime="2021-05-06 20:57:06 &#43;0530 IST">May 6, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/git/2021/aliases/" class="image">
+    <img src="https://pratikjagrut.dev/img/git/aliases.jpg" alt="git aliases">
+  </a>
+        <header>
+          <h2><a href="/blog/git/2021/aliases/">Git aliases</a></h2>
+          <time class="published" datetime="2021-04-29 08:23:36 &#43;0530 IST">April 29, 2021</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/golang/">golang<span class="count">20</span></a>
+          
+          <li>
+              <a href="/categories/git/">git<span class="count">2</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/pratikjagrut" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/pratikjagrut" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+<li><a href="//facebook.com/jagrutpratik" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/pratikjagrut" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jagrut.pratik@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2021 Pratik Jagrut
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-189051592-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>

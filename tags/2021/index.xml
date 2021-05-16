@@ -5,7 +5,18 @@
     <link>https://pratikjagrut.dev/tags/2021/</link>
     <description>Recent content in 2021 on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 May 2021 20:57:06 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/2021/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 12:53:34 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/2021/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Error Handling (Part-2)</title>
+      <link>https://pratikjagrut.dev/blog/golang/series/error_part_2/</link>
+      <pubDate>Sun, 16 May 2021 12:53:34 +0530</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/series/error_part_2/</guid>
+      <description>Creating errors with errors.New() function If we don&amp;rsquo;t need a custom type for an error, and we can work with a single error type then we can use errors.New()  function to create a error on the fly.
+Creating a new error is simple. We simply need to call the New function as shown in the below example:
+package main import ( &amp;quot;errors&amp;quot; &amp;quot;fmt&amp;quot; ) func division(i, j float32) (interface{}, error) { if j == 0 { return &amp;quot;&amp;quot;, errors.</description>
+    </item>
+    
     <item>
       <title>Transform pedestrian Github profile into dynamic portfolio</title>
       <link>https://pratikjagrut.dev/blog/git/2021/githubprofile/</link>
@@ -27,7 +38,7 @@ In the terminal we type git commands git &amp;lt;sub-command&amp;gt; &amp;lt;fla
     </item>
     
     <item>
-      <title>Interface Part-2</title>
+      <title>Interface (Part-2)</title>
       <link>https://pratikjagrut.dev/blog/golang/series/interface_part_2/</link>
       <pubDate>Sun, 25 Apr 2021 10:46:37 +0530</pubDate>
       
@@ -40,7 +51,7 @@ package main import &amp;quot;fmt&amp;quot; type Person interface { info() strin
     </item>
     
     <item>
-      <title>Interface Part-1</title>
+      <title>Interface (Part-1)</title>
       <link>https://pratikjagrut.dev/blog/golang/series/interface_part_1/</link>
       <pubDate>Sun, 07 Mar 2021 20:14:16 +0530</pubDate>
       
@@ -50,7 +61,7 @@ For example, an animal walks, eats and sleeps so we can have an interface Animal
     </item>
     
     <item>
-      <title>Structs part-2</title>
+      <title>Structs (Part-2)</title>
       <link>https://pratikjagrut.dev/blog/golang/series/structs_part_2/</link>
       <pubDate>Thu, 04 Mar 2021 21:53:38 +0530</pubDate>
       
@@ -60,7 +71,7 @@ type struct1 struct{ // fields } type struct2 struct{ // fields s struct1 } Supp
     </item>
     
     <item>
-      <title>Structs part-1</title>
+      <title>Structs (Part-1)</title>
       <link>https://pratikjagrut.dev/blog/golang/series/structs_part_1/</link>
       <pubDate>Thu, 04 Mar 2021 18:02:10 +0530</pubDate>
       
