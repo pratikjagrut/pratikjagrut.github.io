@@ -5,11 +5,11 @@
     <link>https://pratikjagrut.dev/tags/series/</link>
     <description>Recent content in series on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 16 May 2021 13:08:13 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Jun 2021 10:11:55 +0529</lastBuildDate><atom:link href="https://pratikjagrut.dev/tags/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://pratikjagrut.dev/blog/golang/series/contents/</link>
-      <pubDate>Sun, 16 May 2021 13:08:13 +0530</pubDate>
+      <pubDate>Tue, 01 Jun 2021 10:11:55 +0529</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/series/contents/</guid>
       <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;   Anonymous Function  &amp;emsp;   Closures  &amp;emsp;   Pointers  &amp;emsp;   Structs (Part-1)  &amp;emsp;   Structs (Part-2)  &amp;emsp;   Interface (Part-1)  &amp;emsp;   Interface (Part-2)  &amp;emsp;   Error Handling (Part-1)  &amp;emsp;   Error Handling (Part-2)  &amp;emsp;  </description>
