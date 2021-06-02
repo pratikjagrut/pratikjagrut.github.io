@@ -78,9 +78,8 @@ Following are some noted features of Go -
       <pubDate>Sat, 19 Dec 2020 17:23:49 +0532</pubDate>
       
       <guid>https://pratikjagrut.dev/blog/golang/series/helloworld/</guid>
-      <description>Source code organization Since GO1.11 we&amp;rsquo;ve two ways of organizing go code: one is using GOPATH and second one is using go mod. GOPATH structure widely used and kind of only way to structure your go code before GO1.11. In this blog we&amp;rsquo;ll be using go mod, since it provides more feature and flexibility over GOPATH.
-To know more about writing code with GOPATH read this blog. 
-Go programs are organized into packages, which enable code reusability.</description>
+      <description>Source code organization Since GO1.11 we&amp;rsquo;ve two ways of organizing go code: one is, using GOPATH and the second one is using go mod. GOPATH structure was widely in use and kind of only way to structure your go code before GO1.11. In this blog, we&amp;rsquo;ll use go mod since it provides more features and flexibility over GOPATH.
+To know more about writing code with GOPATH read this blog.</description>
     </item>
     
   </channel>
