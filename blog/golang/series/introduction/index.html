@@ -192,7 +192,7 @@
   <div class="meta">
     <time datetime="2020-12-19 17:23:49 &#43;0530 IST">December 19, 2020</time>
     <p>Pratik Jagrut</p>
-    <p>3-Minute Read</p>
+    <p>2-Minute Read</p>
   </div>
 </header>
 
@@ -266,16 +266,22 @@ It’s easy to install Go from the binary distributions or <a href="https://gola
 </code></pre><p>It will create a directory named <code>go</code>.</p>
 </li>
 <li>
-<p>Move that dir to <code>/usr/local</code> where all other binaries reside.</p>
-<pre><code>export PATH=$PATH:/usr/local/go/bin
+<p>Move that <code>go</code> dir to <code>/usr/local</code> where all other binaries reside.</p>
+<pre><code>sudo mv go /usr/local
+echo 'export PATH=$PATH:/usr/local/go/bin' &gt;&gt; ~/.bashrc # bashrc or zshrc depending upon your shell type
 </code></pre></li>
 <li>
 <p>Custom Installation directory</p>
-<p>Instead of moving dir to <code>/usr/local</code> you can choose any other dir.</p>
-<pre><code>mv go $HOME/
+<p>Instead of moving <code>go</code> dir to <code>/usr/local</code> you can choose any other dir.</p>
+<pre><code>mkdir custom_go # just for demo, you can move to any dir of your choice
+mv go custom_go
 </code></pre><p>Then set this custom location to <code>GOROOT</code> environment variable.</p>
 <pre><code>export GOROOT=$HOME/go
-</code></pre><p>To make <code>GOROOT</code> permanent add it to <code>.bashrc</code> or <code>.zshrc</code> depending on which shell you are using or else your <code>GOROOT</code> will be unset once you end your terminal session or start a new terminal session.</p>
+export PATH=$PATH:$GOROOT/bin
+</code></pre><p>and then test</p>
+<pre><code>go version
+go version go1.15.6 linux/amd64
+</code></pre><p>To make <code>GOROOT</code> and <code>PATH</code> permanent add it to <code>.bashrc</code> or <code>.zshrc</code> depending on which shell you are using or else your <code>GOROOT</code> will be unset once you end your terminal session or start a new terminal session.</p>
 </li>
 </ul>
 <h3 id="macos-x">MacOS X</h3>
@@ -284,73 +290,7 @@ It’s easy to install Go from the binary distributions or <a href="https://gola
 </code></pre><h3 id="windows">Windows</h3>
 <p>Download the Windows installer from Go’s official <a href="https://golang.org/dl/" target="_blank">download</a>
  page. Open the installer and follow the on-screen instructions to install Go.
-By default, the installer installs Go in <code>C:\Go</code>.</p>
-<p><em>Once installed try <code>go version</code> to check the installation.</em></p>
-<h2 id="go-code-organization">Go Code organization</h2>
-<p><span style="color:DodgerBlue"><i>
-Note: After the introduction of <b>Go modules in Go 1.11</b>, its no longer required to store Go code in the Go workspace. You can create your Go project in any directory outside of <b>GOPATH</b>. You can refer to <b><a href="https://golang.org/doc/code.html" target="_blank">go docs on code organization</a>
-</b>. The following Go Code organization is still widely in use mostly because of its elegant organizing structure.
-</i></span></p>
-<h3 id="workspace">Workspace</h3>
-<p>Go requires you to organize your code in a specific way -</p>
-<p>By convention, all your Go code and the code must reside in a single workspace whose path is stored in the environment variable <code>GOPATH</code>.</p>
-<p>The <code>workspace</code> dir is supposed to contain the following sub-dir:</p>
-<ul>
-<li>
-<p><code>src</code>: contains Go source files.</p>
-<p>The src directory typically contains many version control repositories containing one or more Go packages. Every Go source file belongs to a package. You generally create a new subdirectory inside your repository for every separate Go package. The tree for this looks like the following:</p>
-<pre><code>go
-└── src
-    └── github.com
-        ├── pratikjagrut
-        │   └── go-tutorial
-        │       └── helloworld
-        │           └── main.go
-        └── user
-            └── project
-</code></pre></li>
-<li>
-<p><code>bin</code>: contains the executable binaries.</p>
-<p>The <code>Go tool</code> builds and installs executable binaries to this directory.</p>
-</li>
-<li>
-<p><code>pkg</code>: contains Go package archives.</p>
-<p>All the non-executable packages (shared libraries) are stored in this directory. This is typically imported and used inside other executable packages.</p>
-</li>
-</ul>
-<h3 id="setting-gopath">Setting GOPATH</h3>
-<h4 id="linux-and-macos">Linux and macOS</h4>
-<pre><code>mkdir $HOME/go_workspace
-export GOPATH=$HOME/go_workspace
-</code></pre><p><em>To make <code>GOPATH</code> permanent add it to <code>.bashrc</code> or <code>.zshrc</code> depending on which shell you are using or else your <code>GOPATH</code> will be unset once you end your terminal session or start a new terminal session.</em></p>
-<h4 id="windows-system">Windows System</h4>
-<ul>
-<li>
-<p>Create the workspace folder at C:\go-workspace.</p>
-</li>
-<li>
-<p>Right-click on Start → click Control Panel → Select System and Security → click on System.</p>
-</li>
-<li>
-<p>From the menu on the left, select the Advanced system&rsquo;s settings.</p>
-</li>
-<li>
-<p>Click the Environment Variables button at the bottom.</p>
-</li>
-<li>
-<p>Click New from the User variables section.</p>
-</li>
-<li>
-<p>Type GOPATH into the Variable name field.</p>
-</li>
-<li>
-<p>Type C:\go-workspace into the Variable value field.</p>
-</li>
-<li>
-<p>Click OK.</p>
-</li>
-</ul>
-<p><em><strong>Note: GOPATH must be different than the path of your Go installation.</strong></em></p>
+By default, the installer installs Go in <code>C:\Go</code> add <code>C:\go\bin</code> to your path environment variable.</p>
 <p><em><strong>Thank you for reading this blog, and please give your feedback in the comment section below.</strong></em></p>
 <hr>
 <a href="/blog/golang/series/contents">
@@ -434,8 +374,10 @@ export GOPATH=$HOME/go_workspace
   
   <div class="pagination">
     
-      <a href="/blog/golang/series/helloworld/" class="button left"><span>Classic hello world program</span></a>
+      <a href="/blog/golang/series/vdc/" class="button left"><span>Variables, data types and constants</span></a>
     
+    
+      <a href="/blog/golang/series/helloworld/" class="button right"><span>Classic hello world program</span></a>
     
   </div>
 

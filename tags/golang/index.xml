@@ -201,15 +201,6 @@ bool int uint float32 complex64 string int8 uint8 float64 complex128 byte int16 
     </item>
     
     <item>
-      <title>Classic hello world program</title>
-      <link>https://pratikjagrut.dev/blog/golang/series/helloworld/</link>
-      <pubDate>Sat, 19 Dec 2020 21:48:51 +0530</pubDate>
-      
-      <guid>https://pratikjagrut.dev/blog/golang/series/helloworld/</guid>
-      <description>First thing, packages In Go, source files are organized into system directories called packages, which enable code reusability. When you build reusable pieces of code, you will develop a package as a shared library. But when you develop executable programs, you will use the package main for making the package as an executable program. The package main tells the Go compiler that the package should compile as an executable program instead of a shared library.</description>
-    </item>
-    
-    <item>
       <title>Go Introduction and Installation</title>
       <link>https://pratikjagrut.dev/blog/golang/series/introduction/</link>
       <pubDate>Sat, 19 Dec 2020 17:23:49 +0530</pubDate>
@@ -218,6 +209,17 @@ bool int uint float32 complex64 string int8 uint8 float64 complex128 byte int16 
       <description>Go is an open-source, statically typed, compiled programing language built by Google. It combines the simplest of both statically typed and dynamically typed languages and provides you with the proper mixture of efficiency and simple programming. It is primarily fitted to building fast, efficient, and reliable server-side or system applications.
 Following are some noted features of Go -
  Safety Concurrency Efficient Garbage Collection High-speed compilation Excellent Tooling support  Installing GO Go binary distributions are available for all major operating systems like Linux, Windows, and macOS.</description>
+    </item>
+    
+    <item>
+      <title>Classic hello world program</title>
+      <link>https://pratikjagrut.dev/blog/golang/series/helloworld/</link>
+      <pubDate>Sat, 19 Dec 2020 17:23:49 +0532</pubDate>
+      
+      <guid>https://pratikjagrut.dev/blog/golang/series/helloworld/</guid>
+      <description>Source code organization Since GO1.11 we&amp;rsquo;ve two ways of organizing go code: one is using GOPATH and second one is using go mod. GOPATH structure widely used and kind of only way to structure your go code before GO1.11. In this blog we&amp;rsquo;ll be using go mod, since it provides more feature and flexibility over GOPATH.
+To know more about writing code with GOPATH read this blog. 
+Go programs are organized into packages, which enable code reusability.</description>
     </item>
     
   </channel>

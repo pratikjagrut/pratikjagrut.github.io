@@ -190,9 +190,9 @@
     
   </div>
   <div class="meta">
-    <time datetime="2020-12-19 21:48:51 &#43;0530 IST">December 19, 2020</time>
+    <time datetime="2020-12-19 17:23:49 &#43;0532 &#43;0532">December 19, 2020</time>
     <p>Pratik Jagrut</p>
-    <p>2-Minute Read</p>
+    <p>4-Minute Read</p>
   </div>
 </header>
 
@@ -243,39 +243,98 @@
     </div>
     <div class="content">
       
-      <h3 id="first-thing-packages">First thing, packages</h3>
-<p>In Go, source files are organized into system directories called packages, which enable code reusability.
-When you build reusable pieces of code, you will develop a package as a shared library. But when you develop executable programs, you will use the package <code>main</code> for making the package as an executable program. The package <code>main</code> tells the Go compiler that the package should compile as an executable program instead of a shared library.</p>
-<pre><code>package main
-</code></pre><h3 id="import">Import</h3>
-<p>The keyword <code>import</code> is used for importing a package into other packages.
-When you import packages, the Go compiler will look on the locations specified by the environment variable <code>ROOT</code> and <code>PATH</code>.</p>
-<pre><code>// Single pkg/lib import
-import &quot;fmt&quot;
-// Multiple pkg/lib import
-import(
-    &quot;fmt&quot;
-    &quot;os&quot;
-)
-</code></pre><h3 id="main-function">Main function</h3>
-<p>The <code>main</code> function in the package <code>main</code> will be the entry point of our executable program.
-When you build shared libraries, you will not have any main package and main function in the package.</p>
-<pre><code>func main(){}
-</code></pre><h3 id="hello-world">Hello World</h3>
+      <h2 id="source-code-organization">Source code organization</h2>
+<p>Since GO1.11 we&rsquo;ve two ways of organizing go code: one is using <code>GOPATH</code> and second one is using <code>go mod</code>.
+<code>GOPATH</code> structure widely used and kind of only way to structure your go code before GO1.11.
+In this blog we&rsquo;ll be using <code>go mod</code>, since it provides more feature and flexibility over GOPATH.</p>
+<p><em><strong><a href="https://golang.org/doc/gopath_code" target="_blank">To know more about writing code with GOPATH read this blog.</a>
+</strong></em></p>
+<p>Go programs are organized into packages, which enable code reusability. A package is a collection of source files in the same directory that are compiled together. Functions, types, variables, and constants defined in one source file are visible to all other source files within the same package.</p>
+<p>The collection of packages which are bundled and release together is known as modules. This modules are stored into repository.
+A repository may contain one or more modules but a Go repository typically contains only one module, located at the root of the repository.</p>
+<p>It is recommended to use remote repository path to organize Go code even though we&rsquo;re not going to publish it at remote repository.
+For example, our hello world module name will be <code>github.com/pratikjagrut/helloworld</code>.
+A module can be defined locally without belonging to a repository.
+This modules path serves as import prefix for its package. An import path is a string used to import a package.</p>
+<h2 id="writing-our-first-program">Writing our first program</h2>
+<p>To start a new project we&rsquo;ll first choose the modules path and will initialize it using <code>go mod init</code>.
+I&rsquo;m choosing <code>github.com/pratikjagrut/helloworld</code> path but you can choose different.</p>
+<p>Create project/module directory.</p>
+<pre><code>mkdir helloworld 
+cd helloworld
+go mod init github.com/pratikjagrut/helloworld
+go: creating new go.mod: module github.com/pratikjagrut/helloworld
+
+cat go.mod
+module github.com/pratikjagrut/helloworld
+
+go 1.16
+</code></pre><p><em>While using repository path make sure to change pratikjagrut to your username.</em></p>
+<p>Now let&rsquo;s create a file <code>main.go</code> (any name will work followed by extension .go).</p>
 <pre><code>package main
 
 import &quot;fmt&quot;
 
 func main() {
-    fmt.Println(&quot;Hello, World!&quot;)
+  fmt.Println(&quot;Hello, world!&quot;)
 }
-</code></pre><p>Save it as <code>main.go</code> or <code>any-name-you-prefer.go</code></p>
-<p>To run this program:</p>
-<pre><code>go run main.go
+</code></pre><p>In this code:</p>
+<ul>
+<li>Declare a main package using keyword <code>package</code></li>
+<li>Import the popular fmt package using keyword <code>import</code>.</li>
+<li>Implement a main function to print a message to the console.</li>
+</ul>
+<p>While developing executable commands we use the <code>main</code> package.
+The package <code>main</code> tells the Go compiler that the package should compile as an executable program instead of a shared library.</p>
+<p>Run the code.</p>
+<pre><code>go run .
 
-Hello, World!
+Hello, world!
 </code></pre><p><em><strong><a href="https://play.golang.org/p/FAszkU0xQZo" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
-<p><em><strong>Thank you for reading this blog, and please give your feedback in the comment section below.</strong></em></p>
+<p>As this is main package we can install the code as a command using <code>go install</code>.</p>
+<p><code>go install</code> is controlled by <code>GOPATH</code> and <code>GOBIN</code> environment variables.
+If GOBIN environment variable is set then bin will install at GOBIN location else it will install at <code>$GOPATH/bin</code> location, the default GOPATH ($HOME/go or %USERPROFILE%\go).
+To use bin as a command make sure bin installation path is added to $PATH variable.</p>
+<pre><code>go install .
+helloworld
+
+Hello, world!
+</code></pre><p>We can make use of any command to install the bin.</p>
+<pre><code>go install
+go install .
+go install github.com/pratikjagrut/helloworld
+</code></pre><h2 id="create-and-import-package-from-same-module">Create and import package from same module</h2>
+<p>Here we&rsquo;ll create a <code>utils</code> package which will have only one function <code>SwapStrings</code>.
+<code>SwapStrings</code> start with capital because we need to <em><strong><a href="https://golang.org/ref/spec#Exported_identifiers" target="_blank">export</a>
+</strong></em> it, so that it could be used outside of the package utils</p>
+<pre><code>mkdir utils # inside helloworld dir
+</code></pre><p>Create a file <code>utils.go</code> in utils dir with following code.</p>
+<pre><code>package utils
+
+func SwapStrings(a, b string) (string, string) {
+  return b, a
+}
+</code></pre><p>We can build it to check if it compiles successfully.</p>
+<pre><code>go build
+</code></pre><p>If it outputs nothing then it means compilation successful.
+<code>go build</code> will also add this package to local cache.</p>
+<p>Now let&rsquo;s use this package in our executable program.</p>
+<pre><code>package main
+
+import (
+  &quot;fmt&quot;
+  &quot;github.com/pratikjagrut/helloworld/utils&quot;
+)
+
+func main() {
+  fmt.Println(&quot;Hello, world!&quot;)
+  fmt.Println(utils.SwapStrings(&quot;Hello,&quot;, &quot;world!&quot;))
+}
+</code></pre><pre><code>go run .
+
+Hello, world!
+world! Hello,
+</code></pre><p><em><strong>Thank you for reading this blog, and please give your feedback in the comment section below.</strong></em></p>
 <hr>
 <a href="/blog/golang/series/introduction">
   <b style="color:DodgerBlue">
@@ -363,10 +422,8 @@ Hello, World!
   
   <div class="pagination">
     
-      <a href="/blog/golang/series/vdc/" class="button left"><span>Variables, data types and constants</span></a>
+      <a href="/blog/golang/series/introduction/" class="button left"><span>Go Introduction and Installation</span></a>
     
-    
-      <a href="/blog/golang/series/introduction/" class="button right"><span>Go Introduction and Installation</span></a>
     
   </div>
 
