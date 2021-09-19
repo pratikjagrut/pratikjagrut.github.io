@@ -1,180 +1,110 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://pratikjagrut.dev/blog/</loc>
     <lastmod>2021-06-01T10:11:55+05:29</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/categories/</loc>
     <lastmod>2021-06-01T10:11:55+05:29</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/contents/</loc>
     <lastmod>2021-06-01T10:11:55+05:29</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/tags/golang/</loc>
     <lastmod>2021-06-01T10:11:55+05:29</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/categories/golang/</loc>
     <lastmod>2021-06-01T10:11:55+05:29</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/</loc>
     <lastmod>2021-06-01T10:11:55+05:29</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/tags/programming/</loc>
     <lastmod>2021-06-01T10:11:55+05:29</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/tags/series/</loc>
     <lastmod>2021-06-01T10:11:55+05:29</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/tags/</loc>
     <lastmod>2021-06-01T10:11:55+05:29</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/tags/2021/</loc>
     <lastmod>2021-06-01T10:11:55+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/error_part_1/</loc>
     <lastmod>2021-06-01T10:11:55+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/error_part_2/</loc>
     <lastmod>2021-06-01T10:11:55+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/tags/git/</loc>
     <lastmod>2021-05-06T20:57:06+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/categories/git/</loc>
     <lastmod>2021-05-06T20:57:06+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/git/2021/githubprofile/</loc>
     <lastmod>2021-05-06T20:57:06+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/git/2021/aliases/</loc>
     <lastmod>2021-04-29T08:23:36+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/interface_part_2/</loc>
     <lastmod>2021-04-25T10:46:37+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/interface_part_1/</loc>
     <lastmod>2021-03-07T20:14:16+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/structs_part_2/</loc>
     <lastmod>2021-03-04T21:53:38+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/structs_part_1/</loc>
     <lastmod>2021-03-04T18:02:10+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/pointers/</loc>
     <lastmod>2021-02-26T16:49:28+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/closures/</loc>
     <lastmod>2021-02-14T19:08:25+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/anonymous_func/</loc>
     <lastmod>2021-02-14T19:07:57+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/functions/</loc>
     <lastmod>2021-01-12T12:36:48+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/range/</loc>
     <lastmod>2021-01-11T23:41:28+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/maps/</loc>
     <lastmod>2021-01-10T16:38:32+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/tags/2020/</loc>
     <lastmod>2020-12-22T16:08:06+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/array_slice/</loc>
     <lastmod>2020-12-22T16:08:06+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/switch/</loc>
     <lastmod>2020-12-22T14:35:42+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/if_else/</loc>
     <lastmod>2020-12-21T22:18:32+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/for_loop/</loc>
     <lastmod>2020-12-21T19:34:10+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/vdc/</loc>
     <lastmod>2020-12-20T18:34:48+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/introduction/</loc>
     <lastmod>2020-12-19T17:23:49+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/blog/golang/series/helloworld/</loc>
     <lastmod>2020-12-19T17:23:49+05:32</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pratikjagrut.dev/about/</loc>
     <lastmod>2020-12-12T12:02:44+05:30</lastmod>
   </url>
-  
 </urlset>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="Pratik Jagrut">
   <meta property="og:title" content="Arrays and Slices">
   <meta property="og:description" content="Blog">
   <meta property="description" content="Blog">
@@ -17,7 +17,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
 </head>
 
   <body>
@@ -126,7 +126,7 @@
     <h1>Pratik Jagrut</h1>
   </header>
   <main>
-    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+    <p>Engineer @ Loft labs, Inc. | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
   </main>
   
     <footer>
@@ -249,18 +249,18 @@ The array has fixed length i.e the number of elements to be stored is fixed befo
 <h3 id="array-declarations">Array Declarations</h3>
 <p>An array type definition specifies length and type of element.
 The array <code>[n]T</code> is of length <code>n</code> and type <code>T</code>.</p>
-<pre><code>// This array can hold 3 integers.
+<pre tabindex="0"><code>// This array can hold 3 integers.
 var i [3]int
 </code></pre><p>Arrays can be indexed in usual way, to access the <em>n<sup>th</sup></em> element we can do <code>a[n]</code>.</p>
-<pre><code>i[0] = 1
+<pre tabindex="0"><code>i[0] = 1
 i[1] = 10
 i[2] = 100
 </code></pre><p><strong>Array literal</strong></p>
-<pre><code>j := [3]string{&quot;Go&quot;, &quot;is&quot;, &quot;fun&quot;}
+<pre tabindex="0"><code>j := [3]string{&quot;Go&quot;, &quot;is&quot;, &quot;fun&quot;}
 </code></pre><p>We can make compiler to compute the length of an array.</p>
-<pre><code>j := [...]string{&quot;Go&quot;, &quot;is&quot;, &quot;fun&quot;}
+<pre tabindex="0"><code>j := [...]string{&quot;Go&quot;, &quot;is&quot;, &quot;fun&quot;}
 </code></pre><p>In both cases, the type of <code>j</code> is <code>[3]string</code>.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -288,7 +288,7 @@ Slices are built on arrays giving it more flexibility, power and convenience.</p
 <p>The slice type is <code>[]T</code>, specified without length and <code>T</code> is the element type.</p>
 <h3 id="slice-formation">Slice formation</h3>
 <p>A slice literal is like an array literal without the length.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -300,14 +300,14 @@ func main() {
 </code></pre><p><em><strong><a href="https://play.golang.org/p/yQUe7knUqgC" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <h4 id="creating-a-slice-with-make">Creating a slice with make</h4>
 <p>Slices can be created with the built-in make function; this is how you create dynamically-sized arrays.</p>
-<pre><code>func make([]T, len, cap) []T
+<pre tabindex="0"><code>func make([]T, len, cap) []T
 </code></pre><p>Where,</p>
 <ul>
 <li>[]T: Type of underlying array</li>
 <li>len: Length of the underlying array</li>
 <li>cap: Capacity of the underlying array, cap is optional</li>
 </ul>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -319,7 +319,7 @@ func main() {
 }
 </code></pre><p><em><strong><a href="https://play.golang.org/p/UqAJvWdDX0N" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p>If the capacity argument is omitted then capacity defaults to length.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -338,7 +338,7 @@ func main() {
 <h4 id="creating-a-slice-from-an-array">Creating a slice from an array</h4>
 <p>Slice can be formed by specifying 2 indices, high bound and low bound separated by a colon, <code>s[low : high]</code>.
 This selects a half-open range which includes the first element but excludes the last one.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -365,7 +365,7 @@ func main() {
 For low bound default is <code>0</code> and for high bound default is <code>length of an array</code>.</p>
 <p><code>a[:high]</code>, <code>a[low:]</code></p>
 <p>To create a slice of an entire array we can omit both high bound and low bound.</p>
-<pre><code>odds := [5]int{1, 3, 5, 7, 9}
+<pre tabindex="0"><code>odds := [5]int{1, 3, 5, 7, 9}
 o := odds[:]
 </code></pre><h3 id="slice-internals">Slice internals</h3>
 <p>A slice does not store any data, it just describes a section of an underlying array.</p>
@@ -383,7 +383,7 @@ o := odds[:]
 </table>
 <h4 id="relation-of-array-and-slice">Relation of array and slice</h4>
 <p>When we create a slice we create a slice variable which stores the pointer, length and capacity of the underlying array. Slicing does not copy the elements, it creates a new slice variable pointing to the original array. Hence changing element of the slice will make those changes to an underlying array and all other slices which share the same underlying array will be affected.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -403,7 +403,7 @@ func main() {
 	fmt.Println(&quot;Updated values of i: &quot;, i)
 	fmt.Println(&quot;Updated values of j: &quot;, j)
 }
-</code></pre><pre><code>Initial values of alphabet:  [A B C D ]
+</code></pre><pre tabindex="0"><code>Initial values of alphabet:  [A B C D ]
 Initial values of i:  [A B C]
 Initial values of j:  [B C D]
 
@@ -413,9 +413,9 @@ Updated values of j:  [B P D]
 </code></pre><p><em><strong><a href="https://play.golang.org/p/iLR-Cs0cQkE" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <h3 id="append-and-copy-functions">Append and copy functions</h3>
 <h4 id="append">Append</h4>
-<pre><code>func append(s []T, x ...T) []T
+<pre tabindex="0"><code>func append(s []T, x ...T) []T
 </code></pre><p>The append function appends the data at the end of the slice. If the destination slice has enough capacity then it is re-sliced to accommodate the new element but if capacity is not enough then new underlying array is created and allocated.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -433,7 +433,7 @@ func main() {
 }
 </code></pre><p><em><strong><a href="https://play.golang.org/p/wuAsUZnf9kc" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p><strong>Appending one slice to another</strong></p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -448,13 +448,13 @@ func main() {
 </code></pre><p><em><strong><a href="https://play.golang.org/p/JEtqp9lsyD7" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <h4 id="copy">Copy</h4>
 <p>Slice can not grow beyond the capacity of the underlying array if it tries to grow will cause runtime panic error similar to index out of bounds error.</p>
-<pre><code>nums := [3]int{1, 2, 3} // array
+<pre tabindex="0"><code>nums := [3]int{1, 2, 3} // array
 n := nums[:] // slicing nums array
 n[3] = 4 // this will throw runtime error
 
 panic: runtime error: index out of range [3] with length 3
 </code></pre><p>So one way to achieve the dynamic array is we can create a new bigger slice and copy the content from the old slice to a new slice.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -475,20 +475,20 @@ func main() {
 }
 </code></pre><p><em><strong><a href="https://play.golang.org/p/7wTe1-2Jz91" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p>The copy function takes destination slice and source slice as an argument and returns the number of elements copied.</p>
-<pre><code>func copy(dst, src []T) int
+<pre tabindex="0"><code>func copy(dst, src []T) int
 </code></pre><h5 id="examples">Examples</h5>
 <p><strong>Copy from one slice to another slice</strong></p>
-<pre><code>var odds = make([]int, 3)
+<pre tabindex="0"><code>var odds = make([]int, 3)
 n := copy(odds, []int{1, 3, 5}) // n == 3, odds == []int{1, 3, 5}
 </code></pre><p><strong>Copy between same slice</strong></p>
-<pre><code>odds := []int{1, 3, 5}
+<pre tabindex="0"><code>odds := []int{1, 3, 5}
 n := copy(odds, odds[1:]) // n == 2, s == []int{3, 5, 5}
 </code></pre><p>In this example, the values at index 0 and 1 are replaced by values at index 1 and 2.</p>
 <p><strong>Copy from a string to a byte slice</strong></p>
-<pre><code>var s = make([]byte, 5)
+<pre tabindex="0"><code>var s = make([]byte, 5)
 copy(s, &quot;Hello, world!&quot;) // s == []byte(&quot;Hello&quot;)
 </code></pre><p>In this example, the slice s has a capacity of 5 elements so the only string Hello is copied to it.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -744,14 +744,14 @@ func main() {
   <p class="copyright">
     © 2021 Pratik Jagrut
       <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

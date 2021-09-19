@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="Pratik Jagrut">
   <meta property="og:title" content="Error Handling (Part-2)">
   <meta property="og:description" content="Blog">
   <meta property="description" content="Blog">
@@ -17,7 +17,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
 </head>
 
   <body>
@@ -126,7 +126,7 @@
     <h1>Pratik Jagrut</h1>
   </header>
   <main>
-    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+    <p>Engineer @ Loft labs, Inc. | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
   </main>
   
     <footer>
@@ -247,7 +247,7 @@
 <p>If we don&rsquo;t need a custom type for an error, and we can work with a single error type then we can use <em><strong><a href="https://pkg.go.dev/errors#New" target="_blank">errors.New()</a>
 </strong></em> function to create a error on the fly.</p>
 <p>Creating a new error is simple. We simply need to call the New function as shown in the below example:</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import (
   &quot;errors&quot;
@@ -266,13 +266,13 @@ func main() {
     fmt.Println(err)
   }
 }
-</code></pre><pre><code>ERROR: Division by Zero
+</code></pre><pre tabindex="0"><code>ERROR: Division by Zero
 </code></pre><p><em><strong><a href="https://play.golang.org/p/BYKrriQfXUh" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <p><em><strong>NOTE: Each call to New() function returns a distinct error value even if the text is identical.</strong></em></p>
 <p><em><strong>New() function makes it easy to create an error, but how New() function is doing this?</strong></em></p>
 <p>Take a look at the source code of <em><strong><a href="https://github.com/golang/go/blob/master/src/errors/errors.go" target="_blank">errors package.</a>
 </strong></em></p>
-<pre><code>package errors
+<pre tabindex="0"><code>package errors
 
 // New returns an error that formats as the given text.
 // Each call to New returns a distinct error value even if the text is identical.
@@ -295,7 +295,7 @@ This means type <code>errorString</code> implements <code>error interface</code>
 <h2 id="creating-errors-with-fmterrorf-function">Creating errors with fmt.Errorf() function</h2>
 <p>Use of errors.New()  to create new errors is just fine, but if we want to add more information or context to the error, then New() function is futile because it does not have a built-in string formatting mechanism. We will have to use something like <code>fmt.Spritnf</code> to format our error string and then pass it to the New() function that is just overwork.</p>
 <p>The better way is to use is <code>fmt.Errorf</code> function.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import (
   &quot;fmt&quot;
@@ -313,7 +313,7 @@ func main() {
     fmt.Println(err)
   }
 }
-</code></pre><pre><code>ERROR: Division by Zero
+</code></pre><pre tabindex="0"><code>ERROR: Division by Zero
 Dividend: 157.000000
 Divisor: 0.000000
 </code></pre><p><em><strong><a href="https://play.golang.org/p/xmjbqIshXCi" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
@@ -327,7 +327,7 @@ If the error needs to have any runtime information, like the address stored in a
 <p>Sometimes error does not make much sense unless we provide context to it.
 This context or additional information could be anything like the function where the error occurred or any runtime value.</p>
 <p>The general way of adding context to the error is using <code>fmt.Errorf and %v verb</code>.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import (
   &quot;errors&quot;
@@ -360,12 +360,12 @@ func main() {
     fmt.Println(err)
   }
 }
-</code></pre><pre><code>ERROR: searchFile: Unauthorized access
+</code></pre><pre tabindex="0"><code>ERROR: searchFile: Unauthorized access
 </code></pre><p><em><strong><a href="https://play.golang.org/p/TkD5FW9UdXF" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <p>In above example, the original error is <code>ErrUnauthorizedAccess</code> which is then annotated with extra information using <code>fmt.Errorf(&quot;ERROR: searchFile: %v&quot;, err)</code>.</p>
 <p>While creating a new error with <code>fmt.Errorf</code>, everything from the original error is discarded except the text. Hence we lose the original error <code>ErrUnauthorizedAccess</code> and the only remnant from the original error is its text <code>Unauthorized access</code>.
 Below example illustrate this problem:</p>
-<pre><code>func main() {
+<pre tabindex="0"><code>func main() {
   _, err := searchFile(10001)
   if err == ErrUnauthorizedAccess {
     fmt.Println(&quot;Please use the valid authorization token&quot;)
@@ -374,7 +374,7 @@ Below example illustrate this problem:</p>
 </code></pre><p><em><strong><a href="https://play.golang.org/p/zxoZn0eLwU2" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <p>In the above snippet, the error returned from fmt.Errorf is compared to the original error which should be completely valid. But if you run this code, you will see the blank output. This is because the new error has lost the original error and capability to compare it.</p>
 <p>To avoid such situations, we can create a custom error type that stores the original error.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import (
   &quot;errors&quot;
@@ -418,12 +418,12 @@ func main() {
     }
   }
 }
-</code></pre><pre><code>Please use a valid authorization token
+</code></pre><pre tabindex="0"><code>Please use a valid authorization token
 </code></pre><p><em><strong><a href="https://play.golang.org/p/Wsv_szFqW6H" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <p>In the above program, we&rsquo;ve struct <code>serviceError</code>, a custom error type that stores the original error in the <code>err</code> field, and <code>fn</code> field that stores the function name where the error will occur(i.e context of an error).
 In the main function, we&rsquo;re using type assertion to extract the concrete value of <code>err</code> and using it to compare with the original error.</p>
 <p><em><strong>This block of code is also referred to as unwrapping of error. Because we&rsquo;re extracting the underlying error.</strong></em></p>
-<pre><code>if errVal, ok := err.(*serviceError); ok &amp;&amp; errVal.err == ErrUnauthorizedAccess{
+<pre tabindex="0"><code>if errVal, ok := err.(*serviceError); ok &amp;&amp; errVal.err == ErrUnauthorizedAccess{
   fmt.Println(&quot;Please use the valid authorization token&quot;)
 }
 </code></pre><h2 id="wrapping-and-unwrapping-error">Wrapping and Unwrapping error</h2>
@@ -431,7 +431,7 @@ In the main function, we&rsquo;re using type assertion to extract the concrete v
 Consider an onion, how each upper layer of an onion wraps around the inner layer of an onion. Similarly, one error can wrap another error, and that error can get wrapped by another error, and so on. We can create a hierarchy of errors which is helpful to form stack trace.</p>
 <p>In the above section, we&rsquo;ve seen how we added the context to an error using fmt.Errorf is also a kind of error wrapping because it creates a new error over an original error.</p>
 <p>In Go1.13, the errors package introduced some new functions to manage errors.</p>
-<pre><code>To support wrapping, fmt.Errorf now has a %w verb for creating wrapped errors, 
+<pre tabindex="0"><code>To support wrapping, fmt.Errorf now has a %w verb for creating wrapped errors, 
 and three new functions in the errors package ( errors.Unwrap, errors.Is and errors.As) 
 simplify unwrapping and inspecting wrapped errors.
 </code></pre><p><em><strong><a href="https://golang.org/doc/go1.13#error_wrapping" style="color:DodgerBlue" target="_blank">Read more in release note.</a></strong></em></p>
@@ -439,30 +439,30 @@ simplify unwrapping and inspecting wrapped errors.
 <p>When we used fmt.Errorf and %v to add context to the error we lost the original error.
 Since Go1.13 <code>fmt.Errorf</code> supports <code>%w</code> verb whose argument must be an error.
 When %w is present fmt.Errorf wraps the error and the error returned by fmt.Errorf will have Unwrap method that will return the argument of %w.</p>
-<pre><code>return fmt.Errorf(&quot;adding more context: %w&quot;, err)
+<pre tabindex="0"><code>return fmt.Errorf(&quot;adding more context: %w&quot;, err)
 </code></pre><p>This wrapped error will have access to <code>errors.Is, errors.As and errors.Unwrap</code> methods which will help handle them.</p>
 <h4 id="errorsis">errors.Is</h4>
 <p>The <code>errors.Is</code> function compares an error to a value. <code>errors.Is(err, error)</code></p>
 <p>This statement</p>
-<pre><code>if err == ErrUnauthorizedAccess { ... }
+<pre tabindex="0"><code>if err == ErrUnauthorizedAccess { ... }
 </code></pre><p>can be replaced by</p>
-<pre><code>if errors.Is(err, ErrUnauthorizedAccess) { ... }
+<pre tabindex="0"><code>if errors.Is(err, ErrUnauthorizedAccess) { ... }
 </code></pre><p><em><strong>In simple terms, the <code>error.Is</code> function behaves like a comparison to a sentinel error.</strong></em></p>
 <h4 id="errorsas">errors.As</h4>
 <p>The <code>errors.As</code> function tests whether an error is a specific type. <code>errors.As(err, &amp;e)</code></p>
 <p>This statement</p>
-<pre><code>if errVal, ok := err.(*Error); ok { ... }
+<pre tabindex="0"><code>if errVal, ok := err.(*Error); ok { ... }
 </code></pre><p>can be replaced by</p>
-<pre><code>var e *serviceError
+<pre tabindex="0"><code>var e *serviceError
 if errors.As(err, &amp;e) { ... }
 </code></pre><p>err is a <code>*serviceError</code>, and e is set to the error&rsquo;s value</p>
 <p><em><strong>In simple term, <code>errors.As</code> function behaves like type assertion.</strong></em></p>
 <h4 id="errorsunwrap">errors.Unwrap</h4>
 <p>Unwrap function is used to extract the underlying or wrapped error.</p>
-<pre><code>e2 := fmt.Errorf(&quot;adding more context: %w&quot;, e1)
+<pre tabindex="0"><code>e2 := fmt.Errorf(&quot;adding more context: %w&quot;, e1)
 errors.Unwrap(e2) // returns e1
 </code></pre><p><em><strong>NOTE: An error containing another error may implement Unwrap method returning the underlying error. Doing so, will give access to the Is and As methods, without needing to use fmt.Errorf with %w.</strong></em></p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import (
   &quot;errors&quot;
@@ -517,22 +517,22 @@ func main() {
     fmt.Println(errors.Unwrap(err))
   }
 }
-</code></pre><pre><code>Error: searchFile: Unauthorized access
+</code></pre><pre tabindex="0"><code>Error: searchFile: Unauthorized access
 Please use a valid authorization token
 Function searchFile returned Unauthorized access error
 Unauthorized access
 </code></pre><p><em><strong><a href="https://play.golang.org/p/OJcik2q5FQk" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
 <p>In the above program, struct <code>serviceError</code> implements the Error method, which makes it a custom error type. It has an error field and implements the <code>Unwrap</code> method which returns the original error, this lets us call <code>errors.Is</code> and <code>errors.As</code> method on it.</p>
 <p>If you remember the previous example, we used this block of code to unwrap the error.</p>
-<pre><code>if errVal, ok := err.(*serviceError); ok &amp;&amp; errVal.err == ErrUnauthorizedAccess{
+<pre tabindex="0"><code>if errVal, ok := err.(*serviceError); ok &amp;&amp; errVal.err == ErrUnauthorizedAccess{
   fmt.Println(&quot;Please use the valid authorization token&quot;)
 }
 </code></pre><p>But now, we replaced it by errors.Is</p>
-<pre><code>if errors.Is(err, ErrUnauthorizedAccess) {
+<pre tabindex="0"><code>if errors.Is(err, ErrUnauthorizedAccess) {
   fmt.Println(&quot;Please use valid authorization token&quot;)
 }
 </code></pre><h5 id="the-same-example-using-fmterrorf-and-w-verb">The same example using fmt.Errorf and %w verb</h5>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import (
   &quot;errors&quot;
@@ -571,7 +571,7 @@ func main() {
     fmt.Println(errors.Unwrap(err))
   }
 }
-</code></pre><pre><code>ERROR: searchFile: Unauthorized access
+</code></pre><pre tabindex="0"><code>ERROR: searchFile: Unauthorized access
 Please use a valid authorization token
 Unauthorized access
 </code></pre><p><em><strong><a href="https://play.golang.org/p/0io6Fr3Sgy1" style="color:DodgerBlue" target="_blank">Run the code in Go Playground</a></strong></em></p>
@@ -821,14 +821,14 @@ Unauthorized access
   <p class="copyright">
     © 2021 Pratik Jagrut
       <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

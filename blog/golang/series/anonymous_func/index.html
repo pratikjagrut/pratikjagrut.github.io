@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="Pratik Jagrut">
   <meta property="og:title" content="Anonymous Function">
   <meta property="og:description" content="Blog">
   <meta property="description" content="Blog">
@@ -17,7 +17,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
 </head>
 
   <body>
@@ -126,7 +126,7 @@
     <h1>Pratik Jagrut</h1>
   </header>
   <main>
-    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+    <p>Engineer @ Loft labs, Inc. | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
   </main>
   
     <footer>
@@ -246,12 +246,12 @@
       <p>The anonymous function is a feature in Golang which let us define a function without a name. This feature is also called a function literal. This is useful when you want an inline function or to form a closure.</p>
 <h3 id="declaring-the-anonymous-function">Declaring the anonymous function</h3>
 <p>The syntax is pretty straight forward and much similar to normal function.</p>
-<pre><code>func(parameter_list)(return_type){
+<pre tabindex="0"><code>func(parameter_list)(return_type){
   return
 }()
 </code></pre><p><code>Parameter list</code> and <code>return type</code> are optional.</p>
 <p><code>()</code> this will invoke the function as soon as it is defined.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -263,7 +263,7 @@ func main() {
 </code></pre><p><em><strong><a href="https://play.golang.org/p/Kpnl__MXw7V" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <h3 id="assigning-anonymous-function-to-a-variable">Assigning anonymous function to a variable</h3>
 <p>In golang, you can assign an anonymous function to a variable. The assigned variable will be the type of function type and it can be called like a regular function.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -274,12 +274,12 @@ func main() {
 	fmt.Printf(&quot;Type of variable v: %T\n&quot;, v)
 	v()
 } 
-</code></pre><pre><code>Type of variable v: func()
+</code></pre><pre tabindex="0"><code>Type of variable v: func()
 Golang Rocks!
 </code></pre><p><em><strong><a href="https://play.golang.org/p/Ebz_b0v-AX-" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <h3 id="passing-an-argument-to-an-anonymous-function">Passing an argument to an anonymous function</h3>
 <p>An anonymous function can take any number of arguments similar to normal function.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -290,7 +290,7 @@ func main() {
 }
 </code></pre><p><em><strong><a href="https://play.golang.org/p/oSsoVNXmNwX" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p><strong>With any number of trailing arguments similar to Variadic functions</strong></p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -305,7 +305,7 @@ func main() {
 <ul>
 <li><em>Anonymous function as an argument to regular function</em></li>
 </ul>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -323,7 +323,7 @@ func main() {
 <ul>
 <li><em>Anonymous function as an argument to anonymous function</em></li>
 </ul>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -336,7 +336,7 @@ func main() {
 }
 </code></pre><p><em><strong><a href="https://play.golang.org/p/d8dprfgLXgF" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p>This above code looks a bit complicated and hard to fathom so another way we can achieve this is the following:</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -355,7 +355,7 @@ func main() {
 <ul>
 <li><em>Returning from regular function</em></li>
 </ul>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -375,7 +375,7 @@ func main() {
 <ul>
 <li><em>Returning from anonymous function</em></li>
 </ul>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -628,14 +628,14 @@ func main() {
   <p class="copyright">
     © 2021 Pratik Jagrut
       <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

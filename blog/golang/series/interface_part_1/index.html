@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="Pratik Jagrut">
   <meta property="og:title" content="Interface (Part-1)">
   <meta property="og:description" content="Blog">
   <meta property="description" content="Blog">
@@ -17,7 +17,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
 </head>
 
   <body>
@@ -126,7 +126,7 @@
     <h1>Pratik Jagrut</h1>
   </header>
   <main>
-    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+    <p>Engineer @ Loft labs, Inc. | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
   </main>
   
     <footer>
@@ -250,17 +250,17 @@
 In OOP programming we might have to use the <code>implement</code> keyword to explicitly implement the interface, but in Golang, if a type defines all the method from an interface then it <code>implicitly implements</code> interface.</p>
 <h2 id="declaring-and-implementing-interface">Declaring and Implementing Interface</h2>
 <p>To declare an interface in Golang we use the <code>type</code> and <code>interface</code> keyword. Below is a syntax:</p>
-<pre><code>type InterfaceName interface {
+<pre tabindex="0"><code>type InterfaceName interface {
   // Method declaration
 }
 </code></pre><p><code>Stringer</code> interface is declared in the <code>fmt</code> package, which has a signature of the only one method <code>String</code>.</p>
 <p><em><strong><a href="https://Golang.org/pkg/fmt/#Stringer" style="color:DodgerBlue" target="_blank">fmt.Stringer doc</a></strong></em></p>
-<pre><code>type Stringer interface {
+<pre tabindex="0"><code>type Stringer interface {
     String() string
 }
 </code></pre><p>To implement a particular interface a type needs to implement all the methods with exact name and signature defined in that interface. <code>Interfaces in Go are implicitly implemented.</code></p>
 <p>Below is an implementation of the <code>fmt.Stringer</code> interface from the standard library.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -299,14 +299,14 @@ func main() {
     fmt.Println(person)
     fmt.Println(address)
 }
-</code></pre><pre><code>My name is 'James Bond', I'm '34' years old, I love in 'London', 'UK'
+</code></pre><pre tabindex="0"><code>My name is 'James Bond', I'm '34' years old, I love in 'London', 'UK'
 {London UK 123456}
 </code></pre><p><em><strong><a href="https://play.golang.org/p/0C_8uGzb04A" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p>In the above example, we&rsquo;ve two structs one is <code>Person</code> and the other one is <code>Address</code> and
 only the <code>Person</code> struct implements the <code>Stringer</code> interface by implementing the <code>String()</code> method because of which we could print the custom string format output.</p>
 <p>Notice the output, the <code>person</code> variable has its custom string and the <code>address</code> variable prints output in curly braces.</p>
 <p>Once a type implements an interface then the method implemented by that type can also be called using interface variable.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import (
     &quot;fmt&quot;
@@ -332,13 +332,13 @@ func main() {
     sq.Area()
     sh.Area()
 }
-</code></pre><pre><code>Area of the square is 100
+</code></pre><pre tabindex="0"><code>Area of the square is 100
 Area of the square is 100
 </code></pre><p><em><strong><a href="https://play.golang.org/p/cQmfCtE3GMC" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p>In the above program, type <code>Square</code> is implementing the <code>Shape</code> interface. In the main function, we call the implemented method <code>Area</code> on variable <code>sq</code> of type <code>Square</code> and on variable <code>sh</code> of type <code>Shape</code> interface and the program still works fine.</p>
 <h2 id="interfaces-types-and-values">Interface&rsquo;s types and values</h2>
 <p>The variable of an interface stores, a concrete value and the type of that concrete value called concrete type. This representation can be envisaged as a tuple <code>(type, value)</code>. An interface variable can store any concrete type and value as long as that type and value implement the interface&rsquo;s method. The below program illustrate the type and value of the interface.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -372,7 +372,7 @@ func main() {
     s = f
     describe(f)
 }
-</code></pre><pre><code>Concrete type of an interface is &lt;nil&gt;
+</code></pre><pre tabindex="0"><code>Concrete type of an interface is &lt;nil&gt;
 &lt;nil&gt;
 
 Concrete type of an interface is main.Int
@@ -393,7 +393,7 @@ We call it dynamic because we can assign any type to the interface as long as th
 <h3 id="zero-value-of-an-interface">Zero Value of an interface</h3>
 <p>The zero value of an interface is <code>&lt;nil&gt;</code>.
 A nil interface has its concrete value and concrete type nil.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -402,11 +402,11 @@ func main() {
     fmt.Printf(&quot;The concrete type of a nil interface is %T\n&quot;, s)
     fmt.Printf(&quot;The concrete value of a nil interface is %v&quot;, s)
 }
-</code></pre><pre><code>The concrete type of a nil interface is &lt;nil&gt;
+</code></pre><pre tabindex="0"><code>The concrete type of a nil interface is &lt;nil&gt;
 The concrete value of a nil interface is &lt;nil&gt;
 </code></pre><p><em><strong><a href="https://play.golang.org/p/8GKGXSwOEOw" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p>If we try to call a method on a nil interface, the program will panic.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -420,7 +420,7 @@ func main() {
     var s fmt.Stringer
     fmt.Println(&quot;The day is &quot;, s.String())
 }
-</code></pre><pre><code>panic: runtime error: invalid memory address or nil pointer dereference
+</code></pre><pre tabindex="0"><code>panic: runtime error: invalid memory address or nil pointer dereference
 [signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x497683]
 
 goroutine 1 [running]:
@@ -433,7 +433,7 @@ main.main()
 The empty interface is represented by <code>interface{}</code>.</p>
 <p>Since an empty interface has no methods it is implemented by all the types.
 Let&rsquo;s dive into an example:</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -454,7 +454,7 @@ func main() {
     b := true
     getType(b)
 }
-</code></pre><pre><code>int
+</code></pre><pre tabindex="0"><code>int
 string
 float64
 bool
@@ -466,7 +466,7 @@ The answer is <code>interface{}</code>.</p>
 The Println function is a <code>variadic function</code> which can take arguments of type <code>interface{}</code>.</p>
 <h2 id="implementing-multiple-interfaces">Implementing multiple interfaces</h2>
 <p>A type can implement more than one interface. Let&rsquo;s see how it is done.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import (
    &quot;fmt&quot;
@@ -508,7 +508,7 @@ func main() {
    var q Quadrilateral = s
    fmt.Println(q.isQuadrilateral())
 }
-</code></pre><pre><code>Area of the square is 100
+</code></pre><pre tabindex="0"><code>Area of the square is 100
 true
 </code></pre><p><em><strong><a href="https://play.Golang.org/p/1alfdI_h-DW" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p>In the above example, we&rsquo;ve two interfaces <code>Shape</code> and <code>Quadrilateral</code>. Type <code>square</code> implements both interfaces. The program is easy and self-explanatory.</p>
@@ -516,7 +516,7 @@ true
 <p>In Golang, one interface can embed any other interface.
 Golang does not support inheritance but this embedding of interfaces can give a sense of inheritance.
 Below is an illustrative example:</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import (
     &quot;fmt&quot;
@@ -562,7 +562,7 @@ func main() {
     s.Area()
     fmt.Println(q.isQuadrilateral())
 }
-</code></pre><pre><code>Number of sides are 4 and dimension of side is 10
+</code></pre><pre tabindex="0"><code>Number of sides are 4 and dimension of side is 10
 Area of the square is 100
 true
 </code></pre><p><em><strong><a href="https://play.Golang.org/p/UOQv16mFLn7" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
@@ -804,14 +804,14 @@ After that, we&rsquo;re calling all the method implemented by type <code>square<
   <p class="copyright">
     © 2021 Pratik Jagrut
       <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

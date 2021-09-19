@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="Pratik Jagrut">
   <meta property="og:title" content="Git aliases">
   <meta property="og:description" content="Blog">
   <meta property="description" content="Blog">
@@ -20,7 +20,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
 </head>
 
   <body>
@@ -129,7 +129,7 @@
     <h1>Pratik Jagrut</h1>
   </header>
   <main>
-    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+    <p>Engineer @ Loft labs, Inc. | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
   </main>
   
     <footer>
@@ -278,17 +278,17 @@ On day-to-day basis we mostly use repetitive commands like <em><strong><code>git
 <p>We&rsquo;ll look into both.</p>
 <h2 id="bash-alias">Bash Alias</h2>
 <p>Defining a bash alias is a simple task. Below is a command for it.</p>
-<pre><code>alias g='git'
+<pre tabindex="0"><code>alias g='git'
 </code></pre><p>And done, we&rsquo;ve <code>g</code> as an alias for the <code>git</code> command.</p>
 <p>But this alias is not persistent as soon as you end the terminal session the alias is gone.
 To make it persistent we&rsquo;ve to add this alias in <em><strong><code>.bashrc</code></strong></em> if you use the bash shell or <em><strong><code>.zshrc</code></strong></em> if you use zsh.
 These files are mostly located in you&rsquo;re home directory.</p>
 <p>To know what shell you&rsquo;re using type echo</p>
-<pre><code>echo &quot;$SHELL&quot;
+<pre tabindex="0"><code>echo &quot;$SHELL&quot;
 /usr/bin/zsh
 </code></pre><p>For the git command, I&rsquo;ve two bash aliases <code>g</code> and <code>gt</code>.
 Sometimes due to old habit, I tend to type <code>git</code> instead of <code>g</code> and while doing that sometimes I miss the <code>i</code> in <code>git</code> so to avoid throwing an error I added <code>gt</code> as an alias in <code>.zshrc</code>.</p>
-<pre><code>alias g='git'
+<pre tabindex="0"><code>alias g='git'
 alias gt='git'
 </code></pre><h2 id="git-alias">Git alias</h2>
 <p>To define a git alias we use the <em><strong><code>git config</code></strong></em> command.
@@ -296,13 +296,13 @@ We can define two types of aliases in Git.</p>
 <ul>
 <li>
 <p><em><strong><code>Global aliases</code></strong></em>, which are stored in <em><strong><code>.gitconfig</code></strong></em> file which is mainly located in the home directory. These aliases are available to all git repositories present in the system. Command to define global alias:</p>
-<pre><code>git config --global alias.&lt;alias_name&gt; '&lt;command&gt;'
-</code></pre><pre><code>or you can directly edit the .gitconfig file.
+<pre tabindex="0"><code>git config --global alias.&lt;alias_name&gt; '&lt;command&gt;'
+</code></pre><pre tabindex="0"><code>or you can directly edit the .gitconfig file.
 </code></pre></li>
 <li>
 <p><em><strong><code>Local aliases</code></strong></em>, which are stored in <em><strong><code>.git/config</code></strong></em> file of the particular project. These aliases are not available to any other repository. Command to define local alias:</p>
-<pre><code>git config alias.&lt;alias_name&gt; '&lt;command&gt;'
-</code></pre><pre><code>or you can directly edit the .git/config file.
+<pre tabindex="0"><code>git config alias.&lt;alias_name&gt; '&lt;command&gt;'
+</code></pre><pre tabindex="0"><code>or you can directly edit the .git/config file.
 </code></pre></li>
 </ul>
 <h3 id="some-useful-git-aliases">Some useful git aliases</h3>
@@ -310,10 +310,10 @@ We can define two types of aliases in Git.</p>
 <li>
 <h4 id="git-status">Git Status</h4>
 <p><em><strong><code>git status</code></strong></em> is a command which is used very frequently to see changed or untracked files.</p>
-<pre><code>git config --global alias.st 'status'
+<pre tabindex="0"><code>git config --global alias.st 'status'
 </code></pre><p>So now instead of <em><strong><code>git status</code></strong></em> we can just type <em><strong><code>git st</code></strong></em> or <em><strong><code>g st</code></strong></em> if bash alias <em><strong><code>g=git</code></strong></em> is set.
 This is the benefit of using aliases, the whole command can be converted into few characters.</p>
-<pre><code>$ g st
+<pre tabindex="0"><code>$ g st
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -323,29 +323,29 @@ nothing to commit, working tree clean
 <li>
 <h4 id="git-pull">Git Pull</h4>
 <p><em><strong><code>git pull &lt;remote&gt; &lt;ref/branch&gt;</code></strong></em> this command pulls the code from specified remote branch.</p>
-<pre><code>git config --global alias.pl 'pull'
+<pre tabindex="0"><code>git config --global alias.pl 'pull'
 </code></pre><p>Now the pull command will be <em><strong><code>git pl &lt;remote&gt; &lt;ref/branch&gt;</code></strong></em>.</p>
 <p>We can shorten it further depending on remote and branch.</p>
-<pre><code>git config --global alias.plo 'pull origin'
+<pre tabindex="0"><code>git config --global alias.plo 'pull origin'
 </code></pre><p>Now the command <em><strong><code>git plo main</code></strong></em> is the same as <em><strong><code>git pull origin main</code></strong></em>.</p>
 <p>We can create dedicated alias for <em><strong><code>git pull origin main</code></strong></em></p>
-<pre><code>git config --global alias.plom 'pull origin main'
+<pre tabindex="0"><code>git config --global alias.plom 'pull origin main'
 </code></pre><p>Now the entire command is abridged, <em><strong><code>git plom</code></strong></em>.</p>
 </li>
 <li>
 <h4 id="git-checkout">Git Checkout</h4>
 <p><em><strong><code>git checkout</code></strong></em> Switch branches or restore working tree files.</p>
-<pre><code>git config --global alias.co 'checkout'
+<pre tabindex="0"><code>git config --global alias.co 'checkout'
 </code></pre><p>Now we can use <em><strong><code>git co &lt;branch&gt;</code></strong></em> to checkout that branch.</p>
 <p>To create new branch we use <em><strong><code>git checkout -b &lt;new_branch&gt; &lt;start_point&gt;</code></strong></em></p>
-<pre><code>git config --global alias.cnb 'checkout -b'
+<pre tabindex="0"><code>git config --global alias.cnb 'checkout -b'
 </code></pre><p>So now we can ues <em><strong><code>git cnb &lt;new_branch&gt; &lt;start_point&gt;</code></strong></em></p>
 </li>
 <li>
 <h4 id="git-branch">Git Branch</h4>
 <p><em><strong><code>git branch</code></strong></em> List, create, or delete branches</p>
-<pre><code>git config --global alias.br 'branch'
-</code></pre><pre><code>$ git br
+<pre tabindex="0"><code>git config --global alias.br 'branch'
+</code></pre><pre tabindex="0"><code>$ git br
 
 * branch1
 main
@@ -353,18 +353,18 @@ main
 <li>
 <h4 id="git-add">Git add</h4>
 <p><em><strong><code>git add &lt;pathspec&gt;...</code></strong></em> adds file contents to the index</p>
-<pre><code>git config --global alias.a 'add'
+<pre tabindex="0"><code>git config --global alias.a 'add'
 </code></pre><p>The command will be <code>git a &lt;pathspec&gt;...</code></p>
 <p>To add all the files (changed + untracked) we can do <em><strong><code>git add .</code></strong></em>.</p>
-<pre><code>git config --global alias.aa 'add .'
+<pre tabindex="0"><code>git config --global alias.aa 'add .'
 </code></pre><p>Now to add all files we can use <em><strong><code>git aa</code></strong></em></p>
 </li>
 <li>
 <h4 id="git-commit">Git commit</h4>
 <p>After adding files to the index we use <em><strong><code>git commit</code></strong></em> to record changes to the repository.
 For git commit alias could be:</p>
-<pre><code>git config --global alias.ci 'commit'
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git ci
+<pre tabindex="0"><code>git config --global alias.ci 'commit'
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git ci
 
 <span style="color:#f92672">[</span>update.theme 89f083e<span style="color:#f92672">]</span> Update CR yaml
 <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">1</span> insertion<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>
@@ -373,12 +373,12 @@ create mode <span style="color:#ae81ff">100644</span> cr.yaml
 <li>
 <h4 id="git-push">Git push</h4>
 <p>Once your changes are committed and you need to update the remote reference with new changes we use <em><strong><code>git push &lt;remote&gt; &lt;branch&gt;</code></strong></em></p>
-<pre><code>git config --global alias.p 'push'
+<pre tabindex="0"><code>git config --global alias.p 'push'
 </code></pre><p>We can shorten it further depending on remote and branch.</p>
-<pre><code>git config --global alias.po 'push origin'
+<pre tabindex="0"><code>git config --global alias.po 'push origin'
 </code></pre><p>Now the command <em><strong><code>git po main</code></strong></em> is the same as <em><strong><code>git push origin main</code></strong></em>.</p>
 <p>We can create dedicated alias for <em><strong><code>git push origin main</code></strong></em></p>
-<pre><code>git config --global alias.pom 'push origin main'
+<pre tabindex="0"><code>git config --global alias.pom 'push origin main'
 </code></pre><p>Now the entire command is abridged, <em><strong><code>git pom</code></strong></em>.</p>
 </li>
 <li>
@@ -387,9 +387,9 @@ create mode <span style="color:#ae81ff">100644</span> cr.yaml
 Now there are various ways of seeing commit history, depending on how we wanna see commit history we can use the flags.</p>
 <p>I usually use these three aliases for log.</p>
 <p>This alias shows complete commit logs with the addition and deletion stats.</p>
-<pre><code>git config --global alias.lg 'log --stat'
-</code></pre><pre><code>$ git lg
-  
+<pre tabindex="0"><code>git config --global alias.lg 'log --stat'
+</code></pre><pre tabindex="0"><code>$ git lg
+
 commit 8b6ac3a9789002a2c578139c830f17b9e18b53f7 (HEAD -&gt; git.aliases, origin/main, origin/HEAD, update.theme)
 Author: Pratik Jagrut &lt;26519653+pratikjagrut@users.noreply.github.com&gt;
 Date:   Sat May 1 21:47:48 2021 +0530
@@ -399,21 +399,21 @@ Date:   Sat May 1 21:47:48 2021 +0530
 public | 2 +-
 1 file changed, 1 insertion(+), 1 deletion(-)
 </code></pre><p>This alias draws a text-based graphical representation of the commit history printed in between commits with relative time.</p>
-<pre><code>git config --global alias.lgdr &quot;log --graph --pretty=format:'%Cred%h%Creset %Cgreen%cr%Creset -%C(yellow)%d%Creset %s %C(bold blue)[%cn]%Creset' --abbrev-commit --date=relative&quot;
-</code></pre><pre><code>$ git lgdr
+<pre tabindex="0"><code>git config --global alias.lgdr &quot;log --graph --pretty=format:'%Cred%h%Creset %Cgreen%cr%Creset -%C(yellow)%d%Creset %s %C(bold blue)[%cn]%Creset' --abbrev-commit --date=relative&quot;
+</code></pre><pre tabindex="0"><code>$ git lgdr
 
 * 8b6ac3a 6 hours ago - (HEAD -&gt; git.aliases, origin/main, origin/HEAD, update.theme) Update public directory [Pratik Jagrut]
 * f47c1c6 6 hours ago - Update theme [Pratik Jagrut]
 </code></pre><p>This alias draws a text-based graphical representation of the commit history printed in between commits with a short format of the date.</p>
-<pre><code>git config --global alias.lgds &quot;log --graph --pretty=format:'%Cred%h%Creset %Cgreen%cr%Creset -%C(yellow)%d%Creset %s %C(bold blue)[%cn]%Creset' --abbrev-commit --date=short
-</code></pre><pre><code>$ git lgds
+<pre tabindex="0"><code>git config --global alias.lgds &quot;log --graph --pretty=format:'%Cred%h%Creset %Cgreen%cr%Creset -%C(yellow)%d%Creset %s %C(bold blue)[%cn]%Creset' --abbrev-commit --date=short
+</code></pre><pre tabindex="0"><code>$ git lgds
 
 * 8b6ac3a 2021-05-01 - (HEAD -&gt; git.aliases, origin/main, origin/HEAD, update.theme) Update public directory [Pratik Jagrut]
 * f47c1c6 2021-05-01 - Update theme [Pratik Jagrut]
 </code></pre></li>
 </ul>
 <p><em><strong>Here&rsquo;s the .gitconfig file for all the above aliases.</strong></em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#f92672">[</span>alias<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#f92672">[</span>alias<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>  st <span style="color:#f92672">=</span> status<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>  pl <span style="color:#f92672">=</span> pull<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>  plo <span style="color:#f92672">=</span> pull origin<span style="color:#960050;background-color:#1e0010">
@@ -642,14 +642,14 @@ We can define as many aliases as we want, Git is too generous. It is always good
   <p class="copyright">
     © 2021 Pratik Jagrut
       <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

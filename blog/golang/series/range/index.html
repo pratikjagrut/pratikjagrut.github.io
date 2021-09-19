@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="Pratik Jagrut">
   <meta property="og:title" content="Range">
   <meta property="og:description" content="Blog">
   <meta property="description" content="Blog">
@@ -17,7 +17,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
 </head>
 
   <body>
@@ -126,7 +126,7 @@
     <h1>Pratik Jagrut</h1>
   </header>
   <main>
-    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+    <p>Engineer @ Loft labs, Inc. | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
   </main>
   
     <footer>
@@ -246,7 +246,7 @@
       <p>The range keyword is used to iterate over various data types. It is used in for loops and its return values are dependent on the data types over which we&rsquo;re using range keyword.</p>
 <h3 id="range-over-slicearray">Range over slice/array</h3>
 <p>Range on <strong>Array and Slice</strong> returns the first value as an index and second value as an element located at that index.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -257,7 +257,7 @@ func main() {
 	}
 }
 </code></pre><p>Output:</p>
-<pre><code>Index :0, value: 1
+<pre tabindex="0"><code>Index :0, value: 1
 Index :1, value: 2
 Index :2, value: 3
 Index :3, value: 4
@@ -265,7 +265,7 @@ Index :4, value: 5
 </code></pre><p><em><strong><a href="https://play.golang.org/p/WwdJkWeMfpA" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <h3 id="range-over-maps">Range over maps</h3>
 <p>Range on <strong>Map</strong> returns the first value as a key and second value is a value associated with that key.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -276,12 +276,12 @@ func main() {
 	}
 }
 </code></pre><p>Output:</p>
-<pre><code>Key :foo, value: 0
+<pre tabindex="0"><code>Key :foo, value: 0
 Key :bar, value: 1
 </code></pre><p><em><strong><a href="https://play.golang.org/p/DA_QyJzPFB7" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <h3 id="range-over-a-string">Range over a string</h3>
 <p>Range on <strong>String</strong> returns the first value as an index and second value is rune int.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -292,7 +292,7 @@ func main() {
 	}
 }
 </code></pre><p>Output:</p>
-<pre><code>Index :0, Rune value: 103
+<pre tabindex="0"><code>Index :0, Rune value: 103
 Index :1, Rune value: 111
 Index :2, Rune value: 108
 Index :3, Rune value: 97
@@ -302,7 +302,7 @@ Index :5, Rune value: 103
 <p><em>Rune int value can be type cast string using string() method. e.g. string(103) == g</em></p>
 <h3 id="range-over-a-channel">Range over a channel</h3>
 <p>Range on <strong>Channel</strong> returns only one value that is the value received from the channel.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -319,7 +319,7 @@ func main() {
 </code></pre><p><em><strong><a href="https://play.golang.org/p/YPHa5RvPGbP" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p><em><strong>*KEEP IN MIND*</strong></em></p>
 <p>You can not update the value in the range loop.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -334,7 +334,7 @@ func main() {
 	fmt.Println(&quot;Slice after range: &quot;, nums)
 }
 </code></pre><p>Output:</p>
-<pre><code>Slice before range:  [1 2 3 4 5]
+<pre tabindex="0"><code>Slice before range:  [1 2 3 4 5]
 Slice after range:  [1 2 3 4 5]
 </code></pre><p><em><strong><a href="https://play.golang.org/p/iGimIFCgcL_J" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p>In the above example, I try to increment all the values of the slice by 1 but the slice is unaffected. This is because the range loop copies the value from slice to local variable. So to update the slice we&rsquo;ll need to use traditional way <code>nums[i] += 1</code>.</p>
@@ -572,14 +572,14 @@ Slice after range:  [1 2 3 4 5]
   <p class="copyright">
     © 2021 Pratik Jagrut
       <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

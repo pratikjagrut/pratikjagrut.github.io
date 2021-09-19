@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="Pratik Jagrut">
   <meta property="og:title" content="Classic hello world program">
   <meta property="og:description" content="Blog">
   <meta property="description" content="Blog">
@@ -17,7 +17,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
 </head>
 
   <body>
@@ -126,7 +126,7 @@
     <h1>Pratik Jagrut</h1>
   </header>
   <main>
-    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+    <p>Engineer @ Loft labs, Inc. | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
   </main>
   
     <footer>
@@ -260,7 +260,7 @@ This module&rsquo;s path serves as an import prefix for its package. An import p
 <p>To start a new project, we&rsquo;ll first choose the module&rsquo;s pathname and then initialize it using <code>go mod init</code>.
 I&rsquo;m choosing <code>github.com/pratikjagrut/helloworld</code> path, but you can choose a different one.</p>
 <p>Create project/module directory.</p>
-<pre><code>mkdir helloworld 
+<pre tabindex="0"><code>mkdir helloworld 
 cd helloworld
 go mod init github.com/pratikjagrut/helloworld
 go: creating new go.mod: module github.com/pratikjagrut/helloworld
@@ -271,7 +271,7 @@ module github.com/pratikjagrut/helloworld
 go 1.16
 </code></pre><p><em>While using repository pathname, make sure to change pratikjagrut to your username.</em></p>
 <p>Now let&rsquo;s create a file <code>main.go</code> (any name will work followed by extension .go).</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -287,7 +287,7 @@ func main() {
 <p>While developing the executable command, we use the <code>main</code> package.
 The main package tells the Go compiler that this package should compile as an executable program instead of a shared library.</p>
 <p>Run the code.</p>
-<pre><code>go run .
+<pre tabindex="0"><code>go run .
 
 Hello, world!
 </code></pre><p><em><strong><a href="https://play.golang.org/p/FAszkU0xQZo" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
@@ -295,31 +295,31 @@ Hello, world!
 <p><code>go install</code> is controlled by <code>GOPATH</code> and <code>GOBIN</code> environment variables.
 If the GOBIN environment variable is set, then binary will install at the GOBIN location, else it will install at the <code>$GOPATH/bin</code> location. The default GOPATH ($HOME/go or %USERPROFILE%\go).
 To use the installed binary as a command, make sure the binary installation path is added to the $PATH variable.</p>
-<pre><code>go install .
+<pre tabindex="0"><code>go install .
 helloworld
 
 Hello, world!
 </code></pre><p>We can make use of any command to install the bin.</p>
-<pre><code>go install
+<pre tabindex="0"><code>go install
 go install .
 go install github.com/pratikjagrut/helloworld
 </code></pre><h2 id="create-and-import-package-from-the-same-module">Create and import package from the same module</h2>
 <p>Here we&rsquo;ll create a <code>utils</code> package that will have only one function <code>SwapStrings</code>.
 <code>SwapStrings</code> starts with capital because we need to <em><strong><a href="https://golang.org/ref/spec#Exported_identifiers" target="_blank">export</a>
 </strong></em> it, so that it could be used outside of the package utils.</p>
-<pre><code>mkdir utils # inside helloworld dir
+<pre tabindex="0"><code>mkdir utils # inside helloworld dir
 </code></pre><p>Create a file <code>utils.go</code> in utils dir with the following code.</p>
-<pre><code>package utils
+<pre tabindex="0"><code>package utils
 
 func SwapStrings(a, b string) (string, string) {
   return b, a
 }
 </code></pre><p>We can build it to check if it compiles successfully.</p>
-<pre><code>go build
+<pre tabindex="0"><code>go build
 </code></pre><p>If it outputs nothing, then it means compilation successful.
 <code>go build</code> will also add this package to the local cache.</p>
 <p>Now let&rsquo;s use this package in our executable program.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import (
   &quot;fmt&quot;
@@ -330,7 +330,7 @@ func main() {
   fmt.Println(&quot;Hello, world!&quot;)
   fmt.Println(utils.SwapStrings(&quot;Hello,&quot;, &quot;world!&quot;))
 }
-</code></pre><pre><code>go run .
+</code></pre><pre tabindex="0"><code>go run .
 
 Hello, world!
 world! Hello,
@@ -567,14 +567,14 @@ world! Hello,
   <p class="copyright">
     © 2021 Pratik Jagrut
       <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

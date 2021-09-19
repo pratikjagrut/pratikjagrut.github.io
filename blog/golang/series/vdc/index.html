@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="Pratik Jagrut">
   <meta property="og:title" content="Variables, data types and constants">
   <meta property="og:description" content="Blog">
   <meta property="description" content="Blog">
@@ -17,7 +17,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
 </head>
 
   <body>
@@ -126,7 +126,7 @@
     <h1>Pratik Jagrut</h1>
   </header>
   <main>
-    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+    <p>Engineer @ Loft labs, Inc. | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
   </main>
   
     <footer>
@@ -247,7 +247,7 @@
 <p>Variable is a symbolic name given to the storage location which contains some value which can be changed at any time during the execution of the program. A variable must be defined with the type of data or value it is holding.</p>
 <h2 id="data-types">Data types</h2>
 <p>There are several data types in Go.</p>
-<pre><code>bool        int         uint        float32     complex64
+<pre tabindex="0"><code>bool        int         uint        float32     complex64
 string      int8        uint8       float64     complex128
 byte        int16       uint16
 rune        int32       uint32
@@ -256,47 +256,47 @@ error       int64       uint64
 <p>In some programming languages variable holds a <code>null</code> or <code>undefined</code> value when not initialized, Go gives it a zero-value of its data type. A <code>boolean</code> variable if not initialized, gets the <code>false</code> value and an <code>integer</code> variable gets <code>0</code> value, <code>string</code> variable will get <code>nil</code> value.</p>
 <h2 id="declaring-a-variable">Declaring a variable</h2>
 <p>The <code>var</code> statement declares a list of variables. Type is at the last of the statement.</p>
-<pre><code>var varName dataType
+<pre tabindex="0"><code>var varName dataType
 </code></pre><p>E.g.:</p>
-<pre><code>var i, j, k int
+<pre tabindex="0"><code>var i, j, k int
 var f float32
 var u uint
 </code></pre><p><strong>Variables with initializers</strong></p>
 <p>We can initialize variable while declaring.</p>
-<pre><code>var varName dataType = value
-</code></pre><pre><code>var i int = 10
+<pre tabindex="0"><code>var varName dataType = value
+</code></pre><pre tabindex="0"><code>var i int = 10
 var s string = &quot;hello&quot;
 var ok bool = true
 </code></pre><p><em>We can omit the type of variable, it will take the type of initializers</em></p>
-<pre><code>var i = 42           // int
+<pre tabindex="0"><code>var i = 42           // int
 var f = 3.142        // float64
 var g = &quot;hello&quot;      // string
 </code></pre><p><strong>Short-hand declaration</strong></p>
 <p>This is the most commonly used variable declaration inside functions.</p>
-<pre><code>varName := value
+<pre tabindex="0"><code>varName := value
 </code></pre><p>E.g.:</p>
-<pre><code>i := 10
+<pre tabindex="0"><code>i := 10
 s := &quot;hello&quot;
 ok := true
 </code></pre><p><em>When declaring a variable without specifying it&rsquo;s type the variable&rsquo;s type is inferred from the value on the right-hand side.</em></p>
-<pre><code>var i int
+<pre tabindex="0"><code>var i int
 j := i            // j is an int
 i := 42           // int
 f := 3.142        // float64
 g := 0.867 + 0.5i // complex128
 </code></pre><p><strong>Assign or Re-assign</strong></p>
 <p>You can assign or re-assign value to a declared variable as:</p>
-<pre><code>varName = value
+<pre tabindex="0"><code>varName = value
 </code></pre><p>E.g.:</p>
-<pre><code>i = 12
+<pre tabindex="0"><code>i = 12
 s = &quot;world&quot;
 ok = false
 </code></pre><p><strong>Multiple variable declarations</strong></p>
 <p>Multiple variables of the same type with the single var statement</p>
-<pre><code>var i, j, k int
+<pre tabindex="0"><code>var i, j, k int
 var x, y, z = 0.867 + 0.5i, 4.65, true
 </code></pre><p>Multiple variables of the different types with the single var statement</p>
-<pre><code>var (
+<pre tabindex="0"><code>var (
     i int = 10
     s string = &quot;hello&quot;
     ok bool = true
@@ -304,11 +304,11 @@ var x, y, z = 0.867 + 0.5i, 4.65, true
 </code></pre><h2 id="constants">Constants</h2>
 <p>Go supports constants of character, string, boolean, and numeric values. Constants are declared using <code>const</code> keyword.</p>
 <p>E.g:</p>
-<pre><code>const str string = &quot;constants&quot;
+<pre tabindex="0"><code>const str string = &quot;constants&quot;
 </code></pre><p><strong>Untyped and Typed</strong></p>
 <p>Constants can be declared with or without a type in Go. If we are declaring literal constant, then we are declaring constants that are untyped and unnamed.</p>
 <p>E.g.:</p>
-<pre><code>const str string = &quot;constants&quot; //Typed constant
+<pre tabindex="0"><code>const str string = &quot;constants&quot; //Typed constant
 const i = 10 //Untyped constant, literal declaration
 const f = 3.14
 </code></pre><p>The constants on the LHS of the declaration are named constants and the literal values on the RHS are unnamed constants.</p>
@@ -551,14 +551,14 @@ const f = 3.14
   <p class="copyright">
     © 2021 Pratik Jagrut
       <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;

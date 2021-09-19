@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.79.0" /><meta property="og:site_name" content="Pratik Jagrut">
+<meta name="generator" content="Hugo 0.88.1" /><meta property="og:site_name" content="Pratik Jagrut">
   <meta property="og:title" content="Structs (Part-2)">
   <meta property="og:description" content="Blog">
   <meta property="description" content="Blog">
@@ -17,7 +17,7 @@
   
   
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.307f33cd8015e5bab28d6ebda9b400f8d3059bc248b4e60adf4d23469fab5a2b.css" integrity="sha256-MH8zzYAV5bqyjW69qbQA&#43;NMFm8JItOYK300jRp&#43;rWis="><link rel="stylesheet" href="/css/add-on.css">
+          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
 </head>
 
   <body>
@@ -126,7 +126,7 @@
     <h1>Pratik Jagrut</h1>
   </header>
   <main>
-    <p>Engineer @ Red Hat | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
+    <p>Engineer @ Loft labs, Inc. | Avid Linux lover | Opensource Enthusiast | Coder | Blogger | Tech speaker | Geek | Traveler | Frolicsome</p>
   </main>
   
     <footer>
@@ -245,7 +245,7 @@
       
       <h2 id="nested-structs">Nested Structs</h2>
 <p>Golang allows us to use struct as a field of another struct, this pattern is called nesting. A nested struct can be defined using the following syntax.</p>
-<pre><code>type struct1 struct{
+<pre tabindex="0"><code>type struct1 struct{
     // fields
 }
 
@@ -254,7 +254,7 @@ type struct2 struct{
     s struct1
 }
 </code></pre><p>Suppose we need to collect the data of a person, person&rsquo;s name, age and address. In address, we need to collect the city and country of that person. So we can do this using nested structs as shown below:</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -280,12 +280,12 @@ func main() {
 
     fmt.Printf(&quot;%#v&quot;, person)
 }
-</code></pre><pre><code>&amp;main.Person{name:&quot;James Bond&quot;, age:34, address:main.Address{city:&quot;London&quot;, country:&quot;UK&quot;}}
+</code></pre><pre tabindex="0"><code>&amp;main.Person{name:&quot;James Bond&quot;, age:34, address:main.Address{city:&quot;London&quot;, country:&quot;UK&quot;}}
 </code></pre><p><em><strong><a href="https://play.golang.org/p/e4A9YhIirqW" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <h3 id="accessing-fields-of-nested-struct">Accessing fields of nested struct</h3>
 <p>To access the fields of nested struct we can do <code>structObj1.structObj2.structObj3........fieldName</code>.</p>
 <p>Below is an example:</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -314,7 +314,7 @@ func main() {
     fmt.Printf(&quot;City: %v\n&quot;, person.address.city)
     fmt.Printf(&quot;Country: %v\n&quot;, person.address.country)
 }
-</code></pre><pre><code>Name: James Bond
+</code></pre><pre tabindex="0"><code>Name: James Bond
 Age: 34
 City: London
 Country: UK
@@ -322,7 +322,7 @@ Country: UK
 <h3 id="promoted-fields">Promoted fields</h3>
 <p>When the struct has another struct as an anonymous field then fields of anonymous structs are called promoted fields. This means we can access the fields of the nested struct without using the object of the nested struct, we can access them just by using the parent struct.</p>
 <p>For example:</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -351,14 +351,14 @@ func main() {
     fmt.Printf(&quot;City: %v\n&quot;, person.city) // Instead of person.address.city we used person.city
     fmt.Printf(&quot;Country: %v\n&quot;, person.country) // Instead of person.address.country we used person.country
 }
-</code></pre><pre><code>Name: James Bond
+</code></pre><pre tabindex="0"><code>Name: James Bond
 Age: 34
 City: London
 Country: UK
 </code></pre><p><em><strong><a href="https://play.golang.org/p/wkxWR0u6zoT" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p><em><strong>Only unique fields of nested anonymous struct gets promoted.</strong></em></p>
 <p>If the parent struct and nested anonymous struct has the same name field then that field will not be promoted.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -398,7 +398,7 @@ func main() {
 <li>Their corresponding fields should be comparable.</li>
 </ul>
 <p>For example:</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -422,7 +422,7 @@ func main() {
 }
 </code></pre><p><em><strong><a href="https://play.golang.org/p/KZrnjv-8qC1" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p><em><strong>Comparing pointers to the struct will always be false, we need to compare dereferenced pointer values.</strong></em></p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -446,7 +446,7 @@ func main() {
 }
 </code></pre><p><em><strong><a href="https://play.golang.org/p/qcQYTF_BUcP" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p>If structs contain incomparable values then struct values can not be compared using <code>==</code> operator, it will throw an error.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -476,9 +476,9 @@ func main() {
     }
     fmt.Println(p1 == p2)
 }
-</code></pre><pre><code>./prog.go:30:18: invalid operation: p1 == p2 (struct containing map[string]float32 cannot be compared)
+</code></pre><pre tabindex="0"><code>./prog.go:30:18: invalid operation: p1 == p2 (struct containing map[string]float32 cannot be compared)
 </code></pre><p>In the above code, a map is used as a field in a struct and a map is an incomparable type. To compare such structs we can use <code>reflect.DeepEqual()</code> function.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import (
     &quot;fmt&quot;
@@ -514,7 +514,7 @@ func main() {
 </code></pre><p><em><strong><a href="https://play.golang.org/p/R1nK7gPUcrt" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <h2 id="structs-and-methodsreceiver-function">Structs and methods/receiver function</h2>
 <p>Golang supports both function and method. A method is a function that is defined for a particular type or with a receiver. A method in Golang also called a receiver function. Following is the example.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -535,11 +535,11 @@ func main() {
 
     fmt.Println(p.GetInfo())
 }
-</code></pre><pre><code>&quot;James Bond&quot; is &quot;34&quot; years old.
+</code></pre><pre tabindex="0"><code>&quot;James Bond&quot; is &quot;34&quot; years old.
 </code></pre><p><em><strong><a href="https://play.golang.org/p/NnCg1hi-t2d" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p>We can also use a pointer as the receiver of the method. The difference between value as receiver and pointer as a receiver is, golang passes everything as value and hence in value receiver the function will get a copy of struct and function will not touch original struct whereas in pointer as a receiver function will get a copy of a pointer which will be pointing to an original struct.</p>
 <p>The below examples illustrates the difference between pointer and value as a receiver.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -577,7 +577,7 @@ func main() {
     fmt.Println(&quot;Name after update: &quot;, p.name)
 }
 </code></pre><p>In above example <code>UpdateAge()</code> is using value as receiver and <code>UpdateName()</code> is using pointer as a receiver.</p>
-<pre><code>Age before update:  34
+<pre tabindex="0"><code>Age before update:  34
 Age after update:  34
 
 Name before update:  James Bond
@@ -585,18 +585,18 @@ Name after update:  Jon Snow
 </code></pre><p><em><strong><a href="https://play.golang.org/p/gvDMobx70PK" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <h2 id="empty-struct">Empty Struct</h2>
 <p>In GOlang, we can have an empty struct. A struct without any field is called an empty struct. Below is the signature of an empty struct.</p>
-<pre><code>type T struct{}
+<pre tabindex="0"><code>type T struct{}
 var s struct{}
 </code></pre><p>Empty struct does not have any field so it does not occupy any memory i.e it occupies <code>zero bytes</code> of storage.</p>
-<pre><code>var s struct{}
+<pre tabindex="0"><code>var s struct{}
 fmt.Println(unsafe.Sizeof(s)) // prints 0
 </code></pre><p>We can create an array of the empty struct and still it occupies zero bytes.</p>
-<pre><code>var arr [100000]struct{}
+<pre tabindex="0"><code>var arr [100000]struct{}
 fmt.Println(unsafe.Sizeof(arr)) // prints 0
 </code></pre><p>The slice of structs will consume some byte just to store pointer, length and capacity of an underlying array but structs still will be of zero bytes.</p>
-<pre><code>sls := make([]struct{}, 100000)
+<pre tabindex="0"><code>sls := make([]struct{}, 100000)
 fmt.Println(unsafe.Sizeof(sls)) // prints 24
-</code></pre><pre><code>package main
+</code></pre><pre tabindex="0"><code>package main
 
 import (
     &quot;fmt&quot;
@@ -613,14 +613,14 @@ func main() {
     sls := make([]struct{}, 100000)
     fmt.Println(&quot;Size of a slice of an empty struct: &quot;, unsafe.Sizeof(sls)) // prints 24
 }
-</code></pre><pre><code>Size of an empty struct:  0
+</code></pre><pre tabindex="0"><code>Size of an empty struct:  0
 Size of an array of an empty struct:  0
 Size of a slice of an empty struct:  24
 </code></pre><p><em><strong><a href="https://play.golang.org/p/SB9x1tSICW1" style="color:DodgerBlue" target="_blank">Run this code in Go Playground</a></strong></em></p>
 <p>Read more about the empty struct and its use cases at <em><strong><a href="https://dave.cheney.net/2014/03/25/the-empty-struct" style="color:DodgerBlue" target="_blank">Dave Cheney&rsquo;s blog.</a></strong></em></p>
 <h2 id="arrayslice-of-structs">Array/Slice of structs</h2>
 <p>The <em><strong><a href="/blog/golang/series/array_slice" style="color:DodgerBlue" target="_blank">Array/Slice</a></strong></em> is a collection of the same type of element in a contiguous memory location. We can create an array/slice of structs.</p>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -649,7 +649,7 @@ func main() {
 
     fmt.Println(&quot;Name of friends character: &quot;, people[2].name)
 }
-</code></pre><pre><code>&amp;{James Bond 34}
+</code></pre><pre tabindex="0"><code>&amp;{James Bond 34}
 &amp;{Jon Snow 24}
 &amp;{Joey Tribbiani 32}
 Name of friends character:  Joey Tribbiani
@@ -888,14 +888,14 @@ Name of friends character:  Joey Tribbiani
   <p class="copyright">
     © 2021 Pratik Jagrut
       <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.79.0' target='_blank' rel='noopener'>Hugo</a>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.88.1' target='_blank' rel='noopener'>Hugo</a>
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
 
       <script src="/js/highlight.js"></script>
     
-    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.b4e669fa428a81defb8af0916c53f39cd1b8e0bbab22199c06f0b182907ba474.js" integrity="sha256-tOZp&#43;kKKgd77ivCRbFPznNG44LurIhmcBvCxgpB7pHQ="></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
     <script src="/js/add-on.js"></script>
 <script type="application/javascript">
 var doNotTrack = false;
