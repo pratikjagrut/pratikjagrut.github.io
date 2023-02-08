@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Pratik Jagrut</title>
-    <link>https://pratikjagrut.dev/categories/git/</link>
+    <link>http://psj.codes/categories/git/</link>
     <description>Recent content in git on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 May 2021 20:57:06 +0530</lastBuildDate><atom:link href="https://pratikjagrut.dev/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 May 2021 20:57:06 +0530</lastBuildDate><atom:link href="http://psj.codes/categories/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Transform pedestrian Github profile into dynamic portfolio</title>
-      <link>https://pratikjagrut.dev/blog/git/2021/githubprofile/</link>
+      <link>http://psj.codes/blog/git/2021/githubprofile/</link>
       <pubDate>Thu, 06 May 2021 20:57:06 +0530</pubDate>
       
-      <guid>https://pratikjagrut.dev/blog/git/2021/githubprofile/</guid>
+      <guid>http://psj.codes/blog/git/2021/githubprofile/</guid>
       <description>Today Github is the behemoth platform for open-source projects. There would not be a single person in the open-source community who doesn&amp;rsquo;t use GitHub. And there could be a minuscule number of developers who don&amp;rsquo;t have a GitHub profile. Github is not only home for the best open-source projects but also a place where developers could showcase their talent via a panoply of projects.
 Below is the default, pedestrian GitHub profile page that shows the name, contact information, and some repositories.</description>
     </item>
     
     <item>
       <title>Git aliases</title>
-      <link>https://pratikjagrut.dev/blog/git/2021/aliases/</link>
+      <link>http://psj.codes/blog/git/2021/aliases/</link>
       <pubDate>Thu, 29 Apr 2021 08:23:36 +0530</pubDate>
       
-      <guid>https://pratikjagrut.dev/blog/git/2021/aliases/</guid>
+      <guid>http://psj.codes/blog/git/2021/aliases/</guid>
       <description>Git is the most widely used Version Control System (VCS) or Source Code Management(SCM) software. It is a day-to-day go-to tool for many of the developers out there. And many developers use terminal/command line to operate it.
 In the terminal we type git commands git &amp;lt;sub-command&amp;gt; &amp;lt;flag&amp;gt; it runs if it succeeds we&amp;rsquo;re happy. On day-to-day basis we mostly use repetitive commands like git pull &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;, git push &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;, git commit and many other and sometimes we use prolonged commands like this one git log --graph --pretty=format:&#39;%Cred%h%Creset %Cgreen%cr%Creset -%C(yellow)%d%Creset %s %C(bold blue)[%cn]%Creset&#39; --abbrev-commit --date=relative which prints commit history in custom fashion.</description>
     </item>
