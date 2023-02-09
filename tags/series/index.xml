@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>series on Pratik Jagrut</title>
-    <link>http://psj.codes/tags/series/</link>
+    <link>https://psj.codes/tags/series/</link>
     <description>Recent content in series on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 01 Jun 2021 10:11:55 +0529</lastBuildDate><atom:link href="http://psj.codes/tags/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Jun 2021 10:11:55 +0529</lastBuildDate><atom:link href="https://psj.codes/tags/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
-      <link>http://psj.codes/blog/golang/series/contents/</link>
+      <link>https://psj.codes/blog/golang/series/contents/</link>
       <pubDate>Tue, 01 Jun 2021 10:11:55 +0529</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/contents/</guid>
+      <guid>https://psj.codes/blog/golang/series/contents/</guid>
       <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;   Anonymous Function  &amp;emsp;   Closures  &amp;emsp;   Pointers  &amp;emsp;   Structs (Part-1)  &amp;emsp;   Structs (Part-2)  &amp;emsp;   Interface (Part-1)  &amp;emsp;   Interface (Part-2)  &amp;emsp;   Error Handling (Part-1)  &amp;emsp;   Error Handling (Part-2)  &amp;emsp;  </description>
     </item>
     

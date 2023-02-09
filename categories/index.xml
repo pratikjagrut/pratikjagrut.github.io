@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Pratik Jagrut</title>
-    <link>http://psj.codes/categories/</link>
+    <link>https://psj.codes/categories/</link>
     <description>Recent content in Categories on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 01 Jun 2021 10:11:55 +0529</lastBuildDate><atom:link href="http://psj.codes/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Jun 2021 10:11:55 +0529</lastBuildDate><atom:link href="https://psj.codes/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>golang</title>
-      <link>http://psj.codes/categories/golang/</link>
+      <link>https://psj.codes/categories/golang/</link>
       <pubDate>Tue, 01 Jun 2021 10:11:55 +0529</pubDate>
       
-      <guid>http://psj.codes/categories/golang/</guid>
+      <guid>https://psj.codes/categories/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>http://psj.codes/categories/git/</link>
+      <link>https://psj.codes/categories/git/</link>
       <pubDate>Thu, 06 May 2021 20:57:06 +0530</pubDate>
       
-      <guid>http://psj.codes/categories/git/</guid>
+      <guid>https://psj.codes/categories/git/</guid>
       <description></description>
     </item>
     

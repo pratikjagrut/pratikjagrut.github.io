@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>golang on Pratik Jagrut</title>
-    <link>http://psj.codes/categories/golang/</link>
+    <link>https://psj.codes/categories/golang/</link>
     <description>Recent content in golang on Pratik Jagrut</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 01 Jun 2021 10:11:55 +0529</lastBuildDate><atom:link href="http://psj.codes/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Jun 2021 10:11:55 +0529</lastBuildDate><atom:link href="https://psj.codes/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
-      <link>http://psj.codes/blog/golang/series/contents/</link>
+      <link>https://psj.codes/blog/golang/series/contents/</link>
       <pubDate>Tue, 01 Jun 2021 10:11:55 +0529</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/contents/</guid>
+      <guid>https://psj.codes/blog/golang/series/contents/</guid>
       <description>Contents Github Repo   &amp;emsp; &amp;#128279; Reference     Introduction and Installation  &amp;emsp;   First program in Go: Hello World  &amp;emsp;   Variables, data types and constants  &amp;emsp;   Looping Construct  &amp;emsp;   Conditional Statements  &amp;emsp;   Switch Statement  &amp;emsp;   Arrays and Slices  &amp;emsp;   Maps  &amp;emsp;   Range  &amp;emsp;   Functions  &amp;emsp;   Anonymous Function  &amp;emsp;   Closures  &amp;emsp;   Pointers  &amp;emsp;   Structs (Part-1)  &amp;emsp;   Structs (Part-2)  &amp;emsp;   Interface (Part-1)  &amp;emsp;   Interface (Part-2)  &amp;emsp;   Error Handling (Part-1)  &amp;emsp;   Error Handling (Part-2)  &amp;emsp;  </description>
     </item>
     
     <item>
       <title>Error Handling (Part-1)</title>
-      <link>http://psj.codes/blog/golang/series/error_part_1/</link>
+      <link>https://psj.codes/blog/golang/series/error_part_1/</link>
       <pubDate>Tue, 01 Jun 2021 10:11:55 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/error_part_1/</guid>
+      <guid>https://psj.codes/blog/golang/series/error_part_1/</guid>
       <description>Error is a result of unexpected circumstances or abnormal behavior of the program. For example, a network connection error, a user entering incorrect data, a function invoked with inaccurate values or file not found, and many other scenarios could cause an error. Error Handling is a process of knowing where an error could befall, and having a mechanism to handle it.
 In Golang, an error is a value type whose zero value is nil i.</description>
     </item>
     
     <item>
       <title>Error Handling (Part-2)</title>
-      <link>http://psj.codes/blog/golang/series/error_part_2/</link>
+      <link>https://psj.codes/blog/golang/series/error_part_2/</link>
       <pubDate>Tue, 01 Jun 2021 10:11:55 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/error_part_2/</guid>
+      <guid>https://psj.codes/blog/golang/series/error_part_2/</guid>
       <description>Creating errors with errors.New() function If we don&amp;rsquo;t need a custom type for an error, and we can work with a single error type then we can use errors.New()  function to create a error on the fly.
 Creating a new error is simple. We simply need to call the New function as shown in the below example:
 package main import ( &amp;#34;errors&amp;#34; &amp;#34;fmt&amp;#34; ) func division(i, j float32) (interface{}, error) { if j == 0 { return &amp;#34;&amp;#34;, errors.</description>
@@ -38,10 +38,10 @@ package main import ( &amp;#34;errors&amp;#34; &amp;#34;fmt&amp;#34; ) func divi
     
     <item>
       <title>Interface (Part-2)</title>
-      <link>http://psj.codes/blog/golang/series/interface_part_2/</link>
+      <link>https://psj.codes/blog/golang/series/interface_part_2/</link>
       <pubDate>Sun, 25 Apr 2021 10:46:37 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/interface_part_2/</guid>
+      <guid>https://psj.codes/blog/golang/series/interface_part_2/</guid>
       <description>Type assertion Type assertion is used to get the underlying concrete value of the interface variable. i.(Type) this is the syntax of type assertion, where:
 i -&amp;gt; interface variable
 Type -&amp;gt; type that implements interface
@@ -51,60 +51,60 @@ package main import &amp;#34;fmt&amp;#34; type Person interface { info() string 
     
     <item>
       <title>Interface (Part-1)</title>
-      <link>http://psj.codes/blog/golang/series/interface_part_1/</link>
+      <link>https://psj.codes/blog/golang/series/interface_part_1/</link>
       <pubDate>Sun, 07 Mar 2021 20:14:16 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/interface_part_1/</guid>
+      <guid>https://psj.codes/blog/golang/series/interface_part_1/</guid>
       <description>In Golang, an interface is a set of method signatures. When any type defines all the methods from an interface then that type implements the interface. So we can state that interface defines the behaviour of the object/type.
 For example, an animal walks, eats and sleeps so we can have an interface Animal which declares the methods walk, eat and sleep and any animal e.g. Tiger, who walks, eats and sleeps so we say Tiger implements the animal interface.</description>
     </item>
     
     <item>
       <title>Structs (Part-2)</title>
-      <link>http://psj.codes/blog/golang/series/structs_part_2/</link>
+      <link>https://psj.codes/blog/golang/series/structs_part_2/</link>
       <pubDate>Thu, 04 Mar 2021 21:53:38 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/structs_part_2/</guid>
+      <guid>https://psj.codes/blog/golang/series/structs_part_2/</guid>
       <description>Nested Structs Golang allows us to use struct as a field of another struct, this pattern is called nesting. A nested struct can be defined using the following syntax.
 type struct1 struct{ // fields } type struct2 struct{ // fields s struct1 } Suppose we need to collect the data of a person, person&amp;rsquo;s name, age and address. In address, we need to collect the city and country of that person.</description>
     </item>
     
     <item>
       <title>Structs (Part-1)</title>
-      <link>http://psj.codes/blog/golang/series/structs_part_1/</link>
+      <link>https://psj.codes/blog/golang/series/structs_part_1/</link>
       <pubDate>Thu, 04 Mar 2021 18:02:10 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/structs_part_1/</guid>
+      <guid>https://psj.codes/blog/golang/series/structs_part_1/</guid>
       <description>What is Struct? A struct is a sequence of named elements, called fields, each of which has a name and a type. Field names may be specified explicitly (IdentifierList) or implicitly (EmbeddedField). Within a struct, non-blank field names must be unique. From golang docs.
 In simple words, a struct is a user-defined type that allows the collection of different types of elements. These elements are called fields. Structs can be used to keep certain data together.</description>
     </item>
     
     <item>
       <title>Pointers</title>
-      <link>http://psj.codes/blog/golang/series/pointers/</link>
+      <link>https://psj.codes/blog/golang/series/pointers/</link>
       <pubDate>Fri, 26 Feb 2021 16:49:28 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/pointers/</guid>
+      <guid>https://psj.codes/blog/golang/series/pointers/</guid>
       <description>The pointer is a special variable in Golang that stores the memory address of other variables.
 Variables are used to store some type of data. All variables are assigned a particular memory where they store data and this memory has a memory address that is in hexadecimal format. The number that starts with 0x is hexadecimal like (0x14 which is equivalent to 20 in decimal). Golang allows us to store this memory address in variables but only pointers will understand that the stored value is pointing to some memory whereas other variables will treat it just as a value.</description>
     </item>
     
     <item>
       <title>Closures</title>
-      <link>http://psj.codes/blog/golang/series/closures/</link>
+      <link>https://psj.codes/blog/golang/series/closures/</link>
       <pubDate>Sun, 14 Feb 2021 19:08:25 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/closures/</guid>
+      <guid>https://psj.codes/blog/golang/series/closures/</guid>
       <description>Golang supports anonymous functions which are then used to form closure functions. Anonymous functions are function without any name. Before going any further read about anonymous function .
 The closure is a special type of function value which references variable declared outside its body. The purpose of this function is to close over a variable of upper function to form a closure. The function may access and assign to the referenced variables; in this sense, the function is &amp;ldquo;bound&amp;rdquo; to the variables.</description>
     </item>
     
     <item>
       <title>Anonymous Function</title>
-      <link>http://psj.codes/blog/golang/series/anonymous_func/</link>
+      <link>https://psj.codes/blog/golang/series/anonymous_func/</link>
       <pubDate>Sun, 14 Feb 2021 19:07:57 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/anonymous_func/</guid>
+      <guid>https://psj.codes/blog/golang/series/anonymous_func/</guid>
       <description>The anonymous function is a feature in Golang which let us define a function without a name. This feature is also called a function literal. This is useful when you want an inline function or to form a closure.
 Declaring the anonymous function The syntax is pretty straight forward and much similar to normal function.
 func(parameter_list)(return_type){ return }() Parameter list and return type are optional.
@@ -113,10 +113,10 @@ func(parameter_list)(return_type){ return }() Parameter list and return type are
     
     <item>
       <title>Functions</title>
-      <link>http://psj.codes/blog/golang/series/functions/</link>
+      <link>https://psj.codes/blog/golang/series/functions/</link>
       <pubDate>Tue, 12 Jan 2021 12:36:48 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/functions/</guid>
+      <guid>https://psj.codes/blog/golang/series/functions/</guid>
       <description>A function is a block of statements which performs a specific task. Functions is a well organized and reusable code. It improves the code readability, maintainability and testability. The general function is:
 func function_name( [parameter list] ) [return_types] { body of the function } Declaring and calling functions The function is declared using func keyword.
 func sayCheeze() { fmt.Println(&amp;#34;Cheeeeeeeeeeeeze&amp;#34;) } Calling the function is pretty easy.
@@ -125,10 +125,10 @@ sayCheeze() package main import &amp;#34;fmt&amp;#34; func sayCheeze() { fmt.</d
     
     <item>
       <title>Range</title>
-      <link>http://psj.codes/blog/golang/series/range/</link>
+      <link>https://psj.codes/blog/golang/series/range/</link>
       <pubDate>Mon, 11 Jan 2021 23:41:28 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/range/</guid>
+      <guid>https://psj.codes/blog/golang/series/range/</guid>
       <description>The range keyword is used to iterate over various data types. It is used in for loops and its return values are dependent on the data types over which we&amp;rsquo;re using range keyword.
 Range over slice/array Range on Array and Slice returns the first value as an index and second value as an element located at that index.
 package main import &amp;#34;fmt&amp;#34; func main() { nums := []int{1, 2, 3, 4, 5} for i, v := range nums { fmt.</description>
@@ -136,10 +136,10 @@ package main import &amp;#34;fmt&amp;#34; func main() { nums := []int{1, 2, 3, 4
     
     <item>
       <title>Maps</title>
-      <link>http://psj.codes/blog/golang/series/maps/</link>
+      <link>https://psj.codes/blog/golang/series/maps/</link>
       <pubDate>Sun, 10 Jan 2021 16:38:32 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/maps/</guid>
+      <guid>https://psj.codes/blog/golang/series/maps/</guid>
       <description>The map is a collection of key-value pairs. It is an implementation of a Hash Table, which provides Create/Add, Read, Update and Delete operations over the data. Collection of key-value pairs is unordered and each key is unique.
 Declaration and initialization In general GO map looks like
 map[KeyType]ValueType The KeyType could be anything that is comparable such as string, int etc. and ValueType could be anything, even it can be another map.</description>
@@ -147,10 +147,10 @@ map[KeyType]ValueType The KeyType could be anything that is comparable such as s
     
     <item>
       <title>Arrays and Slices</title>
-      <link>http://psj.codes/blog/golang/series/array_slice/</link>
+      <link>https://psj.codes/blog/golang/series/array_slice/</link>
       <pubDate>Tue, 22 Dec 2020 16:08:06 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/array_slice/</guid>
+      <guid>https://psj.codes/blog/golang/series/array_slice/</guid>
       <description>Array The array is a collection of the same type of element in a contiguous memory location. The array has fixed length i.e the number of elements to be stored is fixed before memory allocation.
 Array Declarations An array type definition specifies length and type of element. The array [n]T is of length n and type T.
 // This array can hold 3 integers. var i [3]int Arrays can be indexed in usual way, to access the nth element we can do a[n].</description>
@@ -158,10 +158,10 @@ Array Declarations An array type definition specifies length and type of element
     
     <item>
       <title>Switch</title>
-      <link>http://psj.codes/blog/golang/series/switch/</link>
+      <link>https://psj.codes/blog/golang/series/switch/</link>
       <pubDate>Tue, 22 Dec 2020 14:35:42 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/switch/</guid>
+      <guid>https://psj.codes/blog/golang/series/switch/</guid>
       <description>A switch statement is another way to write a sequence of if - else statements.
 Go&amp;rsquo;s switch is like the one in C and C++ except that it only runs the selected case, not all the cases that follows so we don&amp;rsquo;t need break statement here.
 switch expression { case exp1: //Executes if expression matches exp1 case exp2: //Executes if expression matches exp2 default: //Executes if expression does not matches with any case } Switch evaluation order Switch cases evaluate cases from top to bottom and stops when a case succeeds.</description>
@@ -169,20 +169,20 @@ switch expression { case exp1: //Executes if expression matches exp1 case exp2: 
     
     <item>
       <title>Conditional Statements</title>
-      <link>http://psj.codes/blog/golang/series/if_else/</link>
+      <link>https://psj.codes/blog/golang/series/if_else/</link>
       <pubDate>Mon, 21 Dec 2020 22:18:32 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/if_else/</guid>
+      <guid>https://psj.codes/blog/golang/series/if_else/</guid>
       <description>Conditional Statements are part of every programming language. They help us to decide which instruction is suppose to run when certain condition is met. e.g. If I&amp;rsquo;m hungry then I&amp;rsquo;ll eat else I&amp;rsquo;ll wait. e.g. If score is greater than 35%, you passed, else you failed.
 If statement in Go if condition/expression { //instruction to be performed } Condition needs to be true to perform the given set of instructions.</description>
     </item>
     
     <item>
       <title>Looping Construct</title>
-      <link>http://psj.codes/blog/golang/series/for_loop/</link>
+      <link>https://psj.codes/blog/golang/series/for_loop/</link>
       <pubDate>Mon, 21 Dec 2020 19:34:10 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/for_loop/</guid>
+      <guid>https://psj.codes/blog/golang/series/for_loop/</guid>
       <description>Go has only one looping construct, the for loop.
 Basic for loop The basic for loop has three components separated by semicolons:
  init statement: i := 0 exec before 1st iteration condition expression: i &amp;lt; n eval on every interation post statement: i++ exec after each iteration  The expression is not surrounded by parentheses ( ) but the braces { } around set of instructions are required.
@@ -191,10 +191,10 @@ for i := 0; i &amp;lt; n; i++ { //business logic //set of instructions } Init an
     
     <item>
       <title>Variables, data types and constants</title>
-      <link>http://psj.codes/blog/golang/series/vdc/</link>
+      <link>https://psj.codes/blog/golang/series/vdc/</link>
       <pubDate>Sun, 20 Dec 2020 18:34:48 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/vdc/</guid>
+      <guid>https://psj.codes/blog/golang/series/vdc/</guid>
       <description>Variable Variable is a symbolic name given to the storage location which contains some value which can be changed at any time during the execution of the program. A variable must be defined with the type of data or value it is holding.
 Data types There are several data types in Go.
 bool int uint float32 complex64 string int8 uint8 float64 complex128 byte int16 uint16 rune int32 uint32 error int64 uint64 Zero value In some programming languages variable holds a null or undefined value when not initialized, Go gives it a zero-value of its data type.</description>
@@ -202,10 +202,10 @@ bool int uint float32 complex64 string int8 uint8 float64 complex128 byte int16 
     
     <item>
       <title>Go Introduction and Installation</title>
-      <link>http://psj.codes/blog/golang/series/introduction/</link>
+      <link>https://psj.codes/blog/golang/series/introduction/</link>
       <pubDate>Sat, 19 Dec 2020 17:23:49 +0530</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/introduction/</guid>
+      <guid>https://psj.codes/blog/golang/series/introduction/</guid>
       <description>Go is an open-source, statically typed, compiled programing language built by Google. It combines the simplest of both statically typed and dynamically typed languages and provides you with the proper mixture of efficiency and simple programming. It is primarily fitted to building fast, efficient, and reliable server-side or system applications.
 Following are some noted features of Go -
  Safety Concurrency Efficient Garbage Collection High-speed compilation Excellent Tooling support  Installing GO Go binary distributions are available for all major operating systems like Linux, Windows, and macOS.</description>
@@ -213,10 +213,10 @@ Following are some noted features of Go -
     
     <item>
       <title>Classic hello world program</title>
-      <link>http://psj.codes/blog/golang/series/helloworld/</link>
+      <link>https://psj.codes/blog/golang/series/helloworld/</link>
       <pubDate>Sat, 19 Dec 2020 17:23:49 +0532</pubDate>
       
-      <guid>http://psj.codes/blog/golang/series/helloworld/</guid>
+      <guid>https://psj.codes/blog/golang/series/helloworld/</guid>
       <description>Source code organization Since GO1.11 we&amp;rsquo;ve two ways of organizing go code: one is, using GOPATH and the second one is using go mod. GOPATH structure was widely in use and kind of only way to structure your go code before GO1.11. In this blog, we&amp;rsquo;ll use go mod since it provides more features and flexibility over GOPATH.
 To know more about writing code with GOPATH read this blog.</description>
     </item>
